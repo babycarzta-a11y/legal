@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financial Calculator Support</title>
+<meta name="description" content="Help for Financial Calculator: TVM IRR — the worksheets, cash-flow signs, multiple IRRs, bond conventions, amortization rounding, saved calculations, backups, Financial Calculator Pro and restoring the purchase.">
+<style>
+  :root{
+    --bg:#F3F1EC; --surface:#FCFBF8; --field:#F1EFE9; --line:#DFDBD2; --ink:#23292F; --muted:#6E747A;
+    --slate:#2E3A46; --on-slate:#F7F5F0; --sage:#557564; --sage-soft:#DDE7E0; --brick:#A0524A; --brick-soft:#F2E1DD; --brass:#8E7550; --result:#E9EDEA;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#14181C; --surface:#1C2126; --field:#242A30; --line:#333A41; --ink:#E7E4DD; --muted:#9BA1A7;
+      --slate:#B7C6D3; --on-slate:#14181C; --sage:#8FB3A0; --sage-soft:#223029; --brick:#D9958B; --brick-soft:#3A2825; --brass:#C6AD80; --result:#1F2A26; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--sage)}
+  .sheet{max-width:780px;margin:0 auto;padding:0 20px 64px}
+  .head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;padding:44px 0 18px;border-bottom:3px double var(--slate)}
+  .head h1{margin:0;font-size:30px;letter-spacing:-.4px;font-weight:700}
+  .head h1 em{display:block;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+  .head .mono{font:600 13px/1.5 ui-monospace,Menlo,monospace;color:var(--muted);text-align:right}
+  .intro{margin:18px 0 0;max-width:620px}
+  .index{margin:18px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px}
+  .index a{display:block;padding:8px 10px;background:var(--surface);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}
+  .index a::before{content:"§ ";color:var(--brass)}
+  h2{font-size:21px;margin:44px 0 12px;padding-left:12px;border-left:4px solid var(--slate)}
+  .ws{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .ws th,.ws td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .ws th{background:var(--field);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .ws tr:last-child td{border-bottom:0}
+  .ws .pro{color:var(--brass);font-weight:700;white-space:nowrap}
+  .ws .free{color:var(--sage);font-weight:700;white-space:nowrap}
+  .q{margin:0 0 20px;padding:0 0 0 18px;border-left:2px solid var(--line)}
+  .q h3{margin:0 0 6px;font-size:16px}
+  .q p{margin:0 0 8px}
+  .q p:last-child{margin:0}
+  .in{color:var(--sage);font-weight:700}.out{color:var(--brick);font-weight:700}
+  .ex{background:var(--result);border-radius:10px;padding:12px 16px;font:14px/1.6 ui-monospace,Menlo,monospace;margin:8px 0;white-space:pre-wrap}
+  .pricebox{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 14px}
+  @media (max-width:560px){.pricebox{grid-template-columns:1fr}}
+  .pricebox div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .pricebox h3{margin:0 0 6px;font-size:15px}
+  .pricebox ul{margin:0;padding-left:18px}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--field);padding:1px 6px;border-radius:5px}
+  .err{display:grid;grid-template-columns:1fr;gap:0}
+  .err div{padding:12px 0;border-bottom:1px solid var(--line)}
+  .err b{display:block;color:var(--brick)}
+  .note{font-size:14px;color:var(--muted);margin:14px 0 0}
+  .contact{margin-top:44px;padding:22px 24px;background:var(--slate);color:var(--on-slate);border-radius:12px}
+  .contact a{color:var(--on-slate);font-weight:700;font-size:19px;text-decoration:none;border-bottom:2px solid var(--brass)}
+  .contact p{margin:8px 0 0;font-size:14.5px;opacity:.9}
+  footer{margin-top:22px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header class="head">
+  <h1><em>Support</em>Financial Calculator<br>TVM · IRR · Bonds</h1>
+  <div class="mono">N · I/Y · PV<br>PMT · FV</div>
+</header>
+<p class="intro">Financial Calculator is a set of worksheets, not a keypad to relearn: fill in what you know, tap Solve next to the value you want, and read every step of the calculation underneath. Results are computed to about 35 significant digits with an exact decimal engine, so cents never meet binary floating point. No account, no ads, works offline.</p>
+<ul class="index">
+  <li><a href="#worksheets">Worksheets</a></li>
+  <li><a href="#faq">Questions</a></li>
+  <li><a href="#pro">Pro</a></li>
+  <li><a href="#errors">Error messages</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<h2 id="worksheets">The worksheets</h2>
+<table class="ws">
+  <tr><th>Worksheet</th><th>Solves</th><th></th></tr>
+  <tr><td>Time value of money</td><td>N, I/Y, PV, PMT or FV, with P/Y and C/Y, payments at the end or beginning, step-by-step working</td><td class="free">Free</td></tr>
+  <tr><td>Interest conversion</td><td>Nominal ↔ effective (APR ↔ APY, EAR), any compounding, continuous</td><td class="free">Free</td></tr>
+  <tr><td>Breakeven</td><td>Units, price, fixed or variable costs, or profit; contribution margin</td><td class="free">Free</td></tr>
+  <tr><td>Margin and markup</td><td>Cost, selling price, margin %, markup %, profit per unit</td><td class="free">Free</td></tr>
+  <tr><td>Percent change</td><td>Change between two values, or growth per period (CAGR)</td><td class="free">Free</td></tr>
+  <tr><td>Amortization</td><td>Payment, full schedule by payment or year, extra payments, lump sums, payoff date, interest saved, charts</td><td class="pro">Pro</td></tr>
+  <tr><td>Cash flows</td><td>NPV, NFV, profitability index, IRR (all roots), MIRR, payback and discounted payback, NPV profile</td><td class="pro">Pro</td></tr>
+  <tr><td>Bonds</td><td>Clean and dirty price, yield, accrued interest, current yield, Macaulay and modified duration, on real dates</td><td class="pro">Pro</td></tr>
+  <tr><td>Depreciation</td><td>Straight line, sum of years' digits, declining balance with optional switch to straight line; partial first year</td><td class="pro">Pro</td></tr>
+</table>
+<p class="note">Pro worksheets open for free so you can see the inputs and the help; the paywall appears when you tap Calculate.</p>
+
+<h2 id="faq">Questions people ask</h2>
+
+<div class="q"><h3>Why is my payment positive when I expected a negative number?</h3>
+<p>Money has a direction. The iPhone number pad has no minus key, so each money field carries an <span class="in">In</span> / <span class="out">Out</span> chip instead of a sign: In is money you receive, Out is money you pay. Typing a minus flips the chip; the ± key on the keyboard bar does the same. A loan you take: PV <span class="in">In</span>, PMT <span class="out">Out</span>. Savings: deposits <span class="out">Out</span>, the final balance <span class="in">In</span>. The result line says "you pay" or "you receive" in words.</p></div>
+
+<div class="q"><h3>"All amounts have the same sign" — what does that mean?</h3>
+<p>Solving for a rate or a term needs money going both ways. If PV, PMT and FV are all In (or all Out), there is no rate that balances them. Flip the chip on the amounts you pay.</p></div>
+
+<div class="q"><h3>The app says "2 IRRs". Which one is right?</h3>
+<p>When cash flows change sign more than once, the NPV curve can cross zero more than once, and every crossing is a mathematically valid IRR. The app scans the whole range from −99 % to +1,000 % per period, reports every root and the number of sign changes. Decide with the NPV at your required rate, or use MIRR, which assumes a finance rate and a reinvestment rate and always has one answer. The TVM worksheet does the same for I/Y: it returns the root nearest zero and lists the others.</p></div>
+
+<div class="q"><h3>What is the difference between P/Y and C/Y?</h3>
+<p>P/Y is how many payments there are per year; C/Y is how often interest is compounded. A Canadian mortgage, for instance, has monthly payments (P/Y 12) with semi-annual compounding (C/Y 2). Leave them equal for the usual case. I/Y is always the annual rate in percent.</p></div>
+
+<div class="q"><h3>My amortization totals differ from the bank's by a few cents.</h3>
+<p>Check <em>Round schedules to cents</em> in Settings. When it is on, interest and the payment are rounded to the cent every period, as a lender's statement does, and the final payment absorbs the difference. When it is off, every period is carried at full precision and the totals can differ by cents from a statement. The payment is calculated if you leave the field empty; extra payments per period and a one-time lump sum shorten the loan and the summary shows the interest and time saved.</p></div>
+
+<div class="q"><h3>Which bond conventions are used?</h3>
+<p>Prices are per 100 of face value and clean (without accrued interest); the dirty price is shown separately. Coupon dates are counted back from maturity with the end-of-month rule, as spreadsheets do. Day count is Actual/Actual or 30/360 (US/NASD with the February rules); the default follows your region and can be changed in Settings. For yield to call, enter the call date as the maturity and the call price as the redemption value.</p></div>
+
+<div class="q"><h3>Margin or markup?</h3>
+<p>Margin is profit as a share of the selling price; markup is profit as a share of cost. A 25 % markup is a 20 % margin. Enter any two of cost, price, margin and markup. French users: the app follows the French retail convention (taux de marque / taux de marge).</p></div>
+
+<div class="q"><h3>How does percent change become CAGR?</h3>
+<p>With one period the worksheet gives the simple percent change. With several periods it gives the average growth per period, so 100 growing to 121 over 2 years is 10 % a year.</p></div>
+
+<div class="q"><h3>How many decimals does it calculate with?</h3>
+<p>About 35 significant digits internally, always. Settings → <em>Decimal places</em> only changes how many are shown. A solved value keeps its full precision until you edit the field, as a hardware calculator does.</p></div>
+
+<div class="q"><h3>What is the difference between History and Saved?</h3>
+<p>History keeps your last 100 solved calculations automatically, newest first, and is free. Saved (Pro) is where you keep a calculation on purpose with a name and a note ("Bank offer 4.9 %") and come back to it. Both live in a file on the iPhone and are included in <em>Back up to a file</em>; importing a backup adds and never deletes, and the history always merges.</p></div>
+
+<div class="q"><h3>Can I get a schedule into Excel?</h3>
+<p>With Pro: <em>CSV table</em> exports the schedule or table; <em>PDF report</em> exports inputs, results, the steps and the schedule. Numbers and dates in the CSV follow your region's format. The free version shares any result as plain text.</p></div>
+
+<h2 id="pro">Financial Calculator Pro</h2>
+<div class="pricebox">
+  <div><h3>Stays free</h3><ul>
+    <li>TVM with steps and the sign helper</li>
+    <li>Interest conversion, breakeven, margin/markup, percent change</li>
+    <li>History of the last 100 calculations</li>
+    <li>Plain-text sharing, backup and import</li>
+    <li>Light and dark appearance</li>
+  </ul></div>
+  <div><h3>Pro unlocks</h3><ul>
+    <li>Amortization schedules with extra payments and charts</li>
+    <li>Cash flows: NPV, IRR with multiple-root detection, MIRR, payback</li>
+    <li>Bonds and depreciation</li>
+    <li>Saved calculations with names and notes</li>
+    <li>PDF reports and CSV tables</li>
+  </ul></div>
+</div>
+<p>Pro is one non-consumable in-app purchase, product id <code>fincalc_pro</code>. It is not a subscription; nothing is charged again, and everything that is free stays free. The price on the paywall is the App Store's price for your country; the app does not carry one.</p>
+<p><strong>Restore.</strong> Settings → <em>Restore purchases</em> or <em>Restore</em> on the paywall, signed in with the Apple ID that bought Pro. The app also re-confirms the purchase with the App Store at each cold start; if the store cannot be reached, Pro is kept. If Pro is lost (a different Apple ID), saved calculations are never deleted; you only cannot create new Pro results until it is restored. Importing a backup that contains saved calculations needs Pro; the history part of a backup always imports.</p>
+<p><strong>Refunds</strong> are Apple's: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2 id="errors">Error messages, decoded</h2>
+<div class="err">
+  <div><b>"The payment does not even cover the interest, so the balance is never repaid."</b>PMT is smaller than one period's interest on PV. Increase the payment, shorten nothing: N cannot be solved for a loan that grows.</div>
+  <div><b>"No IRR: the NPV does not reach zero between −99 % and 1,000 % per period."</b>The flows never break even at any sensible rate, for example a project whose inflows are smaller than the outlay. Check signs and amounts.</div>
+  <div><b>"Cash flows need at least one negative and one positive amount."</b>Mark the investment as Out (negative) and the returns as In.</div>
+  <div><b>"The settlement date must be before the maturity date."</b>Swap the two dates in the bond worksheet.</div>
+  <div><b>"The salvage value cannot be higher than the cost."</b>Depreciation would be negative; correct one of the two.</div>
+  <div><b>"That is more than 12,000 periods."</b>A term this long is almost always a units mistake, for example years entered where months were meant.</div>
+  <div><b>"The App Store isn't available right now."</b>No connection, signed out of the App Store, or in-app purchases blocked by Screen Time. Fix one and open the paywall again.</div>
+</div>
+<p class="note">Financial Calculator is a tool for study and planning. Results depend on the inputs and conventions you choose and are not financial, tax or investment advice; check important figures with your lender, broker or adviser.</p>
+
+<section class="contact" id="contact">
+  <div>Found a result you can compare against a textbook or a statement and ours differs?</div>
+  <a href="mailto:babycar.zta@gmail.com?subject=Financial%20Calculator">babycar.zta@gmail.com</a>
+  <p>Write "Financial Calculator" in the subject and include the worksheet, every input (with its In/Out chip), the result you got and the result you expected. We check every reported discrepancy against published examples and reply within a few business days.</p>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · Works offline. No account, no ads, no tracking.</footer>
+</div>
+</body>
+</html>

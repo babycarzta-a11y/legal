@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annum Support — Vintage Film Camera</title>
+<meta name="description" content="Help for Annum, the camera that travels through time: eras and the dial, free shots, the Roll and album, missions, silent film, Annum Pro (yearly with a free week, or lifetime) and restoring purchases.">
+<style>
+  :root{
+    --graphite:#1A1816; --surface:#24211E; --surface2:#2E2A26; --line:rgba(237,230,216,.2);
+    --brass:#B8955A; --brass-dim:#8C7444; --bone:#EDE6D8; --bone-muted:#A9A194; --bone-faint:#6F685E; --terracotta:#C98A7A;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--graphite)}
+  body{margin:0;background:var(--graphite);color:var(--bone);font:16px/1.55 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--brass)}
+  .page{max-width:760px;margin:0 auto;padding:0 20px 72px}
+  .masthead{padding:56px 0 32px;text-align:center}
+  .masthead .rule{width:64px;height:1px;background:var(--brass);margin:0 auto 18px}
+  .masthead h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:40px;letter-spacing:.04em;margin:0 0 6px;color:var(--bone)}
+  .masthead .sub{color:var(--bone-muted);font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 20px}
+  .masthead p.lead{color:var(--bone-muted);max-width:560px;margin:0 auto;font-size:16.5px}
+  nav.years{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin:28px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  nav.years a{padding:12px 16px;color:var(--bone);text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-right:1px solid var(--line)}
+  nav.years a:last-child{border-right:0}
+  nav.years a:hover{color:var(--brass)}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:26px;color:var(--bone);margin:52px 0 6px;letter-spacing:.02em}
+  h2 + .kicker{color:var(--brass);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 20px}
+  p{margin:0 0 14px}
+  .plate{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 16px}
+  .plate h3{margin:0 0 6px;font-size:17px;color:var(--bone)}
+  .plate p:last-child{margin:0}
+  .plate.free{border-color:var(--brass-dim)}
+  .q{border-top:1px solid var(--line);padding:18px 0 4px;display:grid;grid-template-columns:48px 1fr;gap:0 14px}
+  .q:last-of-type{border-bottom:1px solid var(--line);padding-bottom:18px}
+  .q .n{font-family:Georgia,serif;color:var(--brass);font-size:22px;line-height:1.2}
+  .q h3{margin:0 0 6px;font-size:17px;font-weight:600;color:var(--bone)}
+  .q p{color:var(--bone-muted);margin:0 0 10px}
+  .q p:last-child{margin:0}
+  .q em{color:var(--bone);font-style:normal}
+  table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:15px}
+  th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--brass);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+  td:first-child{color:var(--bone-muted)}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--surface2);padding:2px 6px;border-radius:5px;color:var(--bone)}
+  .warn{border-left:3px solid var(--terracotta);padding:6px 0 6px 16px;color:var(--bone-muted);margin:0 0 16px}
+  .warn strong{color:var(--terracotta)}
+  .fix{list-style:none;padding:0;margin:0}
+  .fix li{padding:14px 0;border-bottom:1px solid var(--line)}
+  .fix li strong{display:block;color:var(--bone);margin-bottom:4px}
+  .fix li span{color:var(--bone-muted)}
+  .contact{margin-top:56px;text-align:center;padding:32px 20px;background:var(--surface);border-radius:14px}
+  .contact .mail{display:inline-block;margin:8px 0 12px;font-family:Georgia,serif;font-size:24px;color:var(--bone);text-decoration:none;border-bottom:1px solid var(--brass)}
+  .contact p{color:var(--bone-muted);font-size:14.5px;margin:0}
+  footer{text-align:center;color:var(--bone-faint);font-size:13px;margin-top:28px}
+  footer a{color:var(--bone-faint)}
+  @media (max-width:520px){.masthead h1{font-size:32px}.q{grid-template-columns:36px 1fr}.q .n{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="rule"></div>
+  <h1>Annum</h1>
+  <p class="sub">Vintage Film Camera · Support</p>
+  <p class="lead">Annum is a camera that travels through time: 35 cameras from the daguerreotype to the early DSLR, each one rendered the way its real process saw the world. No account, no upload, no ads. Photos go straight to your Photos library.</p>
+  <nav class="years">
+    <a href="#how">How it works</a>
+    <a href="#faq">Questions</a>
+    <a href="#pro">Annum Pro</a>
+    <a href="#fix">Troubleshooting</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<h2 id="how">How Annum works</h2>
+<p class="kicker">The dial, the cameras, the Roll</p>
+<div class="plate">
+  <h3>Turn the dial to travel</h3>
+  <p>The time dial runs from 1839 to the 2000s. Each stop is a camera with its own body, controls and film. Long-press the era card to read a short history of the process and a "what you'll see" list (for example, red lips turning black on a wet-collodion plate).</p>
+</div>
+<div class="plate">
+  <h3>Real controls, or Quick shoot</h3>
+  <p>Old cameras are operated the way they were: slide in the plate holder, take off the lens cap, count the seconds, wind on, pull the advance lever, set aperture and shutter speed. If you would rather just take the picture, switch on <em>Quick shoot</em> in Settings and one tap does the plate, cap and winding for you.</p>
+</div>
+<div class="plate">
+  <h3>Photos are saved immediately</h3>
+  <p>Every developed photo is written to your Photos library as a JPEG the moment it finishes. The in-app <em>Roll</em> keeps only your last 50 photos for re-developing and sharing; the library is the safe copy. Removing a photo from the Roll never removes it from Photos.</p>
+</div>
+
+<h2 id="faq">Questions people ask</h2>
+<p class="kicker">Answers from the people who built it</p>
+
+<div class="q"><div class="n">01</div><div>
+  <h3>Which cameras are free, and what are "free shots"?</h3>
+  <p>Three cameras are free forever: <em>Tintype</em>, <em>Classic 35 mm B&amp;W</em> and <em>Disposable</em>, at full resolution with no time limit. Every other camera can be used live in the viewfinder and gives <em>3 full-quality shots</em> before it asks for Pro. Those counters are kept in the Keychain, so reinstalling the app does not reset them. The free shots count captures and imports alike.</p>
+</div></div>
+
+<div class="q"><div class="n">02</div><div>
+  <h3>Why is there a small "Annum" mark on my photo?</h3>
+  <p>On the free plan every photo carries a small, era-appropriate mark in the lower-left corner: a blind-embossed studio stamp on plates, a tiny serif mark on film prints, a plain overlay on digital eras. Pro removes it from all photos, including the three free cameras. Your original photo (when <em>Also save the original</em> is on) never has a mark.</p>
+</div></div>
+
+<div class="q"><div class="n">03</div><div>
+  <h3>Can I keep a Pro camera without paying?</h3>
+  <p>Yes, four of them. Open <em>Missions</em>: taking five tintypes unlocks the <em>Ambrotype</em>, ten disposable shots unlock the <em>126 square</em>, twenty 35 mm frames unlock the <em>Twin-lens reflex</em>, and shooting with five different cameras unlocks the <em>Toy camera</em>. A camera earned this way is yours to keep, and it stays unlocked even if you never buy Pro. The other missions give badges.</p>
+</div></div>
+
+<div class="q"><div class="n">04</div><div>
+  <h3>What is the difference between "Aged" and "Fresh"?</h3>
+  <p>Aged shows the object as it survives in museums today: tarnish, foxing, faded dyes. Fresh shows it as it looked the day it was made. The toggle is in the camera's options and is part of Pro, as are the frames and the other per-camera options such as the mirror image on plates and the date stamp on point-and-shoots.</p>
+</div></div>
+
+<div class="q"><div class="n">05</div><div>
+  <h3>Why are my daguerreotype and tintype photos mirror-reversed?</h3>
+  <p>Because the real ones were. A plate exposed directly in the camera is a mirror image, so writing reads backwards and your parting is on the other side. Turn <em>Mirror image</em> off in the camera's options if you prefer it the modern way. In the Roll, tilting the phone over a daguerreotype flips it between positive and negative, the way a real silver plate does (Pro).</p>
+</div></div>
+
+<div class="q"><div class="n">06</div><div>
+  <h3>Can I apply an era to a photo I already have?</h3>
+  <p>Yes. Open the Roll and tap <em>Import</em>, pick a photo, choose an era and tap <em>Develop</em>. Annum saves a new photo; the original is never changed. Import works on the free cameras too, and on any Pro camera while it still has free shots.</p>
+</div></div>
+
+<div class="q"><div class="n">07</div><div>
+  <h3>How does the silent film camera work?</h3>
+  <p>The newsreel camera is cranked by hand: crank for at least 5 seconds, choose fast, normal or slow motion, add an optional title card, pick the sound (piano or projector only), and tap <em>Develop the film</em>. The finished MP4 lands in Photos. Free films run up to 15 seconds; Pro films up to a minute. There is a one-tap hashtag copy on the share screen.</p>
+</div></div>
+
+<div class="q"><div class="n">08</div><div>
+  <h3>What is the darkroom?</h3>
+  <p>An optional mini-game for black-and-white shots. Switch on <em>Print black-and-white in the darkroom</em> in Settings and after each B&amp;W photo you rock the print through developer, stop bath and fixer yourself. Longer development prints darker; about 60 seconds makes a normal print. You can skip it at any moment and the print is developed for you.</p>
+</div></div>
+
+<div class="q"><div class="n">09</div><div>
+  <h3>What does the "Share print" option do?</h3>
+  <p>It wraps the photo in a period mount (cabinet card, slide frame, booth strip and so on) with a small Annum mark, ready for a post. The plain photo without a mount is the one already saved to your library.</p>
+</div></div>
+
+<div class="q"><div class="n">10</div><div>
+  <h3>Where are the "Rolls" and "Cameras" tabs in the album?</h3>
+  <p>The Roll has three views. <em>Recent</em> is the last 50 photos in order. <em>Rolls</em> groups them by the roll of film, box of plates or memory card they were shot on. <em>Cameras</em> groups them by camera. The <em>Camera Museum</em> lists all 35 cameras by decade and shows which ones are in your collection.</p>
+</div></div>
+
+<h2 id="pro">Annum Pro</h2>
+<p class="kicker">Two ways to buy, no credits, no weekly plan</p>
+<table>
+  <tr><th>Product</th><th>Identifier</th><th>What it is</th></tr>
+  <tr><td>Yearly</td><td><code>annum.pro.yearly</code></td><td>Auto-renewable subscription, one year. New subscribers get a 7-day free trial; the paywall states the exact date and price you will be charged. Renews each year until you cancel.</td></tr>
+  <tr><td>Lifetime</td><td><code>annum.pro.lifetime</code></td><td>One payment, no subscription, all current and future cameras forever.</td></tr>
+</table>
+<p>Both unlock the same thing: every camera (future ones included), every frame and option, the aged and fresh looks, the tilt viewer, minute-long silent films, and no mark on your photos. The three free cameras and anything you have earned through missions stay yours regardless.</p>
+<p><strong>Prices</strong> are shown in the app exactly as the App Store reports them for your country. Annum never hard-codes a price. If the paywall says "Loading prices…" for more than a few seconds, the App Store is not reachable: check your connection and open the paywall again.</p>
+<p><strong>The free week.</strong> When you start the trial, Annum can set a local reminder two days before it ends ("Remind me 2 days before the trial ends"). To cancel before you are charged, open iPhone Settings → your name → Subscriptions → Annum. Cancelling keeps Pro until the end of the trial.</p>
+<p><strong>Restoring.</strong> New phone or fresh install? Settings → <em>Restore purchases</em> (also on the paywall). Annum reads your own transactions from the App Store and re-grants Pro; make sure you are signed in with the Apple ID that bought it. A lifetime purchase is never downgraded by a later yearly record. Yearly renewals are re-read from the App Store at launch, with a three-day grace window if your phone was offline when the renewal happened.</p>
+<div class="warn"><strong>Refunds</strong> are handled by Apple, not by us. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Subscriptions are cancelled in iPhone Settings → Subscriptions; deleting the app does not cancel one.</div>
+
+<h2 id="fix">Troubleshooting</h2>
+<p class="kicker">When the picture does not come out</p>
+<ul class="fix">
+  <li><strong>"Camera access is off"</strong><span>Open iPhone Settings → Privacy &amp; Security → Camera and allow Annum. Until then you can still import photos from your library.</span></li>
+  <li><strong>"Could not save to Photos"</strong><span>Annum asks for add-only access to Photos on the first save. Check Settings → Privacy &amp; Security → Photos → Annum and allow "Add Photos Only" or full access.</span></li>
+  <li><strong>"Something went wrong while developing"</strong><span>The render did not finish. Try once more; for an imported photo, tap <em>Develop again</em> in the Roll. If it keeps failing with one particular camera, tell us which one.</span></li>
+  <li><strong>The exposure meter says "Underexposed" and the picture is dark</strong><span>Old cameras expose what you set. Open the aperture, choose a slower shutter speed or faster film, or use the lighten/darken wheel on cameras that have one. Tap the viewfinder to meter on your subject.</span></li>
+  <li><strong>The viewfinder shows the scene upside down</strong><span>That is the ground glass of a view camera. Turn off <em>Ground-glass view</em> in that camera's options if you prefer a normal view.</span></li>
+  <li><strong>The shutter opens the Pro sheet</strong><span>You have used the three free shots of this camera. Choose one of the free cameras, complete a mission that unlocks it, or get Pro.</span></li>
+  <li><strong>Pro shows as inactive after reinstalling</strong><span>Settings → Restore purchases while online and signed in with the purchasing Apple ID. If the App Store reports no purchase for that account, check Settings → your name → Subscriptions for which account holds it.</span></li>
+  <li><strong>A film takes long to develop</strong><span>Silent films are encoded on the phone at full resolution; a 15-second film can take a while on older devices. Keep the app in the foreground until "Your film is in Photos" appears.</span></li>
+</ul>
+
+<section class="contact" id="contact">
+  <p>Found a camera that misbehaves, or a historical detail we got wrong?</p>
+  <a class="mail" href="mailto:babycar.zta@gmail.com?subject=Annum">babycar.zta@gmail.com</a>
+  <p>Please mention "Annum", your iPhone model, the iOS version and which camera on the dial you were using. A photo that shows the problem helps a lot. We reply within a few business days.</p>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · Annum collects no data and has no account.</footer>
+</div>
+</body>
+</html>

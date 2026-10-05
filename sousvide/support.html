@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sous Vide Core Support</title>
+<meta name="description" content="Help for Sous Vide Core: how the calculator works out time and temperature, pasteurisation and safety limits, cook timers and notifications, Live Activity, recipes, backups, Sous Vide Core Pro and restoring the purchase.">
+<style>
+  :root{
+    --bg:#F5F1EA; --surface:#FFFDF9; --surface2:#EDE6DB; --line:#E2D9CC; --ink:#2A2420; --muted:#746B63;
+    --cocoa:#6E4433; --terracotta:#A9715A; --sage:#66765F; --warn:#A4553B; --ok:#55704F;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#161311; --surface:#201C19; --surface2:#2A2521; --line:#362F2A; --ink:#EFE8DF; --muted:#ADA399;
+      --cocoa:#D8A88E; --terracotta:#C99278; --sage:#A5B69C; --warn:#DC977C; --ok:#A5B69C; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--cocoa)}
+  .wrap{max-width:700px;margin:0 auto;padding:0 20px 64px}
+  .top{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:44px 0 26px;border-bottom:2px solid var(--cocoa)}
+  .gauge{width:72px;height:72px;border-radius:50%;border:5px solid var(--cocoa);position:relative;background:var(--surface)}
+  .gauge::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:26px;background:var(--terracotta);transform-origin:50% 100%;transform:translate(-50%,-100%) rotate(35deg);border-radius:2px}
+  .gauge::before{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;background:var(--cocoa);border-radius:50%;z-index:1}
+  h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:32px;line-height:1.1}
+  .top p{margin:4px 0 0;color:var(--muted)}
+  .lead{margin:22px 0 0;font-size:17px}
+  .menu{display:flex;flex-wrap:wrap;gap:6px 18px;margin:18px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:600}
+  .menu a{text-decoration:none;border-bottom:2px solid var(--line)}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:25px;margin:46px 0 16px}
+  .rows{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .row .k{font-weight:700;color:var(--cocoa)}
+  @media (max-width:560px){.row{grid-template-columns:1fr;gap:4px}}
+  details{border-bottom:1px solid var(--line);padding:4px 0}
+  details:first-of-type{border-top:1px solid var(--line)}
+  summary{cursor:pointer;padding:12px 0;font-weight:700;list-style:none;display:flex;gap:12px;align-items:baseline}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--terracotta);font-family:Georgia,serif;font-size:20px;line-height:1;flex:0 0 16px}
+  details[open] summary::before{content:"–"}
+  details p{margin:0 0 12px 28px;color:var(--ink)}
+  .safety{background:var(--surface2);border-left:4px solid var(--warn);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+  .safety strong{color:var(--warn)}
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+  @media (max-width:560px){.tiers{grid-template-columns:1fr}}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .tier h3{margin:0 0 8px;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tier.pro h3{color:var(--terracotta)}
+  .tier ul{margin:0;padding-left:18px}
+  .tier li{margin:3px 0}
+  code{font-size:13.5px;background:var(--surface2);padding:1px 6px;border-radius:5px}
+  .fixlist{list-style:none;padding:0;margin:0}
+  .fixlist li{padding:10px 0 10px 22px;position:relative;border-bottom:1px dotted var(--line)}
+  .fixlist li::before{content:"°";position:absolute;left:2px;top:6px;color:var(--terracotta);font-size:22px;font-weight:700}
+  .fixlist b{display:block}
+  .contact{margin-top:44px;background:var(--cocoa);color:var(--bg);border-radius:16px;padding:26px 24px;text-align:center}
+  .contact a{color:var(--bg);font-size:21px;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
+  .contact p{margin:10px 0 0;font-size:14.5px;opacity:.9}
+  footer{margin-top:22px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="gauge" aria-hidden="true"></div>
+  <div>
+    <h1>Sous Vide Core</h1>
+    <p>Support, questions and the small print</p>
+  </div>
+</header>
+<p class="lead">Sous Vide Core works out how long a piece of food needs in the water bath for its thickness, shape, starting temperature and the doneness you want, tells you when it is pasteurised and when it must come out, and then runs the timer with notifications. It also holds 55 recipes, your own recipes, a shopping list and a cook log, all on your iPhone.</p>
+<ul class="menu">
+  <li><a href="#calc">Calculator</a></li>
+  <li><a href="#faq">Questions</a></li>
+  <li><a href="#safety">Safety</a></li>
+  <li><a href="#pro">Pro</a></li>
+  <li><a href="#fix">Fixes</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<h2 id="calc">Reading the calculator</h2>
+<div class="rows">
+  <div class="row"><div class="k">Food</div><div>43 cuts in 9 categories (beef, pork, lamb, poultry, fish, shellfish, eggs, vegetables, desserts) plus a custom mode by food type: meat, ground meat, poultry, lean or oily fish, shellfish, vegetables or fruit.</div></div>
+  <div class="row"><div class="k">Shape and thickness</div><div>Flat, round-and-long, or ball. Measure the thickest part; the slider works in millimetres or ⅛-inch steps depending on your units. Thickness matters far more than weight.</div></div>
+  <div class="row"><div class="k">From the fridge / Frozen</div><div>Frozen adds the thawing time to the plan; the latent heat of the ice is modelled, not guessed.</div></div>
+  <div class="row"><div class="k">Doneness</div><div>Picks the bath temperature. With sous vide the water temperature is the doneness: the food never gets hotter than the bath. A custom temperature can be typed.</div></div>
+  <div class="row"><div class="k">Ready</div><div>When the centre reaches the bath temperature. Times are rounded up and count from the moment the food goes into a preheated bath.</div></div>
+  <div class="row"><div class="k">Pasteurised</div><div>When enough heat has accumulated at the centre to meet the published FSIS/FDA tables for that food. Poultry and ground meat are planned to this point by default. For other foods, <em>Count to pasteurisation</em> is an option on the start sheet.</div></div>
+  <div class="row"><div class="k">Take out by</div><div>The texture limit for tender foods, or the 4-hour safety limit if the bath is below 54.4 °C (130 °F).</div></div>
+  <div class="row"><div class="k">Ice bath</div><div>How long to chill the bag in half ice, half water before refrigerating, for make-ahead cooks.</div></div>
+</div>
+
+<h2 id="faq">Questions people ask</h2>
+<details open><summary>Why does a chicken breast say "Ready" and "Pasteurised" at different times?</summary><p>"Ready" is the moment the centre reaches the bath temperature. "Pasteurised" takes longer at low temperatures because the bacteria are killed by time at temperature, not by temperature alone. At 60 °C that is a good while after the centre arrives; at 65 °C it is close behind. For poultry and ground meat the app plans the cook to the pasteurised time, and the start sheet says so.</p></details>
+<details><summary>Why are short ribs 24 hours but a steak 1 hour?</summary><p>A steak only needs its centre to come up to temperature. Tough cuts need hours or days for collagen to turn into gelatin at these low temperatures, so their time is a tenderising time, not a heating time. The cut's hint in the picker says which kind of time you are looking at, and recipes show the bath time and the minimum/maximum range separately.</p></details>
+<details><summary>What is "Count to pasteurisation"?</summary><p>On the start sheet, <em>Count to pasteurisation</em> runs the timer to the pasteurised time instead of the ready time, for pregnant, very young, older or immunocompromised guests. It is the default for poultry and ground meat and cannot be shortened for them.</p></details>
+<details><summary>Can I have dinner ready at 19:30?</summary><p>Yes. On the start sheet choose <em>Ready at a set time…</em>. The app works backwards and tells you when to put the food in, sends a reminder at that moment, and then the usual "ready" and "take out by" notifications.</p></details>
+<details><summary>Does the timer keep running when I close the app?</summary><p>Yes. A cook stores its absolute end times, so closing the app or restarting the phone loses nothing. Notifications are scheduled with iOS: put the food in (for planned cooks), ready, pasteurised if that is later, before the maximum time, and when the ice bath is done. With Pro the countdown also appears on the Lock Screen and in the Dynamic Island as a Live Activity.</p></details>
+<details><summary>I have two circulators. Can I tell the cooks apart?</summary><p>Give each cook a bath label on the start sheet ("Big pot", "Kitchen stick"). The free version runs one cook at a time; Pro runs several at once, each with its own notifications.</p></details>
+<details><summary>Recipe steps show °C but I use °F.</summary><p>More → Units → Temperature switches the calculator, the doneness guide and the bath line of every recipe between °C and °F. In this version the written recipe steps still mention °C; we know and it is on the list.</p></details>
+<details><summary>How do I keep my own recipes and share them?</summary><p>Recipes → <em>New recipe</em>, or open any built-in recipe and choose <em>Copy to my recipes and edit</em>. Own recipes take a photo, tags, servings, ingredients and steps. Share a recipe as text, as a recipe file that another Sous Vide Core user can import, or (Pro) as a PDF or an image card. The free version keeps 3 own recipes.</p></details>
+<details><summary>What does the cook log do?</summary><p>When a cook is done, Pro lets you save it with a star rating and notes ("salted 2 h ahead, seared 45 s per side"). Next time, start the same cook again from the log with one tap.</p></details>
+<details><summary>Where is my data? Can I move it to a new iPhone?</summary><p>Everything is stored on the phone (no account, no cloud). <em>More → Back up to a file</em> saves own recipes with photos, favourites, the cook log and the shopping list to one file; <em>Restore from a backup</em> adds what is missing and deletes nothing. Your device backup (iCloud or computer) also includes the app's data.</p></details>
+<details><summary>Can I use Siri?</summary><p>Yes: "Start chicken breast in Sous Vide Core" opens the app on the start sheet with that food selected (the phrase is English only for now). The numbers always come from the calculator, never from Siri.</p></details>
+
+<h2 id="safety">Safety, in plain words</h2>
+<div class="safety"><strong>Below 54.4 °C (130 °F)</strong> nothing is pasteurised, and the food must spend no more than 4 hours in the bath in total. The app caps the maximum at 4 hours there and disables the start button if the centre could not even reach the bath temperature in that time. It also warns when a piece is too thick for a chosen temperature and when fish or shellfish is being cooked lightly: use fish that was frozen first, serve it right away, and do not serve it to at-risk groups.</div>
+<p>The tables behind the pasteurisation times are the FSIS poultry 7-log table, the FDA Food Code / FSIS Appendix A meat tables, Listeria values for fish and Schuman's egg data; the heat model is a finite-volume calculation calibrated against Baldwin's published tables. The <em>Safety</em> screen in the app lists these sources. Sous Vide Core gives general guidance for home cooking; it is not food-safety advice. Measure the thickness carefully and use a probe thermometer when in doubt.</p>
+
+<h2 id="pro">Sous Vide Core Pro</h2>
+<div class="tiers">
+  <div class="tier"><h3>Free, forever</h3><ul>
+    <li>The whole calculator: every food, thickness, frozen, custom mode, pasteurisation</li>
+    <li>Safety notes and the doneness / finishing guide</li>
+    <li>10 of the 55 recipes</li>
+    <li>3 own recipes</li>
+    <li>One cook at a time, with notifications</li>
+    <li>Shopping list</li>
+    <li>Share as text or recipe file, backup and restore</li>
+  </ul></div>
+  <div class="tier pro"><h3>Pro, one-time</h3><ul>
+    <li>All 55 recipes with photos</li>
+    <li>Unlimited own recipes</li>
+    <li>Several cooks at once</li>
+    <li>Live Activity on the Lock Screen and Dynamic Island</li>
+    <li>Cook log with ratings and notes</li>
+    <li>Share recipes as PDF and image cards</li>
+  </ul></div>
+</div>
+<p>Pro is one non-consumable in-app purchase, product id <code>sousvide_pro</code>. No subscription, nothing renews. The paywall shows the price the App Store reports for your country; the app has no price of its own. Safety information is never behind the paywall.</p>
+<p><strong>Restore purchases:</strong> More → <em>Restore purchases</em>, or <em>Restore</em> on the paywall, while signed in with the Apple ID that bought Pro. The app also re-checks the purchase with the App Store on every cold start and keeps Pro whenever the store cannot be reached. Losing Pro (a different Apple ID on the phone, for instance) hides nothing and deletes nothing: your extra recipes and log stay, you just cannot add beyond the free limits until Pro is restored.</p>
+<p><strong>Refunds:</strong> only Apple can refund an App Store purchase: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2 id="fix">When something is off</h2>
+<ul class="fixlist">
+  <li><b>No notification when the food was ready</b>Open iPhone Settings → Notifications → Sous Vide Core and allow them; also check <em>Timer notifications</em> in More. A Focus mode can silence them. The timer itself keeps counting regardless.</li>
+  <li><b>The Live Activity does not appear</b>It needs iOS 16.2 or later and <em>Live Activity</em> switched on in More. iPhone Settings → Sous Vide Core → Live Activities must be allowed too.</li>
+  <li><b>"Not within the safe time" in the Pasteurised row</b>At this temperature the centre cannot be pasteurised inside the 4-hour limit. Raise the temperature or use a thinner piece.</li>
+  <li><b>"Start cook" is greyed out</b>The piece is too thick for the chosen temperature to be safe. The warning above the button says which limit was hit.</li>
+  <li><b>"This file is not a shared recipe" / "not a Sous Vide Core backup"</b>Recipe files and backup files are different things: import a recipe from Recipes, restore a backup from More. PDFs and image cards cannot be imported.</li>
+  <li><b>"Restored 12 items. 4 recipes need Pro."</b>The backup held more own recipes than the free version keeps. Restore again after unlocking Pro and the rest come in.</li>
+  <li><b>"The App Store did not respond"</b>Check the connection and that you are signed in to the App Store, then open the paywall again. Screen Time can also block in-app purchases.</li>
+</ul>
+
+<section class="contact" id="contact">
+  <div>Need help, found a wrong number, or want a cut added?</div>
+  <a href="mailto:babycar.zta@gmail.com?subject=Sous%20Vide%20Core">babycar.zta@gmail.com</a>
+  <p>Mention "Sous Vide Core", your iPhone model and iOS version. For a calculation question, include the food, thickness, temperature and whether it started frozen. We reply within a few business days.</p>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · No account, no ads, no tracking. Your recipes and cooks stay on this iPhone.</footer>
+</div>
+</body>
+</html>

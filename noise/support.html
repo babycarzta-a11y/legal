@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Noise Support</title>
+<meta name="description" content="Help for Noise: Brown Pink White — how the three colours are generated, background play and lock-screen controls, the sleep timer and its fade, warmth, presets, why it pauses, Noise Pro and restoring the purchase.">
+<style>
+  :root{
+    --paper:#F7F5F0; --card:#EEEBE4; --card2:#E2DFD8; --ink:#1E352D; --muted:#5F6B64; --green:#3F6658; --green-soft:#DCEBE5;
+    --brown:#86644B; --pink:#CB8FA3; --white:#F7F5F0; --white-edge:#C9C5BC;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --paper:#14181A; --card:#1E2426; --card2:#293033; --ink:#E6E4DF; --muted:#A3ABA6; --green:#9CC2B3; --green-soft:#223A32;
+      --brown:#A07A5E; --pink:#D7A0B2; --white:#E6E4DF; --white-edge:#3A4245; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--green)}
+  .col{max-width:600px;margin:0 auto;padding:48px 20px 64px}
+  .spheres{display:flex;gap:14px;margin-bottom:22px}
+  .spheres i{width:34px;height:34px;border-radius:50%;display:block;box-shadow:inset -4px -5px 10px rgba(0,0,0,.18),inset 3px 3px 6px rgba(255,255,255,.12)}
+  h1{margin:0 0 6px;font-size:36px;font-weight:700;letter-spacing:-.6px}
+  .sub{margin:0 0 18px;color:var(--muted);font-size:16px}
+  .lead{margin:0;font-size:17px}
+  .jump{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14.5px;font-weight:600}
+  .jump a{text-decoration:none;border-bottom:2px solid var(--green-soft)}
+  h2{font-size:20px;margin:42px 0 12px;font-weight:700}
+  .block{background:var(--card);border-radius:18px;padding:18px 20px;margin:0 0 10px}
+  .block h3{margin:0 0 6px;font-size:16px}
+  .block p{margin:0 0 8px}
+  .block p:last-child{margin:0}
+  .block.brown{border-left:6px solid var(--brown)}
+  .block.pink{border-left:6px solid var(--pink)}
+  .block.white{border-left:6px solid var(--white);box-shadow:inset 6px 0 0 var(--white-edge)}
+  .faq .block{border-left:0}
+  .timer{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+  .timer span{padding:7px 12px;border-radius:12px;background:var(--card2);font-size:14px;font-weight:600}
+  .timer span.free{background:var(--green);color:var(--paper)}
+  .pro{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+  @media (max-width:520px){.pro{grid-template-columns:1fr}}
+  .pro div{background:var(--card);border-radius:18px;padding:16px 18px}
+  .pro div.p{background:var(--green-soft)}
+  .pro h3{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .pro ul{margin:0;padding-left:18px}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--card2);padding:1px 6px;border-radius:5px}
+  .why{list-style:none;padding:0;margin:0}
+  .why li{padding:12px 0;border-bottom:1px solid var(--card2)}
+  .why b{display:block}
+  .contact{margin-top:44px;background:var(--green);color:var(--paper);border-radius:18px;padding:26px 22px;text-align:center}
+  .contact a{color:var(--paper);font-weight:700;font-size:20px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
+  .contact p{margin:10px 0 0;font-size:14.5px;opacity:.92}
+  footer{margin-top:22px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="col">
+
+<div class="spheres" aria-hidden="true"><i style="background:var(--brown)"></i><i style="background:var(--pink)"></i><i style="background:var(--white);border:1px solid var(--white-edge)"></i></div>
+<h1>Noise</h1>
+<p class="sub">Brown · Pink · White — Support</p>
+<p class="lead">Noise is one screen: three colours of noise, a warmth slider, a sleep timer and a play button. The sound is synthesised on your iPhone in real time, so it never loops and never repeats. It keeps playing with the screen off, shows up on the lock screen and in Control Centre, and makes no network requests at all.</p>
+<ul class="jump">
+  <li><a href="#colours">The colours</a></li>
+  <li><a href="#faq">Questions</a></li>
+  <li><a href="#pauses">Why did it pause?</a></li>
+  <li><a href="#pro">Noise Pro</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<h2 id="colours">The three colours</h2>
+<div class="block brown"><h3>Brown noise</h3><p>Deep and soft, like distant surf. White noise integrated, which loses 6 dB per octave, with the slow drift that integration causes filtered out.</p></div>
+<div class="block pink"><h3>Pink noise</h3><p>Balanced, like steady rain. The white source through a filter that loses 3 dB per octave, built to be exact at both 44.1 and 48 kHz, so it sounds the same on wired and Bluetooth headphones.</p></div>
+<div class="block white"><h3>White noise</h3><p>Bright and even, like a fan. The raw random source.</p></div>
+<p>All three are level-matched by loudness (K-weighting), so switching colours does not jump in volume, and the switch itself is a short crossfade with no gap or click. Left and right channels are generated independently, which sounds wider on headphones.</p>
+
+<h2 id="faq">Questions people ask</h2>
+<div class="faq">
+<div class="block"><h3>Does it play with the screen locked, and can I control it from the lock screen?</h3><p>Yes to both. Noise takes over the system audio session the way a music app does, so play/pause works from the lock screen, Control Centre, headphone buttons. Because it owns the session it does not mix under a podcast; when you pause Noise, the audio app you paused earlier is told it may resume.</p></div>
+
+<div class="block"><h3>How does the sleep timer work?</h3><p>Pick a length and the sound fades out at the end rather than stopping dead: a gentle dB-linear fade that lasts about 5 % of the run (between 20 and 90 seconds), then silence, then the audio engine shuts down. The end is a wall-clock time, so "stop at 23:30" survives a phone call or the app being suspended. The player shows "Fades out in …" while it runs.</p>
+<div class="timer"><span>15 min</span><span class="free">30 min · free</span><span>45 min</span><span>1 h</span><span>1.5 h</span><span>2 h</span><span>3 h</span><span>4 h</span><span>8 h</span></div>
+<p>30 minutes is free; the other eight lengths are part of Noise Pro.</p></div>
+
+<div class="block"><h3>What does Warmth do?</h3><p>It rolls off the top end: from full range down to a soft rumble. Technically a Butterworth low-pass whose cutoff sweeps from 20 kHz down to 200 Hz on a logarithmic scale, with the loudness compensated so a warmer setting is not quieter. The caption shows the cutoff ("Cut above 2 kHz"). Warmth is a Pro feature.</p></div>
+
+<div class="block"><h3>Why is there no volume slider?</h3><p>Noise is meant to be driven from the lock screen with the hardware buttons, and those already set the volume. A second slider inside the app would only disagree with them.</p></div>
+
+<div class="block"><h3>What is a preset?</h3><p>A saved combination of colour, warmth and timer with a name, applied with one tap ("Night: brown, cut above 1 kHz, 8 h"). Presets are stored on the phone only. They are part of Pro.</p></div>
+
+<div class="block"><h3>Is anything recorded, downloaded or looped?</h3><p>No. Every sample is computed on the audio thread from a random source. There are no sound files in the app and nothing is fetched; the app makes no network requests and has no analytics. Only your settings and presets are stored, on the device.</p></div>
+
+<div class="block"><h3>Why does the sound sound different on my Bluetooth speaker than on headphones?</h3><p>Partly the speaker: brown noise is mostly low frequencies that small speakers cannot reproduce. Partly the route: when the output changes (Bluetooth connects, headphones go in), Noise rebuilds its audio graph for the new sample rate and channel count so the filters stay exact. A mono speaker receives the left channel.</p></div>
+</div>
+
+<h2 id="pauses">Why did it pause?</h2>
+<p>The player always says why under the play button:</p>
+<ul class="why">
+  <li><b>"Paused for a call or another app."</b>iOS interrupted the audio. After a call ends, Noise resumes by itself if iOS says it may; after another app took the audio, it stays paused so two things do not play at once. Tap play to continue.</li>
+  <li><b>"Paused — headphones disconnected."</b>When headphones or a Bluetooth device drop off, Noise pauses instead of blasting the loudspeaker. Tap play when you are ready.</li>
+  <li><b>"Sleep timer finished."</b>The fade ran to the end. If you tap play again, a fresh run starts without a timer unless you set one.</li>
+  <li><b>"Couldn't start audio. Try again."</b>The audio engine could not start, which can happen right after a call or when another app holds an exclusive session. Tapping play again almost always works; if not, close and reopen the app.</li>
+</ul>
+
+<h2 id="pro">Noise Pro</h2>
+<div class="pro">
+  <div><h3>Free</h3><ul>
+    <li>Brown, pink and white noise</li>
+    <li>Background play, lock-screen and Control Centre controls</li>
+    <li>The 30-minute sleep timer with fade</li>
+    <li>Light and dark appearance</li>
+  </ul></div>
+  <div class="p"><h3>Pro, one payment</h3><ul>
+    <li>Warmth</li>
+    <li>All nine timer lengths, up to 8 hours</li>
+    <li>Presets</li>
+  </ul></div>
+</div>
+<p>Noise Pro is a single non-consumable in-app purchase, product id <code>noise_pro_unlock</code>. No subscription, no renewals; it works on the Apple ID that bought it. The button shows the price exactly as the App Store lists it for your country.</p>
+<p><strong>Restore.</strong> Settings → <em>Restore purchase</em>, signed in with the purchasing Apple ID. Noise also re-checks with the App Store at launch; an unreachable store never takes Pro away. If Pro does lapse (a different Apple ID, or a refund), warmth returns to full range and a running timer is never cut short.</p>
+<p><strong>"Waiting for approval"</strong> appears when a purchase needs Ask to Buy or other confirmation. Pro unlocks by itself once it is approved; nothing is charged until then.</p>
+<p><strong>Refunds</strong> are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<section class="contact" id="contact">
+  <div>Hear a click, a loop, a level jump, or want another timer length?</div>
+  <a href="mailto:babycar.zta@gmail.com?subject=Noise">babycar.zta@gmail.com</a>
+  <p>Say "Noise", your iPhone model, iOS version, and what you were listening on (built-in speaker, wired or Bluetooth). If the sound did something odd, the colour, warmth and timer at the time help us reproduce it. We reply within a few business days.</p>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · No account, no analytics, no ads, no network requests.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photo Dimensions Support</title>
+<meta name="description" content="Help for Photo Dimensions: Measure Pics — drawing dimension lines on photos, typing measurements, the scale reference, PDF and JPEG export, backups, Photo Dimensions Pro and restoring the purchase.">
+<style>
+  :root{
+    --bg:#F4F2EE; --surface:#FFFFFF; --surface2:#EBE8E2; --line:#DEDAD2; --ink:#1F2A30; --muted:#627077;
+    --slate:#2E4A57; --amber:#D08C22; --danger:#B0503C; --editor:#0F1315; --editor-bar:#181D20; --editor-ink:#EDEBE6; --editor-muted:#9AA4A9;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#121618; --surface:#1A2023; --surface2:#232A2E; --line:#2D353A; --ink:#ECEAE5; --muted:#A0A9AE; --slate:#9FC0CC; --amber:#E8A33D; --danger:#E08A76; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--slate)}
+  .editor{background:var(--editor);color:var(--editor-ink);padding:40px 20px 34px}
+  .editor .in{max-width:760px;margin:0 auto}
+  .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+  .bar a{color:var(--editor-muted);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.04em;padding:8px 12px;border:1px solid #2A3236;border-radius:8px;background:var(--editor-bar)}
+  .bar a:hover{color:var(--editor-ink)}
+  .editor h1{margin:0 0 10px;font-size:34px;font-weight:700;letter-spacing:-.5px}
+  .editor h1 small{display:block;font-size:14px;font-weight:600;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+  .editor p{margin:0;color:var(--editor-muted);max-width:600px}
+  .dim{margin-top:26px;position:relative;height:40px;max-width:420px}
+  .dim::before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:var(--amber)}
+  .dim::after{content:"2 450 mm";position:absolute;left:50%;top:0;transform:translateX(-50%);background:var(--editor);padding:0 10px;color:var(--amber);font:600 14px/1 ui-monospace,Menlo,monospace;top:14px}
+  .dim i{position:absolute;top:10px;width:2px;height:22px;background:var(--amber)}
+  .dim i.l{left:0}.dim i.r{right:0}
+  main{max-width:760px;margin:0 auto;padding:8px 20px 64px}
+  h2{font-size:22px;margin:44px 0 14px;display:flex;align-items:center;gap:12px}
+  h2::before{content:"";width:22px;height:3px;background:var(--amber);border-radius:2px}
+  .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .tool{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .tool b{display:block;margin-bottom:4px}
+  .tool span{color:var(--muted);font-size:14.5px}
+  .faq{counter-reset:q}
+  .faq .item{padding:16px 0 14px;border-bottom:1px solid var(--line)}
+  .faq .item h3{margin:0 0 6px;font-size:16.5px}
+  .faq .item h3::before{counter-increment:q;content:counter(q,decimal-leading-zero);font:600 12px/1 ui-monospace,Menlo,monospace;color:var(--amber);margin-right:10px;vertical-align:2px}
+  .faq .item p{margin:0 0 8px}
+  .faq .item p:last-child{margin:0}
+  .caution{margin:14px 0;padding:12px 16px;border:1px dashed var(--danger);border-radius:10px;color:var(--ink);font-size:15px}
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0 16px}
+  th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  td.y{color:var(--slate);font-weight:700}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--surface2);padding:1px 6px;border-radius:5px}
+  .fix dt{font-weight:700;margin-top:14px}
+  .fix dd{margin:4px 0 0}
+  .contact{margin-top:44px;background:var(--slate);color:#fff;border-radius:14px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+  .contact a{color:#fff;font-weight:700;font-size:19px;text-decoration:none;border-bottom:2px solid var(--amber)}
+  .contact p{margin:6px 0 0;font-size:14.5px;opacity:.9}
+  @media (max-width:560px){.contact{grid-template-columns:1fr}}
+  footer{margin-top:22px;text-align:center;font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="editor"><div class="in">
+  <nav class="bar">
+    <a href="#tools">Tools</a><a href="#faq">Questions</a><a href="#pro">Pro</a><a href="#fix">Troubleshooting</a><a href="#contact">Contact</a>
+  </nav>
+  <h1><small>Support</small>Photo Dimensions</h1>
+  <p>Take a photo of the wall, window or kitchen, draw dimension lines on it, type in what your tape or laser says, and send a clean PDF. One project per job or client. No account, no cloud; the photos stay on your iPhone.</p>
+  <div class="dim" aria-hidden="true"><i class="l"></i><i class="r"></i></div>
+</div></header>
+
+<main>
+
+<h2 id="tools">The editor tools</h2>
+<div class="tools">
+  <div class="tool"><b>Select</b><span>Tap a drawing to edit it, drag its handles, move its label. Pinch to zoom, two fingers to pan.</span></div>
+  <div class="tool"><b>Dimension</b><span>Drag along an edge. The line snaps level or plumb within 2.5°, a loupe shows the exact point under your finger, then you type the value.</span></div>
+  <div class="tool"><b>Angle</b><span>Drag from the corner along the first edge, then set the second. The angle read from the photo is shown; type a value to override it.</span></div>
+  <div class="tool"><b>Area</b><span>Drag across the surface, then move the four corners into the perspective. Type width × height for the area.</span></div>
+  <div class="tool"><b>Arrow</b><span>Drag to draw an arrow, with optional text.</span></div>
+  <div class="tool"><b>Text</b><span>Tap where the note goes.</span></div>
+  <div class="tool"><b>Draw</b><span>Freehand with one finger.</span></div>
+  <div class="tool"><b>Undo / Redo</b><span>Up to 100 steps per photo, covering every drawing change.</span></div>
+</div>
+
+<h2 id="faq">Questions people ask</h2>
+<div class="faq">
+
+<div class="item"><h3>Does the app measure the photo by itself?</h3>
+<p>No, and the listing says so plainly. You draw the dimension line and type the value you measured with your tape or laser. The app's job is to put those numbers in the right place on the photo and in a tidy report. There is no augmented-reality measuring in this version.</p></div>
+
+<div class="item"><h3>Then what is the "Scale reference"?</h3>
+<p>An optional shortcut. Mark one line whose value you know and switch on <em>Scale reference</em> for it. Other dimension lines on the same photo that you leave without a value are then estimated from it and shown with ≈. This is only reliable on the same flat surface, photographed straight on; anything at an angle or in another plane will be off. The PDF carries the footnote "≈ estimated from the scale reference on this photo. Check on site before ordering."</p>
+<div class="caution">Estimates are for orientation, not for ordering windows, worktops or doors. Measure those.</div></div>
+
+<div class="item"><h3>How do I type 3 ft 7 ⅝ in?</h3>
+<p>With imperial units the value sheet has feet, whole inches and a fraction picker, so you never have to type a slash on the number pad. The fraction step (1/8, 1/16 or 1/32) is set under Settings → <em>Imperial precision</em>. Values are stored in millimetres internally, so switching a project between mm, cm, m, in and ft-in never loses precision.</p></div>
+
+<div class="item"><h3>Which units does a new project get?</h3>
+<p>Feet-and-inches if your iPhone region is the United States, Liberia or Myanmar, millimetres everywhere else. Change it per project in the project details, and set the default for new projects in Settings. Unit symbols stay mm, cm, m, in on drawings in every language, the way they do on plans.</p></div>
+
+<div class="item"><h3>What is in the PDF report?</h3>
+<p>A cover page with the project name, client, address, date and notes; every annotated photo with its title and note; and a measurement table (item, value, note) per photo. Paper size is A4, or US Letter in the US, Canada, Mexico, the Philippines, Chile and Colombia. With Pro the cover shows your company name and logo (Settings → PDF report). <em>Print</em> sends the same report to AirPrint.</p></div>
+
+<div class="item"><h3>Can I send just the photos?</h3>
+<p>Yes: <em>Export → Annotated photos</em> produces one JPEG per photo with the drawings burned in, for messages or email, and the editor menu has <em>Share this photo</em> for a single one. The JPEG uses exactly the same painter as the editor and the PDF, so lines and labels look identical in all three.</p></div>
+
+<div class="item"><h3>Why is there a small mark on my export?</h3>
+<p>On the free plan every PDF and JPEG carries a small "Made with Photo Dimensions" mark. Pro removes it. Nothing else differs between free and Pro exports.</p></div>
+
+<div class="item"><h3>Is location data kept in the photos?</h3>
+<p>No. Photos are imported at up to 3200 px on the long side with metadata stripped, so neither the stored copy nor any export contains GPS data. Exports are capped at 3000 px (JPEG) and 2000 px (PDF).</p></div>
+
+<div class="item"><h3>Where are my projects stored? How do I move to a new iPhone?</h3>
+<p>Projects are a file in the app's Documents folder, written atomically with the previous version kept, and photos are plain JPEG files next to it. All of it is part of your iPhone backup. For a deliberate copy, Settings → <em>Back up to a file</em> writes every project and photo into one .zip, and <em>Import a backup</em> adds and updates projects without deleting anything.</p></div>
+
+<div class="item"><h3>Can two people work on the same project?</h3>
+<p>Not live; there is no server by design. Share the backup .zip by AirDrop or Files, and the other person imports it. Importing adds and updates projects and never deletes anything.</p></div>
+
+</div>
+
+<h2 id="pro">Photo Dimensions Pro</h2>
+<table>
+  <tr><th></th><th>Free</th><th>Pro</th></tr>
+  <tr><td>Projects</td><td>1</td><td class="y">Unlimited</td></tr>
+  <tr><td>Photos (across all projects)</td><td>3</td><td class="y">Unlimited</td></tr>
+  <tr><td>Drawing tools, undo, units, fractions</td><td>All</td><td class="y">All</td></tr>
+  <tr><td>PDF report, JPEG export, AirPrint</td><td>With a small mark</td><td class="y">Without the mark</td></tr>
+  <tr><td>Company name and logo on the PDF</td><td>–</td><td class="y">Yes</td></tr>
+  <tr><td>Backup and import</td><td>Yes</td><td class="y">Yes</td></tr>
+</table>
+<p>Pro is a single non-consumable in-app purchase, product id <code>photodim_pro</code>: pay once, no subscription, no account, nothing is charged again. The price on the paywall is the one the App Store reports for your country.</p>
+<p><strong>Restore.</strong> Settings → <em>Restore purchases</em>, or <em>Restore</em> on the paywall, with the Apple ID that bought Pro signed in. The app also re-checks the purchase with the App Store at every cold start; an unreachable store never turns Pro off. If Pro is lost (another Apple ID on the phone), no project or photo is deleted or hidden: you only cannot add beyond one project and three photos until it is restored. Deleting a project frees its photos for the free allowance.</p>
+<p><strong>Refunds</strong> are handled by Apple only: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2 id="fix">Troubleshooting</h2>
+<dl class="fix">
+  <dt>"Allow camera access in Settings to take photos"</dt><dd>iPhone Settings → Privacy &amp; Security → Camera → Photo Dimensions. Choosing from Photos works without camera access.</dd>
+  <dt>"Could not open this photo"</dt><dd>The image could not be read. Try choosing it again from Photos, or take a new photo in the app; if one particular file always fails, tell us what kind of file it is.</dd>
+  <dt>A line went in while I was trying to pinch</dt><dd>It should not: a drawing that turns into a two-finger gesture is discarded. If one slipped through, tap Undo.</dd>
+  <dt>The label is upside down or hidden behind the line</dt><dd>Labels are rotated with the line and never upside down; vertical lines read bottom to top. On very short lines the label moves above the line and the arrows flip outside. In Select mode you can drag a label away; a thin leader keeps it attached.</dd>
+  <dt>"No free photos left"</dt><dd>The free plan's three photos are shared across all projects. Delete a photo you no longer need, or unlock Pro.</dd>
+  <dt>"1 project did not fit the free plan" after an import</dt><dd>The backup held more than the free plan allows. The rest was imported; import again after unlocking Pro.</dd>
+  <dt>"Could not export"</dt><dd>Try again; if it keeps failing, check that the iPhone has free storage, and tell us how many photos the project has.</dd>
+  <dt>"The App Store is not available right now"</dt><dd>Check the connection, that you are signed in to the App Store, and that Screen Time allows in-app purchases.</dd>
+</dl>
+
+<section class="contact" id="contact">
+  <div>
+    <div>Questions, a bug, or a report layout you need?</div>
+    <p>Mention "Photo Dimensions", your iPhone model and iOS version, and the units you use. A screenshot of the editor or the PDF page in question helps most. We reply within a few business days.</p>
+  </div>
+  <a href="mailto:babycar.zta@gmail.com?subject=Photo%20Dimensions">babycar.zta@gmail.com</a>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · Your photos stay on this iPhone. No account, no ads, no tracking.</footer>
+</main>
+</body>
+</html>

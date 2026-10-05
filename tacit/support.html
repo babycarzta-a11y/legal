@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tacit Support</title>
+<meta name="description" content="Help for Tacit, the private app for two: check-ins, wish cards, sharing nearby or by envelope, the green light, the cycle journal, the app lock, Tacit Plus and restoring a subscription.">
+<style>
+  :root{
+    --ivory:#F7F2EA; --ivory-deep:#EDE5D8; --sage:#8FA88F; --sage-deep:#5E7A63; --peach:#E7B8A0;
+    --plum:#3E2A3C; --plum-soft:#6B5168; --lavender:#B9AED6; --card:#FFFFFF; --text:#3E2A3C; --muted:#6B5168;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --ivory:#1E1720; --ivory-deep:#2A2129; --card:#2A2129; --text:#F7F2EA; --muted:#B9AED6; --sage-deep:#A5BFA5; --plum:#F7F2EA; --plum-soft:#D9CFE6; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ivory);color:var(--text);font:16px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--sage-deep)}
+  .sheet{max-width:640px;margin:0 auto;padding:40px 20px 72px}
+  .hero{text-align:center;padding:12px 0 28px}
+  .hero .dots{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+  .hero .dots i{width:12px;height:12px;border-radius:50%;display:block}
+  .hero h1{font-size:34px;margin:0 0 4px;font-weight:600;letter-spacing:-.4px}
+  .hero .tag{color:var(--muted);margin:0 0 16px;font-size:15px}
+  .hero p.intro{margin:0 auto;max-width:480px;font-size:16.5px}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0 0}
+  .chips a{text-decoration:none;color:var(--text);background:var(--ivory-deep);padding:8px 14px;border-radius:14px;font-size:14px;font-weight:600}
+  h2{font-size:20px;margin:40px 0 14px;font-weight:700}
+  .card{background:var(--card);border-radius:20px;padding:18px 20px;margin:0 0 12px;box-shadow:0 1px 0 rgba(62,42,60,.06)}
+  .card h3{margin:0 0 6px;font-size:16.5px}
+  .card p{margin:0 0 8px}
+  .card p:last-child{margin:0}
+  .badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:9px;margin-left:6px;vertical-align:middle}
+  .badge.you{background:var(--ivory-deep);color:var(--muted)}
+  .badge.plus{background:var(--lavender);color:#3E2A3C}
+  .badge.free{background:var(--sage);color:#fff}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:520px){.pair{grid-template-columns:1fr}}
+  .plan{border-radius:20px;padding:18px 20px}
+  .plan.free{background:var(--ivory-deep)}
+  .plan.plus{background:var(--lavender);color:#3E2A3C}
+  .plan h3{margin:0 0 8px}
+  .plan ul{margin:0;padding-left:18px}
+  .plan li{margin:3px 0}
+  .plan.plus a{color:#3E2A3C}
+  .quiet{background:var(--peach);color:#3E2A3C;border-radius:14px;padding:12px 16px;font-size:14.5px;margin:12px 0}
+  .step{display:flex;gap:14px;align-items:flex-start;margin:0 0 12px}
+  .step b{flex:0 0 30px;height:30px;border-radius:50%;background:var(--sage-deep);color:#fff;text-align:center;line-height:30px;font-size:14px}
+  .contact{text-align:center;margin-top:44px;padding:26px 20px;border-radius:20px;background:var(--card)}
+  .contact a.mail{display:inline-block;font-size:21px;font-weight:600;color:var(--sage-deep);text-decoration:none;margin:6px 0 10px}
+  .contact p{margin:0;color:var(--muted);font-size:14.5px}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+  footer a{color:var(--muted)}
+  code{font-size:13.5px;background:var(--ivory-deep);padding:1px 6px;border-radius:6px;color:var(--text)}
+  .plan.plus code{background:rgba(255,255,255,.5);color:#3E2A3C}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header class="hero">
+  <div class="dots"><i style="background:var(--sage)"></i><i style="background:var(--peach)"></i><i style="background:var(--lavender)"></i></div>
+  <h1>Tacit</h1>
+  <p class="tag">Closer to each other. · Support</p>
+  <p class="intro">Tacit is a small, private app for two people who live together: a daily check-in that only you see, wish cards you can show your partner, and a way to exchange them phone-to-phone without any server in between.</p>
+  <nav class="chips">
+    <a href="#how">How it works</a>
+    <a href="#faq">Questions</a>
+    <a href="#plus">Tacit Plus</a>
+    <a href="#help">Something wrong?</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<h2 id="how">The four tabs</h2>
+<div class="card"><h3>Today <span class="badge you">Only you</span></h3><p>How are you right now? Three sliders: energy (low, some, plenty), talking (I'd like quiet, a little, I want to talk) and touch (I'd like it, ask me first, not right now). <em>Save for me</em> stores it on your phone. It is never sent anywhere; it is a note to yourself, and it shows up in the calendar later.</p></div>
+<div class="card"><h3>Wishes</h3><p>Cards in six groups: Tenderness, Rest, Time together, Support, Closeness, After tension. For every card you choose who sees it (<em>Only me</em>, <em>Show my partner</em>, or a <em>Hint</em>) and for how long (an hour, until the end of today, or a time you pick). A preview shows exactly what your partner will see before you confirm. You can withdraw a card at any moment.</p></div>
+<div class="card"><h3>Us</h3><p>Where sharing happens: linking your phones, <em>We're nearby</em> exchange, the envelope for when you are apart, the green light, and what your partner has sent you.</p></div>
+<div class="card"><h3>Journal</h3><p>Your calendar of moments (how you were, what you shared, what you received) and the cycle journal. No scores, no ratings.</p></div>
+
+<h2 id="faq">Questions people ask</h2>
+
+<div class="card"><h3>How do our phones get linked?</h3>
+<div class="step"><b>1</b><p>Both of you install Tacit and enter a name in Settings.</p></div>
+<div class="step"><b>2</b><p>Open the Us tab on both phones, put them next to each other, and tap <em>We're nearby</em> on each.</p></div>
+<div class="step"><b>3</b><p>Each phone shows a code. If the codes match, both of you tap <em>Codes match</em>. If they differ, tap <em>Doesn't match</em> and start again.</p></div>
+<p>From then on everything you send is end-to-end encrypted with keys that exist only on your two phones. There is no account and no Tacit server; the exchange runs over Bluetooth while both apps are open and the phones are close. <em>Unlink</em> in Settings forgets the pairing; what you had already received stays with you.</p></div>
+
+<div class="card"><h3>What does "Show my partner" actually send?</h3>
+<p>Only the card you chose and the time it is valid until, for example "Tenderness — until 22:00". Your Today check-in, your notes and your journal are never part of it. A shared card first shows <em>Waiting to share</em> and becomes <em>Delivered</em> once your partner's phone has confirmed it during a nearby exchange.</p></div>
+
+<div class="card"><h3>What is a Hint? <span class="badge plus">Plus</span></h3>
+<p>A hint tells your partner only that you have something in mind, with a tone (Tender or Bold), not which card. They can answer <em>Tell me in person</em>, <em>Show the card</em> or <em>Not today</em>. If they ask to see it, the card opens at your next exchange. Hints are a Plus feature; without Plus you can try one once for free.</p></div>
+
+<div class="card"><h3>We are not in the same place. Can I still send a card? <span class="badge plus">Plus</span></h3>
+<p>Yes, with the <em>Envelope</em> in the Us tab. <em>Send envelope</em> wraps your pending cards into an encrypted block of text that you paste into any messenger. Your partner copies the whole message and taps <em>Open envelope</em>. Only their phone can open it, and the messenger sees only ciphertext. The envelope is a Plus feature with one free try.</p></div>
+
+<div class="card"><h3>What is the green light?</h3>
+<p>A switch in the Us tab: <em>I'm in the mood today</em>. Your partner learns that it is on only when theirs is on too, so nobody is ever the first to ask. It goes out by itself at midnight, and you can switch it off any time without explanation. Tacit also reminds you on the Closeness cards: a card is never consent, only an invitation to check in with each other.</p></div>
+
+<div class="card"><h3>Is the cycle journal shared? <span class="badge free">Free, always</span></h3>
+<p>Only as much as you decide. Under <em>My cycle</em> you mark "started today" and "ended today"; after a few entries the app shows a guess for the next start, based solely on your own entries (it is not a medical prediction). In <em>What my partner sees</em> you choose: nothing, only "started" and "ended", or dates with an approximate range. Symptoms, notes and mood are never shared, and the cycle journal is free and will stay free.</p></div>
+
+<div class="card"><h3>Can I hide the app and lock it?</h3>
+<p>Settings → <em>Lock with Face ID or passcode</em> asks iOS to verify you every time Tacit opens; the content is also hidden in the app switcher, and your journal is encrypted on the phone. <em>Neutral icon</em> (Plus) swaps the Home Screen icon for a plain one, so Tacit looks like an ordinary app; iOS shows a short confirmation when the icon changes.</p></div>
+
+<div class="card"><h3>Why does "Only if we both chose it" say "coming later"?</h3>
+<p>Mutual matching (a card is revealed only when both of you picked it) needs the hidden-match cryptography to be checked by an independent reviewer first. We would rather ship it late than ship it wrong. The same goes for <em>Say it for me</em>, which is still being built.</p></div>
+
+<div class="card"><h3>Does my partner have to pay?</h3>
+<p>No. Receiving cards, hints and envelopes, and answering them, is always free. Only the person who wants to send hints, send envelopes or use the neutral icon needs Plus.</p></div>
+
+<h2 id="plus">Tacit Plus</h2>
+<div class="pair">
+  <div class="plan free"><h3>Free</h3><ul>
+    <li>Today check-ins and the calendar</li>
+    <li>All wish cards, <em>Only me</em> and <em>Show my partner</em></li>
+    <li>Linking phones and nearby exchange</li>
+    <li>Green light</li>
+    <li>Cycle journal with partner visibility settings</li>
+    <li>Face ID / passcode lock</li>
+    <li>Receiving and answering everything</li>
+  </ul></div>
+  <div class="plan plus"><h3>Plus</h3><ul>
+    <li>Hints</li>
+    <li>Envelopes for when you are apart</li>
+    <li>Neutral Home Screen icon</li>
+    <li>One free try of each before subscribing</li>
+  </ul>
+  <p style="margin:10px 0 0;font-size:14px">Auto-renewable subscription, monthly (<code>com.stankevych.tacit.plus.monthly</code>) or yearly (<code>com.stankevych.tacit.plus.yearly</code>).</p></div>
+</div>
+<div class="quiet">Prices are shown on the Plus sheet exactly as the App Store lists them for your country. If your Apple ID is eligible, the yearly plan shows a free trial ("{days} days free, then {price} / year") before anything is charged.</div>
+<p><strong>Renewal and cancelling.</strong> The subscription renews automatically until you cancel it in iPhone Settings → your name → Subscriptions → Tacit, at least 24 hours before the renewal date. Deleting the app does not cancel a subscription. When a subscription ends, Plus switches off; your cards, journal and pairing remain untouched.</p>
+<p><strong>Restoring.</strong> On a new phone or after a reinstall, open the Plus sheet (Settings → Tacit Plus) and tap <em>Restore purchases</em>. Tacit checks your current entitlements with the App Store (StoreKit) and turns Plus back on if the subscription is active under the signed-in Apple ID. An expired subscription does not restore; the App Store is the only source of truth, so the app cannot grant Plus by itself.</p>
+<p><strong>Refunds</strong> are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2 id="help">When something does not work</h2>
+<div class="card"><h3>"Couldn't connect. Bring the phones closer and try again."</h3><p>Both apps must be open in the foreground, Bluetooth must be on for both phones, and Tacit needs Bluetooth permission (iPhone Settings → Tacit → Bluetooth). Put the phones within arm's reach, tap <em>Stop</em> and then <em>We're nearby</em> again on both.</p></div>
+<div class="card"><h3>The codes do not match</h3><p>Tap <em>Doesn't match</em> on both phones and repeat. A mismatch means the phones were talking to something else nearby; never confirm a code that differs.</p></div>
+<div class="card"><h3>"This envelope isn't for this phone or is damaged"</h3><p>Make sure your partner copied the whole message, from the first character to the last; some messengers trim long texts or add a preview. An envelope is addressed to one specific linked phone, so if the two of you have unlinked and linked again since it was sent, ask for a new one.</p></div>
+<div class="card"><h3>A card still says "Waiting to share"</h3><p>It has not been delivered yet. Delivery happens only during a nearby exchange or when your partner opens an envelope. Withdrawn cards update on your partner's phone the same way, at the next exchange.</p></div>
+<div class="card"><h3>"The store isn't available right now"</h3><p>Tacit needs the internet only for purchases and updates. Check the connection and that you are signed in to the App Store, then open the Plus sheet again.</p></div>
+<div class="card"><h3>I lost my phone. Is my journal recoverable?</h3><p>Your journal is only on that phone (and in your own iPhone backup, if you make one). We have no copy and cannot restore it, which is also why nobody else can read it.</p></div>
+
+<section class="contact" id="contact">
+  <p>Questions, a bug, or a wish card you think is missing?</p>
+  <a class="mail" href="mailto:babycar.zta@gmail.com?subject=Tacit">babycar.zta@gmail.com</a>
+  <p>Say "Tacit", your iPhone model and iOS version. Please do not send us any of your cards or journal entries; we do not need them to help. We reply within a few business days.</p>
+</section>
+
+<footer><a href="privacy.html">Privacy Policy</a> · Your journal stays on this phone. Sharing happens directly, nearby.</footer>
+</div>
+</body>
+</html>

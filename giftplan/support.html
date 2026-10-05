@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yulelist Support — Christmas Gift List</title>
+<meta name="description" content="Help for Yulelist: how occasions, people, budgets and gift statuses work, the year archive, backups, reminders, Yulelist Pro and restoring your purchase.">
+<style>
+  :root{
+    --bg:#F6F2EA; --surface:#FFFDF8; --surface2:#EFE9DD; --line:#E4DDD0;
+    --ink:#22302A; --muted:#68716B; --green:#3E5A4A; --red:#A65A52; --brass:#9A7B4F;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#141719; --surface:#1D2124; --surface2:#262B2E; --line:#30363A;
+      --ink:#ECE8E1; --muted:#A3A8A6; --green:#9DBBA6; --red:#CB948B; --brass:#C2A77A; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--green)}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px 64px}
+  header{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:10px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:36px;line-height:1.1;margin:0 0 12px;letter-spacing:-.3px}
+  header p{margin:0;color:var(--muted);max-width:520px}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:24px;margin:44px 0 14px;letter-spacing:-.2px}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+  .toc a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);text-decoration:none;font-size:14px;font-weight:600}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{position:relative;padding:0 0 12px 40px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--green);color:var(--bg);font-size:13px;font-weight:700;text-align:center;line-height:26px}
+  .status{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+  .status span{padding:4px 10px;border-radius:8px;font-size:13px;font-weight:700;background:var(--surface2)}
+  .status .idea{color:#8C8A7E}.status .bought{color:var(--brass)}.status .wrapped{color:var(--red)}.status .given{color:var(--green)}
+  .status i{color:var(--muted);font-style:normal;align-self:center}
+  .faq dt{font-weight:700;margin:22px 0 4px;padding-left:14px;border-left:3px solid var(--brass)}
+  .faq dd{margin:0 0 0 17px;color:var(--ink)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){.two{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0 0 8px}
+  .card p:last-child{margin:0}
+  .note{background:var(--surface2);border-radius:14px;padding:14px 18px;font-size:15px;margin:16px 0}
+  .contact{margin-top:48px;padding:24px;border:1px dashed var(--brass);border-radius:18px;text-align:center}
+  .contact a.mail{font-family:Georgia,serif;font-size:22px;text-decoration:none;border-bottom:1px solid var(--brass)}
+  footer{margin-top:36px;font-size:13px;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">Support</span>
+  <h1>Yulelist<br>Christmas Gift List</h1>
+  <p>Yulelist is an offline planner for the people you give to: a budget per person, gift ideas, a four-step status for every gift, a countdown with reminders, and an archive of past years. No account, no server. This page answers the questions we get most.</p>
+  <ul class="toc">
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#pro">Yulelist Pro</a></li>
+    <li><a href="#trouble">Something wrong?</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<h2 id="start">The basics in four steps</h2>
+<ol class="steps">
+  <li><strong>Pick the occasion.</strong> Yulelist opens with Christmas for the current year (New Year's Eve in Russian and Turkish). In the Plan tab you can rename it, change the date, or add another kind: New Year, Hanukkah, St Nicholas Day, Sinterklaas, Three Kings Day, a birthday, Secret Santa or anything else.</li>
+  <li><strong>Add people.</strong> A name, a group (Family, Kids, Friends, Work, Others) and an optional budget. The person card then shows budget, spent and what is left.</li>
+  <li><strong>Collect gift ideas.</strong> Each gift has a title, a price, a store or link, and a note for size, colour or where it is hidden. Tap the status to move it on:</li>
+  <li><strong>Hand them out.</strong> On the day, mark each gift as given. When the season is over, choose <em>Start next year</em> and the season moves to the archive.</li>
+</ol>
+<div class="status"><span class="idea">Idea</span><i>→</i><span class="bought">Bought</span><i>→</i><span class="wrapped">Wrapped</span><i>→</i><span class="given">Given</span></div>
+
+<h2 id="faq">Questions people ask</h2>
+<dl class="faq">
+  <dt>Why does the countdown end on 24 December for me and on the 25th for a friend?</dt>
+  <dd>The app follows the language of your phone, not your location. In German, Polish, Czech, Swedish, Danish, Finnish, Norwegian and Portuguese presents are traditionally opened on Christmas Eve, so the countdown targets 24 December. In other languages it targets 25 December. You can change the date of any occasion by hand in the Plan tab.</dd>
+
+  <dt>What do the reminders say, and when do they arrive?</dt>
+  <dd>Turn on <em>Countdown reminders</em> in Settings. Yulelist then schedules a local notification at 10:00, 30, 14, 10, 7, 3 and 1 day before the occasion and on the day itself. The text only says how many people still need a gift or how many gifts are waiting to be wrapped. Names and gift titles are never shown on the lock screen, so nobody reads a spoiler over your shoulder. The notification permission is only requested when you switch reminders on.</dd>
+
+  <dt>Can I share the list with my partner?</dt>
+  <dd>There is no live sync, because Yulelist has no server by design. What works: in Settings choose <em>Back up to a file</em>, AirDrop the file to your partner, and they choose <em>Import a backup</em>. Import merges rather than replaces: people and gifts are matched by their ids, the newer edit wins, and nothing is deleted. Do it again in the other direction whenever you want to catch up.</dd>
+
+  <dt>How are budgets counted?</dt>
+  <dd>Each person can have a budget. <em>Spent</em> is the sum of gifts that are bought, wrapped or given; ideas are not counted as spent but are shown under <em>Planned in total</em>. The plan uses one currency, set from your phone's region and changeable in Settings. Changing the currency only relabels amounts, it does not convert them.</dd>
+
+  <dt>Where is my data stored? Will I lose it on a new iPhone?</dt>
+  <dd>Your plan is a single file in the app's Documents folder, which is part of your normal iPhone backup (iCloud or computer). The app writes the file atomically and keeps the previous version next to it, so an interrupted write cannot corrupt it. For a belt-and-braces copy, export a backup file to Files or iCloud Drive before switching phones. Deleting the app deletes the plan.</dd>
+
+  <dt>What happens when I tap "Start next year"?</dt>
+  <dd>The current season moves to the archive as read-only, with all bought and given gifts kept, and a fresh season for the following year is created. With Pro you can tick <em>Copy people and budgets</em> and <em>Bring unused ideas along</em>, so the new year starts with your list already filled in. On the free plan the new season starts empty, but your history is still kept and becomes visible if you unlock Pro later.</dd>
+
+  <dt>What is the repeat warning?</dt>
+  <dd>When you add a gift whose title matches something you already gave the same person in an archived year, the gift sheet shows "You gave {name} this in {year}". Each person's screen also has a <em>Given before</em> section listing earlier years. Both need the archive, which is part of Pro.</dd>
+
+  <dt>Can I hide the app from curious family members?</dt>
+  <dd>Yes. <em>Lock with Face ID</em> in Settings asks for Face ID, Touch ID or your iPhone passcode whenever the app opens, and the content is hidden in the app switcher. There is no separate Yulelist PIN to forget: a phone that has no passcode at all is never locked out. The lock is a Pro feature.</dd>
+
+  <dt>How do I get the list out of the app?</dt>
+  <dd>Settings → <em>Export list as CSV</em> or <em>Export list as PDF</em>. The CSV opens cleanly in Excel and Numbers (it uses the right separator for your locale); the PDF is a printable list of people and gifts with totals. Both are Pro features. The backup file, on the other hand, is free and is meant for the app itself, not for reading.</dd>
+
+  <dt>Which themes are there?</dt>
+  <dd>Paper (default) and Midnight are free through the <em>Automatic</em> setting, which uses Paper by day and Midnight at night. Pro adds Snow and Forest and lets you fix any theme manually.</dd>
+</dl>
+
+<h2 id="pro">Yulelist Pro</h2>
+<div class="two">
+  <div class="card">
+    <h3>Free</h3>
+    <p>One active occasion with up to 5 people, and every planning feature: budgets, statuses, the countdown, reminders, backup and import.</p>
+    <p>Nothing on the free plan is time-limited and nothing is ever taken away.</p>
+  </div>
+  <div class="card">
+    <h3>Pro — one-time purchase</h3>
+    <p>Unlimited people and occasions, the year archive (with "given before", the repeat warning and copying people to next year), the Face ID lock, the Snow and Forest themes, and CSV / PDF export.</p>
+    <p>Product: <code>giftplan_pro</code>, a single non-consumable purchase. Not a subscription; nothing renews.</p>
+  </div>
+</div>
+<div class="note">
+  <strong>Price.</strong> The price is set in App Store Connect and shown on the paywall in your local currency, exactly as the App Store reports it. We never hard-code a price in the app.
+</div>
+<p><strong>Buying.</strong> Tap <em>Unlock Pro</em> anywhere a Pro feature is marked, confirm with Apple, and the features switch on immediately. Payment goes through your Apple Account; we never see your card or your account details.</p>
+<p><strong>Restoring.</strong> New phone, reinstalled app, or Pro shows as locked? Open Settings → <em>Restore purchases</em> (there is also a <em>Restore</em> link on the paywall). Make sure the phone is signed in with the same Apple Account that made the purchase. If the App Store answers that no purchase exists for this account, the app says so. Yulelist also re-checks the unlock with the App Store on every cold start; a store that is offline or slow never removes Pro.</p>
+<p><strong>Refunds.</strong> Apple handles all refunds for App Store purchases. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in, and pick the Yulelist purchase. We cannot issue refunds ourselves.</p>
+<p><strong>If Pro ever disappears</strong> (for example after signing in with a different Apple Account), nothing is deleted: your extra people, occasions and archived years stay in place, the app only stops you adding beyond the free limits until Pro is restored.</p>
+
+<h2 id="trouble">If something goes wrong</h2>
+<dl class="faq">
+  <dt>"The App Store is not available right now"</dt>
+  <dd>The phone could not reach the App Store. Check your connection, make sure you are signed in under Settings → your name → Media &amp; Purchases, and try again. Screen Time restrictions on in-app purchases also cause this.</dd>
+  <dt>Reminders never arrive</dt>
+  <dd>Open iPhone Settings → Notifications → Yulelist and allow notifications. Reminders are only scheduled while an occasion is in the future; a past date gets none. Focus modes can also silence them.</dd>
+  <dt>"This file is not a Yulelist backup"</dt>
+  <dd>Only files exported by Yulelist's <em>Back up to a file</em> can be imported; a CSV or PDF export cannot. Ask your partner to send the backup file again, ideally by AirDrop or Files rather than through a chat app that might convert it.</dd>
+  <dt>Import says "{count} skipped (free plan limit)"</dt>
+  <dd>The backup contained more people or occasions than the free plan allows. The rest was imported; the skipped entries will come in if you import again after unlocking Pro.</dd>
+  <dt>Lost your plan?</dt>
+  <dd>Restore the iPhone from a backup that was made while the app was installed, or import your latest Yulelist backup file. We hold no copy of anyone's plan, so we cannot recover it for you.</dd>
+</dl>
+
+<div class="contact" id="contact">
+  <p style="margin:0 0 8px">Still stuck, found a bug, or have an idea?</p>
+  <a class="mail" href="mailto:babycar.zta@gmail.com?subject=Yulelist">babycar.zta@gmail.com</a>
+  <p style="margin:12px 0 0;color:var(--muted);font-size:14px">Mention "Yulelist", your iPhone model and iOS version, and what you tapped before the problem. We answer within a few business days.</p>
+</div>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a> · Yulelist keeps everything on your iPhone.
+</footer>
+
+</div>
+</body>
+</html>
