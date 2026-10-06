@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sip Daily — help and questions</title>
+<meta name="description" content="How Sip Daily counts drinks, plans reminders, writes to Apple Health and what Sip+ unlocks. Answers and a direct email.">
+<style>
+  :root{--deep:#0b3b47;--ocean:#0e7a8c;--aqua:#4fd8e3;--foam:#eef8f9;--ink:#10262b;--muted:#5d7a7e}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Manrope",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--foam);line-height:1.6}
+  header{background:var(--deep);color:#fff;padding:44px 20px 70px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-40px;height:80px;background:var(--foam);border-radius:50% 50% 0 0}
+  header .wrap{max-width:760px;margin:0 auto}
+  header h1{margin:0 0 6px;font-size:2rem;letter-spacing:-.01em}
+  header p{margin:0;color:#bfeef2}
+  main{max-width:760px;margin:-20px auto 0;padding:0 20px 60px;position:relative}
+  .contact{background:#fff;border:1px solid #d7e6e6;border-radius:22px;padding:18px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .contact a.btn{background:var(--ocean);color:#fff;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:700}
+  h2{font-size:1.15rem;margin:34px 0 10px;color:var(--deep)}
+  details{background:#fff;border:1px solid #d7e6e6;border-radius:16px;margin:8px 0;padding:0 16px}
+  summary{cursor:pointer;font-weight:700;padding:13px 0;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"\25CF";color:var(--aqua);margin-right:8px;font-size:.8em}
+  details p,details ul{margin:0 0 14px;color:#24414a}
+  table{border-collapse:collapse;width:100%;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #d7e6e6}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #e3eeee;font-size:.95rem}
+  th{background:#e7f0f0}
+  footer{color:var(--muted);font-size:.9rem;margin-top:40px}
+  a{color:var(--ocean)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Sip Daily — help</h1>
+  <p>Answers about the water &amp; drink log for iPhone. Written by the developer, not a bot.</p>
+</div></header>
+<main>
+  <div class="contact">
+    <div style="flex:1;min-width:220px"><strong>Something not working?</strong><br>Write and say which iPhone and iOS version you use. Replies usually within two working days.</div>
+    <a class="btn" href="mailto:babycar.zta@gmail.com?subject=Sip%20Daily%20help">Email the developer</a>
+  </div>
+
+  <h2>Logging</h2>
+  <details><summary>How do I log a drink?</summary>
+    <p>On <em>Today</em>, pick what you are drinking in the row of drinks, then tap a cup size. <em>Custom</em> lets you type any amount up to 5 litres. The glass and the big number update at once.</p></details>
+  <details><summary>I logged the wrong amount. Can I fix it?</summary>
+    <p>Yes, for free. Tap the entry in <em>Today's log</em>: change the amount, the drink or the time, or delete it. The × on the row deletes it straight away.</p></details>
+  <details><summary>Why does coffee count less than water?</summary>
+    <p>Each drink has a share that counts toward your goal. The starting values are water 100 %, sparkling 100 %, tea 90 %, coffee 80 %, milk 90 %, juice 85 %, soda 85 %, sports drink 95 %. They are only starting points, not medical advice: change any of them in <em>Settings → How drinks count</em> (steps of 5 %, from 0 to 100 %). A new share applies to drinks you log afterwards; older entries keep the share they were logged with. <em>Today</em> shows both what you drank and what counted.</p></details>
+  <details><summary>What is the "pace" line?</summary>
+    <p>A straight line from 0 at your first reminder hour to your full goal at your last one. <em>Today</em> tells you how far ahead or behind that line you are right now. Once the goal is met the line is gone for the day.</p></details>
+  <details><summary>Does a new goal change my past days?</summary>
+    <p>No. Sip Daily remembers which goal was in force on each day, so streaks and the Trends chart judge every day by its own goal.</p></details>
+
+  <h2>Reminders</h2>
+  <details><summary>When do reminders come?</summary>
+    <p>Free: every 2 hours between 08:00 and 22:00. Every drink you log pushes the next reminder back by the interval, and reminders stop for the day once the goal is reached. Nothing is sent before you switch reminders on.</p></details>
+  <details><summary>What do quiet hours and the catch-up reminder do? (Sip+)</summary>
+    <p><strong>Quiet hours</strong>: one block inside your day with no reminders at all. <strong>Catch-up</strong>: at the hour you choose, if you are under 75 % of where the pace line says you should be, you get one extra reminder with its own text. If you log enough before that hour, it is cancelled automatically.</p></details>
+  <details><summary>I get no reminders.</summary>
+    <ul><li>Check <em>Settings → Notifications → Sip Daily</em> in iOS. The app shows an orange note when notifications are off.</li>
+    <li>Open Sip Daily once every few days: reminders are planned about six days ahead and re-planned each time you start the app, a new day begins, or you log a drink.</li>
+    <li>Focus modes can hold notifications back.</li></ul></details>
+
+  <h2>Widgets and Apple Health</h2>
+  <details><summary>How do I add the widget?</summary>
+    <p>Touch and hold the Home Screen or Lock Screen, tap <em>Edit</em> or <em>+</em>, search for Sip Daily. Home Screen: small (amount + bar) and medium (ring, amount, streak). Lock Screen: circular gauge, rectangular, and a one-line inline widget. Lock Screen widgets need iOS 16.</p></details>
+  <details><summary>The widget's "+" button</summary>
+    <p>On iOS 17 and later, the Home Screen widgets show a button that logs one glass of water (200 ml) without opening the app. The widget adds it right away; the entry moves into your log the next time you open Sip Daily.</p></details>
+  <details><summary>What goes to Apple Health?</summary>
+    <p>Only if you turn on <em>Settings → Write water to Health</em>. Sip Daily then writes the counted amount of each drink to <em>Water</em>. Editing or deleting an entry in Sip Daily updates or removes that same sample. Sip Daily asks for write access only and never reads your health data. You can revoke access at any time in the Health app under <em>Sharing → Apps</em>.</p></details>
+
+  <h2>Sip+ and your data</h2>
+  <table>
+    <tr><th>Free forever</th><th>Sip+ (one purchase)</th></tr>
+    <tr><td>Every drink type, editing entries, how drinks count, pace line, streaks, 7-day trend, the every-2-hours reminder, widgets, Apple Health, 20 languages</td>
+        <td>Your own reminder day (first/last reminder, every 1–4 h), quiet hours, catch-up reminder, 30/90/365-day trends, weekly insights, My cups (up to 8), two extra sizes (150 ml, 750 ml), CSV export</td></tr>
+  </table>
+  <details><summary>Is Sip+ a subscription?</summary>
+    <p>No. It is a single in-app purchase on your App Store account; nothing renews. On a new iPhone, open <em>Settings → Sip+</em> in the app and tap <em>Restore purchase</em>.</p></details>
+  <details><summary>How do I get my data out?</summary>
+    <p>With Sip+, <em>Trends → Export CSV</em> creates a file with one row per drink (date, time, drink, amount in ml, share, counted ml) and opens the iOS share sheet so you can save it to Files or send it.</p></details>
+  <details><summary>Where is my data stored?</summary>
+    <p>Only on your iPhone. There is no account and no server. Deleting the app deletes the log. See the <a href="privacy.html">privacy policy</a>.</p></details>
+
+  <footer>Sip Daily: Water Reminder · <a href="privacy.html">Privacy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (Apple standard EULA)</a></footer>
+</main>
+</body>
+</html>
