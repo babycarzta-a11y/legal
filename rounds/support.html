@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rounds: HIIT Timer — support</title>
+<meta name="description" content="How Rounds builds a workout, calls it out, shows it on the Lock Screen, writes it to Apple Health and what Rounds Premium adds. Answers from the developer and a direct email.">
+<style>
+  :root{--board:#111216;--panel:#1b1c21;--red:#e8492b;--teal:#2f8f86;--gold:#e8b23a;--paper:#f6f5f2;--ink:#1b1d22;--muted:#6b6c6a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+  header{background:var(--board);color:#fff;padding:36px 20px 44px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-26px;height:52px;background:var(--red);transform:rotate(-3deg)}
+  .wrap{max-width:780px;margin:0 auto;position:relative;z-index:1}
+  .tag{display:inline-block;background:var(--red);color:#fff;font:700 .8rem/1 "Oswald","Arial Narrow",sans-serif;letter-spacing:.06em;padding:5px 8px}
+  h1{font:700 2.3rem/1.1 "Oswald","Arial Narrow",Impact,sans-serif;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.01em}
+  header p{margin:0;color:#c9c9c4;max-width:560px}
+  main{max-width:780px;margin:0 auto;padding:34px 20px 60px}
+  .mail{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#fff;border-top:5px solid var(--gold);padding:16px 18px;border-radius:6px}
+  .mail a.btn{background:var(--board);color:#fff;text-decoration:none;padding:9px 16px;border-radius:4px;font-weight:700}
+  h2{font:700 1.35rem/1.2 "Oswald","Arial Narrow",sans-serif;text-transform:uppercase;margin:38px 0 10px;display:flex;gap:10px;align-items:center}
+  h2 span{background:var(--board);color:var(--gold);font-size:.8rem;padding:3px 7px;border-radius:3px}
+  details{background:#fff;border-left:4px solid var(--red);margin:8px 0;padding:0 16px;border-radius:0 6px 6px 0}
+  details.rest{border-left-color:var(--teal)}
+  summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p,details ul,details ol{margin:0 0 14px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden;font-size:.95rem}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #e6e3dc}
+  th{background:var(--board);color:#fff;font-weight:600}
+  td:nth-child(2){font-variant-numeric:tabular-nums;white-space:nowrap}
+  code{background:#ecebe6;padding:1px 5px;border-radius:3px}
+  footer{color:var(--muted);font-size:.9rem;margin-top:44px}
+  a{color:#b5361c}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="tag">ROUNDS</span>
+  <h1>Support for the interval timer</h1>
+  <p>Answers about programs, voice cues, the Lock Screen countdown, the log, Apple Health and Rounds Premium. Written by the person who builds the app.</p>
+</div></header>
+<main>
+  <div class="mail">
+    <div style="flex:1;min-width:230px"><strong>Something not right in a workout?</strong><br>Tell me which program, what you expected to hear or see, and your iPhone and iOS version. I usually answer within two working days.</div>
+    <a class="btn" href="mailto:babycar.zta@gmail.com?subject=Rounds%20support">babycar.zta@gmail.com</a>
+  </div>
+
+  <h2><span>R1</span> Programs and the builder</h2>
+  <details open><summary>How is a program put together?</summary>
+    <p>A program is an optional <em>get ready</em> lead-in followed by one or more <strong>blocks</strong>. A block is a list of steps (each one work or rest, with its own name and length) that repeats for the number of rounds you set. Two kinds of rest sit around a block:</p>
+    <ul>
+      <li><strong>Rest between rounds</strong> goes between two repeats of the same block. If the repeat already ends with a rest step, the longer block rest takes its place, so you never get rest followed by rest.</li>
+      <li><strong>Rest after block</strong> goes before the next block. Nothing is added after the last block.</li>
+    </ul>
+    <p>A workout never ends on a rest: trailing rests are dropped. The coloured strip on every card is the program's real timeline, tall bars for work and short ones for rest.</p>
+  </details>
+  <details><summary>Can I change a ready-made program?</summary>
+    <p>Open it and tap <em>Copy and edit</em>. The copy becomes one of your own programs; the original stays as it is. Ready-made programs follow the app's language, so a copy keeps the names in the language you made it in.</p>
+  </details>
+  <details><summary>What happened to my 1.0 presets?</summary>
+    <p>On the first start of 1.1 each saved preset becomes one of your own programs with the same work, rest, rounds and get-ready times and the same name. Nothing is deleted.</p>
+  </details>
+  <details><summary>Limits</summary>
+    <p>Up to 12 blocks, 20 steps per block, 99 rounds per block, 60 minutes per step, 5 minutes of get ready and 6 hours per program. Back and Skip on the run screen move by whole steps; skipped work is not counted as done in your log.</p>
+  </details>
+
+  <h2><span>R2</span> Ready-made programs</h2>
+  <table>
+    <tr><th>Program</th><th>Shape</th><th>Cues on by default</th></tr>
+    <tr><td>Tabata</td><td>8 × 20 s / 10 s</td><td>voice</td></tr>
+    <tr><td>Double Tabata</td><td>2 sets of 8 × 20/10, 1 min between</td><td>voice</td></tr>
+    <tr><td>30/30 intervals</td><td>10 × 30 s / 30 s</td><td>voice</td></tr>
+    <tr><td>EMOM 10</td><td>10 × 1 min</td><td>voice, 10-second warning</td></tr>
+    <tr><td>EMOM 20 alternating</td><td>10 × (A 1 min, B 1 min)</td><td>voice, 10-second warning</td></tr>
+    <tr><td>AMRAP 12 / AMRAP 20</td><td>one 12 or 20 min block</td><td>voice, halfway (+10 s on 20)</td></tr>
+    <tr><td>Boxing 12 × 3 min</td><td>3 min / 1 min × 12</td><td>voice, 10-second clapper</td></tr>
+    <tr><td>Boxing 3 × 3 min</td><td>3 min / 1 min × 3</td><td>voice, 10-second clapper</td></tr>
+    <tr><td>Heavy bag 6 × 2 min</td><td>2 min / 45 s × 6</td><td>voice, halfway, clapper</td></tr>
+    <tr><td>Full-body circuit</td><td>4 stations 40/20 × 3 laps, 1 min between</td><td>voice</td></tr>
+    <tr><td>Core 10</td><td>4 moves 45/15 × 2 laps</td><td>voice</td></tr>
+    <tr><td>Ladder 10–40</td><td>10-20-30-40-30-20-10 s, 15 s rests</td><td>voice</td></tr>
+    <tr><td>Mobility holds</td><td>8 × 60 s hold / 10 s switch</td><td>none (quiet)</td></tr>
+  </table>
+
+  <h2><span>R3</span> Sound, voice and music</h2>
+  <details open><summary>Will Rounds stop my music or podcast?</summary>
+    <p>No. Beeps and the voice play <em>over</em> whatever is playing, at full music volume. If you prefer the music to dip for each cue, turn on <em>Settings &gt; Sound &gt; Lower music during cues</em>. Cues also sound with the Ring/Silent switch set to silent.</p>
+  </details>
+  <details><summary>What does the voice coach say, and in which language?</summary>
+    <p>It says the step name when a step starts ("Squats", or "Go" for a plain work step), "Rest. Next: push-ups" when a rest starts, counts 3-2-1, and, if the program asks for it, "Halfway" and "Ten seconds". It speaks the app's language using the voices built into iOS. If a voice sounds robotic, download a better one in iOS Settings &gt; Accessibility &gt; Spoken Content &gt; Voices. You can switch the voice off for all programs in Settings, or per program in the builder (useful for routines full of short holds).</p>
+  </details>
+  <details class="rest"><summary>Why are there no sounds after I lock the phone?</summary>
+    <p>While a workout runs, Rounds keeps the screen on so you can see the clock and hear every cue. If you lock the phone or switch apps, iOS pauses the app's sounds; the timer keeps counting by the clock and is exactly in the right place when you come back. The Lock Screen countdown (below) keeps showing time while the phone is locked.</p>
+  </details>
+
+  <h2><span>R4</span> Lock Screen and Dynamic Island</h2>
+  <details open><summary>What does the Live Activity show?</summary>
+    <p>The current step, its countdown, the round, what comes next and the time to finish. iOS draws both countdowns itself. When a step ends while the phone is locked, iOS cannot know the next step, so the card shows an "open the app" arrow instead of a wrong time; the time to finish stays correct. Needs iOS 16.2 or later; switch it in <em>Settings &gt; Lock Screen</em> or in iOS Settings &gt; Rounds &gt; Live Activities.</p>
+  </details>
+
+  <h2><span>R5</span> Log, week streak and Apple Health</h2>
+  <details open><summary>How does the week streak count?</summary>
+    <p>You set a weekly goal (1 to 7 sessions). Each week that reaches it extends the streak; the current week counts as soon as you reach the goal and does not break the streak while it is still running. Weeks start on the first day of the week of your region. Sessions under 30 seconds are not logged.</p>
+  </details>
+  <details><summary>What goes to Apple Health?</summary>
+    <p>Only if you turn on <em>Settings &gt; Apple Health</em>: each logged session is saved as a workout with its type (HIIT, boxing, strength, cardio, core or mobility, chosen per program), start, end and pauses. Rounds reads nothing from Health. To stop, turn the switch off or remove access in the Health app: Profile &gt; Apps &gt; Rounds.</p>
+  </details>
+  <details><summary>Can I delete or export the log?</summary>
+    <p>Swipe a session to the left to delete it. With Premium, <em>Export CSV</em> gives a spreadsheet file (date, start, end, program, type, active and work seconds, intervals done and planned, completed) through the share sheet. The log never leaves your phone otherwise.</p>
+  </details>
+
+  <h2><span>R6</span> Rounds Premium</h2>
+  <details open><summary>What is free and what is Premium?</summary>
+    <p>Free: the Quick timer, all 14 ready-made programs, the builder with up to 3 own programs, voice cues, the Lock Screen countdown, the log with week streaks, Apple Health, light and dark mode, 20 languages. Premium adds unlimited own programs, the Bell, Buzzer and Gong sound packs, and CSV export. There are no ads and no account.</p>
+  </details>
+  <details><summary>Price, renewal and cancelling</summary>
+    <p>Rounds Premium is an annual auto-renewing subscription; the App Store shows the price in your currency before you confirm. Cancel any time, at least 24 hours before renewal, in iOS Settings &gt; your name &gt; Subscriptions, or from <em>Settings &gt; Manage subscription</em> in the app. If Premium lapses, your oldest 3 programs stay usable and the others are kept, locked, until you renew or delete them.</p>
+  </details>
+  <details><summary>I paid but Premium is not active</summary>
+    <p>Tap <em>Restore purchase</em> in Settings or on the Premium page while signed in to the same Apple Account. If that does not help, email me the date of purchase (no card details needed).</p>
+  </details>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (Apple standard EULA)</a></p>
+    <p>Rounds: HIIT Timer for iPhone · Oleksandr Stankevych · babycar.zta@gmail.com</p>
+  </footer>
+</main>
+</body>
+</html>
