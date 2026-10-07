@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roll Hunt Support — Coin Roll Log</title>
+<meta name="description" content="Help for Roll Hunt: Coin Roll Log — logging a box, finds per box, silver ounces, the Lifetime card, categories and box sizes, Roll Hunt Premium and restoring your subscription.">
+<style>
+  :root{
+    --bg:#F4F1EA; --surface:#FFFFFF; --surface2:#ECE6D8; --line:#DED5C2;
+    --ink:#201E1B; --muted:#6B675F; --silver:#4F6275; --copper:#8C4A2A;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#17181B; --surface:#1F2125; --surface2:#272A2F; --line:#34373D;
+      --ink:#EDEAE2; --muted:#A2A6AC; --silver:#B9C7D6; --copper:#D08B5C; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--silver)}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px 64px}
+  header{padding:48px 0 28px;border-bottom:1px solid var(--line)}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);font-weight:700;margin-bottom:10px}
+  h1{font-family:"IBM Plex Sans",-apple-system,sans-serif;font-weight:700;font-size:34px;line-height:1.15;margin:0 0 12px;letter-spacing:-.3px}
+  header p{margin:0;color:var(--muted);max-width:520px}
+  h2{font-family:"IBM Plex Sans",-apple-system,sans-serif;font-weight:700;font-size:22px;margin:44px 0 14px}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+  .toc a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);text-decoration:none;font-size:14px;font-weight:600;color:var(--ink)}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{position:relative;padding:0 0 14px 40px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--silver);color:var(--bg);font-size:13px;font-weight:700;text-align:center;line-height:26px}
+  .faq dt{font-weight:700;margin:22px 0 4px;padding-left:14px;border-left:3px solid var(--copper)}
+  .faq dd{margin:0 0 0 17px;color:var(--ink)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){.two{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0 0 8px}
+  .card p:last-child{margin:0}
+  .note{background:var(--surface2);border-radius:14px;padding:14px 18px;font-size:15px;margin:16px 0}
+  .contact{margin-top:48px;padding:24px;border:1px dashed var(--copper);border-radius:18px;text-align:center}
+  .contact a.mail{font-family:"IBM Plex Sans",-apple-system,sans-serif;font-size:21px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--copper)}
+  footer{margin-top:36px;font-size:13px;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+  code{background:var(--surface2);padding:1px 6px;border-radius:6px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="tag">Support</span>
+  <h1>Roll Hunt<br>Coin Roll Log</h1>
+  <p>Roll Hunt is a session log for coin roll hunters: open a box, tap once per find, and get finds per box, silver ounces and a Lifetime card that keeps growing. Offline, no account, nothing leaves your iPhone except an optional CSV you export yourself. This page answers the questions we get most.</p>
+  <ul class="toc">
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#premium">Roll Hunt Premium</a></li>
+    <li><a href="#trouble">Something wrong?</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<h2 id="start">Logging a box, in four steps</h2>
+<ol class="steps">
+  <li><strong>Start a session.</strong> Pick the denomination (cents, nickels, dimes, quarters or half dollars), how much you're searching — boxes or rolls — and, optionally, the bank. Coin and face-value counts come from the box/roll sizes, which you can edit per denomination in Settings.</li>
+  <li><strong>Tap as you go.</strong> Each find category — 90% silver, 40% silver, war nickels, wheats, W quarters, NIFC halves, proofs, foreign, errors and more — has a big +1 tile. Hold a tile instead of tapping to log a notable coin's year, mint mark and variety. One tap undoes the last change.</li>
+  <li><strong>Finish the session.</strong> You get finds by category, finds per box and silver ounces for that box. Reopen a finished session any time to keep adding.</li>
+  <li><strong>Watch the Lifetime card.</strong> On the Sessions tab: boxes searched, total finds, finds per box and silver ounces across every session you've ever logged — free, no cap on reading it.</li>
+</ol>
+
+<h2 id="faq">Questions people ask</h2>
+<dl class="faq">
+  <dt>Is Roll Hunt a coin identification or pricing app?</dt>
+  <dd>No. Roll Hunt counts what you tell it and does arithmetic on those counts (finds per box, silver ounces from each coin type's known silver content). If you enter a spot price yourself, it multiplies ounces by that price and shows the date you entered it — that is not a live valuation and not investment advice, and Roll Hunt is not affiliated with the U.S. Mint, any bank, or any grading or pricing service.</dd>
+  <dt>What happens to a session if I close the app mid-box?</dt>
+  <dd>Every tap autosaves immediately. Reopen the app and the same in-progress session is still on top of the Sessions tab — pick up exactly where you left off.</dd>
+  <dt>Can I change what the counters count?</dt>
+  <dd>Yes. In Settings → Categories you can rename, reorder or hide any seeded category, add your own, and set coins-per-roll / rolls-per-box per denomination if your bank's boxes differ from the standard sizes.</dd>
+  <dt>What does "finds per box" mean exactly?</dt>
+  <dd>Total finds in that category divided by boxes searched, shown per session and, on Premium Stats, by denomination, category and bank over your whole history — the number that tells you which banks and denominations are actually worth the trip.</dd>
+  <dt>Why isn't there a dollar value next to my finds?</dt>
+  <dd>By design. Roll Hunt reports counts and silver ounces, never a coin's collector or melt value — see the question above.</dd>
+</dl>
+
+<h2 id="premium">Roll Hunt Premium</h2>
+<div class="two">
+  <div class="card">
+    <h3>Free</h3>
+    <p>Full tap-first logging with detailed finds, up to 10 saved sessions (existing sessions stay viewable, editable and searchable once you're at the cap), session summaries, the Lifetime card, finds search, banks, editable categories and box sizes.</p>
+  </div>
+  <div class="card">
+    <h3>Premium — auto-renewing annual subscription</h3>
+    <p>Unlimited sessions; Stats (finds per box by denomination/category/bank, best banks, monthly trend, best session, silver by denomination and over time); optional approximate melt figure at a spot price you enter; CSV export of sessions and finds.</p>
+    <p>Product: <code>coinroll_premium_annual</code>. Manage or cancel any time in your iPhone's Settings → your name → Subscriptions.</p>
+  </div>
+</div>
+<div class="note">
+  <strong>Price.</strong> Shown on the paywall in your local currency exactly as the App Store reports it. We never hard-code a price in the app.
+</div>
+<p><strong>Buying.</strong> Tap "Unlock Premium" wherever you see it — the 11th session, Stats, CSV export, or Settings. The paywall shows what's included and the price from the App Store; confirm with Apple and Premium switches on immediately. Payment goes through your Apple Account; we never see your card or account details.</p>
+<p><strong>Restoring.</strong> New phone or reinstalled app? Open Settings → Restore Purchases. Make sure you're signed in with the Apple Account that bought the subscription. Roll Hunt also re-checks your entitlement with the App Store on every cold start, so a slow or offline store never silently removes Premium.</p>
+<p><strong>Refunds and billing issues.</strong> Apple handles all App Store billing. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in, and pick the Roll Hunt purchase — we cannot issue refunds ourselves.</p>
+<p><strong>If Premium ever shows as lapsed</strong> (expired renewal, different Apple Account), nothing is deleted: every session and find you logged stays exactly as it was. The app only stops new sessions past 10 until Premium is restored or renewed.</p>
+
+<h2 id="trouble">If something goes wrong</h2>
+<dl class="faq">
+  <dt>"Couldn't save that tap"</dt>
+  <dd>A write to on-device storage failed — usually the device is critically low on storage. Free up space and try the tap again; nothing logged before the error is lost.</dd>
+  <dt>"The App Store is not available right now"</dt>
+  <dd>The phone couldn't reach the App Store. Check your connection, confirm you're signed in under Settings → your name → Media &amp; Purchases, and try again. Screen Time restrictions on in-app purchases also cause this.</dd>
+  <dt>I deleted a category I'm still using</dt>
+  <dd>Seeded categories can be hidden but not deleted, so your existing finds always keep a home. A find whose custom category was removed shows as "Deleted category" and its count is never lost.</dd>
+  <dt>Lost your sessions?</dt>
+  <dd>Restore the iPhone from a backup made while Roll Hunt was installed. We hold no copy of your data — it never leaves your device except through CSV export — so we cannot recover it for you.</dd>
+</dl>
+
+<div class="contact" id="contact">
+  <p style="margin:0 0 8px">Still stuck, found a bug, or have an idea?</p>
+  <a class="mail" href="mailto:babycar.zta@gmail.com?subject=Roll%20Hunt">babycar.zta@gmail.com</a>
+  <p style="margin:12px 0 0;color:var(--muted);font-size:14px">Mention "Roll Hunt", your iPhone model and iOS version, and what you tapped before the problem. We answer within a few business days.</p>
+</div>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · Roll Hunt keeps everything on your iPhone.
+</footer>
+
+</div>
+</body>
+</html>
