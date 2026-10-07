@@ -73,9 +73,9 @@
 </header>
 
 <h2 id="how">The four tabs</h2>
-<div class="card"><h3>Today <span class="badge you">Only you</span></h3><p>How are you right now? Three sliders: energy (low, some, plenty), talking (I'd like quiet, a little, I want to talk) and touch (I'd like it, ask me first, not right now). <em>Save for me</em> stores it on your phone. It is never sent anywhere; it is a note to yourself, and it shows up in the calendar later.</p></div>
+<div class="card"><h3>Today <span class="badge you">Only you</span></h3><p>How are you right now? Three sliders: energy (low, some, plenty), talking (I'd like quiet, a little, I want to talk) and touch (I'd like it, ask me first, not right now). <em>Save for me</em> stores it on your phone. It is never sent anywhere; it is a note to yourself, and it shows up in the calendar later. Below it, under <em>For the two of you</em>, are <em>Both say yes</em> and <em>Pause</em> (see below), and the green light.</p></div>
 <div class="card"><h3>Wishes</h3><p>Cards in six groups: Tenderness, Rest, Time together, Support, Closeness, After tension. For every card you choose who sees it (<em>Only me</em>, <em>Show my partner</em>, or a <em>Hint</em>) and for how long (an hour, until the end of today, or a time you pick). A preview shows exactly what your partner will see before you confirm. You can withdraw a card at any moment.</p></div>
-<div class="card"><h3>Us</h3><p>Where sharing happens: linking your phones, <em>We're nearby</em> exchange, the envelope for when you are apart, the green light, and what your partner has sent you.</p></div>
+<div class="card"><h3>Us</h3><p>Where sharing happens: linking your phones, <em>We're nearby</em> exchange, the envelope for when you are apart, and what your partner has sent you.</p></div>
 <div class="card"><h3>Journal</h3><p>Your calendar of moments (how you were, what you shared, what you received) and the cycle journal. No scores, no ratings.</p></div>
 
 <h2 id="faq">Questions people ask</h2>
@@ -96,7 +96,7 @@
 <p>Yes, with the <em>Envelope</em> in the Us tab. <em>Send envelope</em> wraps your pending cards into an encrypted block of text that you paste into any messenger. Your partner copies the whole message and taps <em>Open envelope</em>. Only their phone can open it, and the messenger sees only ciphertext. The envelope is a Plus feature with one free try.</p></div>
 
 <div class="card"><h3>What is the green light?</h3>
-<p>A switch in the Us tab: <em>I'm in the mood today</em>. Your partner learns that it is on only when theirs is on too, so nobody is ever the first to ask. It goes out by itself at midnight, and you can switch it off any time without explanation. Tacit also reminds you on the Closeness cards: a card is never consent, only an invitation to check in with each other.</p></div>
+<p>A switch in the Today tab: <em>I'm in the mood today</em>. Your partner learns that it is on only when theirs is on too, so nobody is ever the first to ask. It goes out by itself at midnight, and you can switch it off any time without explanation. Tacit also reminds you on the Closeness cards: a card is never consent, only an invitation to check in with each other.</p></div>
 
 <div class="card"><h3>Is the cycle journal shared? <span class="badge free">Free, always</span></h3>
 <p>Only as much as you decide. Under <em>My cycle</em> you mark "started today" and "ended today"; after a few entries the app shows a guess for the next start, based solely on your own entries (it is not a medical prediction). In <em>What my partner sees</em> you choose: nothing, only "started" and "ended", or dates with an approximate range. Symptoms, notes and mood are never shared, and the cycle journal is free and will stay free.</p></div>
@@ -104,8 +104,18 @@
 <div class="card"><h3>Can I hide the app and lock it?</h3>
 <p>Settings → <em>Lock with Face ID or passcode</em> asks iOS to verify you every time Tacit opens; the content is also hidden in the app switcher, and your journal is encrypted on the phone. <em>Neutral icon</em> (Plus) swaps the Home Screen icon for a plain one, so Tacit looks like an ordinary app; iOS shows a short confirmation when the icon changes.</p></div>
 
-<div class="card"><h3>Why does "Only if we both chose it" say "coming later"?</h3>
-<p>Mutual matching (a card is revealed only when both of you picked it) needs the hidden-match cryptography to be checked by an independent reviewer first. We would rather ship it late than ship it wrong. The same goes for <em>Say it for me</em>, which is still being built.</p></div>
+<div class="card" id="both"><h3>How does "Both say yes" work? <span class="badge free">Free</span></h3>
+<p>Today → <em>Both say yes</em> is a round for two people on <strong>one</strong> phone. Choose the card groups (Closeness cards only if you both switch them on) and tap <em>Start a round</em>. The first person answers each card alone: <em>Yes</em>, <em>Maybe</em> or <em>Not for me</em>. A dark screen then hides everything, and the phone goes to the second person, who answers the same cards in a different order. At the end Tacit shows only the cards you <em>both</em> said yes to, and separately the ones you both said maybe to. Nobody sees the other person's "no", or a yes that wasn't shared.</p>
+<p>The individual answers exist only in the app's memory during the round and are erased at the reveal (or when you stop the round). If you want, <em>Keep in our calendar</em> saves the shared result only; <em>For today</em> puts a shared card into <em>Active now</em> until midnight.</p>
+<p>Matching between <em>two</em> phones (each answering on their own device) is not offered: doing that without either phone learning the other's answers needs cryptography that an independent reviewer has to check first. On one phone the question doesn't arise, because nothing leaves the phone.</p></div>
+
+<div class="card" id="pause"><h3>What is "Pause"? <span class="badge free">Free</span></h3>
+<p>For the moment after tension, when one of you needs to step away. Today → <em>Pause</em>: pick 20, 30, 45 or 60 minutes (at least 20, so there is time to calm down; at most an hour, because a pause is not leaving the talk). The pause screen shows, in large letters, "I need a pause. I'll come back to this at 21:30", so you can simply show it to your partner, plus a slow breathing rhythm (4 seconds in, 6 out) and the time left. If you allow notifications, one local reminder comes when the time is up. Then <em>Ready to talk</em> creates that card.</p>
+<p>If your phones are linked, your partner's phone learns only the return time at your next exchange ("Sam is taking a pause until 21:30 and will come back to the talk"). No reason, no text.</p></div>
+
+<div class="card" id="backup"><h3>How do I move Tacit to a new phone? <span class="badge free">Free</span></h3>
+<p>Tacit has no account and no cloud, and its database is deliberately kept out of iCloud. So you make the copy yourself: Settings → <em>Save encrypted backup</em>, choose a passphrase (at least 8 characters), and save the file with the share sheet (Files, AirDrop to your Mac, anywhere). On the new phone: Settings → <em>Restore from backup</em>, pick the file, enter the passphrase.</p>
+<p>The file is encrypted with AES-256-GCM using a key derived from your passphrase with Argon2id. We never see the file or the passphrase; if you forget the passphrase, nobody can open it. Pairing keys are not part of a backup: on the new phone you link with your partner again by comparing the code.</p></div>
 
 <div class="card"><h3>Does my partner have to pay?</h3>
 <p>No. Receiving cards, hints and envelopes, and answering them, is always free. Only the person who wants to send hints, send envelopes or use the neutral icon needs Plus.</p></div>
@@ -117,6 +127,9 @@
     <li>All wish cards, <em>Only me</em> and <em>Show my partner</em></li>
     <li>Linking phones and nearby exchange</li>
     <li>Green light</li>
+    <li><em>Both say yes</em> rounds on one phone</li>
+    <li><em>Pause</em> with return time and reminder</li>
+    <li>Encrypted backup file</li>
     <li>Cycle journal with partner visibility settings</li>
     <li>Face ID / passcode lock</li>
     <li>Receiving and answering everything</li>
@@ -129,9 +142,9 @@
   </ul>
   <p style="margin:10px 0 0;font-size:14px">Auto-renewable subscription, monthly (<code>com.stankevych.tacit.plus.monthly</code>) or yearly (<code>com.stankevych.tacit.plus.yearly</code>).</p></div>
 </div>
-<div class="quiet">Prices are shown on the Plus sheet exactly as the App Store lists them for your country. If your Apple ID is eligible, the yearly plan shows a free trial ("{days} days free, then {price} / year") before anything is charged.</div>
+<div class="quiet">Prices are shown on the Plus screen exactly as the App Store lists them for your country. If your Apple ID is eligible, the yearly plan shows a free trial ("{days} days free, then {price} / year") before anything is charged.</div>
 <p><strong>Renewal and cancelling.</strong> The subscription renews automatically until you cancel it in iPhone Settings → your name → Subscriptions → Tacit, at least 24 hours before the renewal date. Deleting the app does not cancel a subscription. When a subscription ends, Plus switches off; your cards, journal and pairing remain untouched.</p>
-<p><strong>Restoring.</strong> On a new phone or after a reinstall, open the Plus sheet (Settings → Tacit Plus) and tap <em>Restore purchases</em>. Tacit checks your current entitlements with the App Store (StoreKit) and turns Plus back on if the subscription is active under the signed-in Apple ID. An expired subscription does not restore; the App Store is the only source of truth, so the app cannot grant Plus by itself.</p>
+<p><strong>Restoring.</strong> On a new phone or after a reinstall, open the Plus screen (Settings → Tacit Plus) and tap <em>Restore purchases</em>. Tacit checks your current entitlements with the App Store (StoreKit) and turns Plus back on if the subscription is active under the signed-in Apple ID. An expired subscription does not restore; the App Store is the only source of truth, so the app cannot grant Plus by itself.</p>
 <p><strong>Refunds</strong> are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 
 <h2 id="help">When something does not work</h2>
@@ -139,8 +152,8 @@
 <div class="card"><h3>The codes do not match</h3><p>Tap <em>Doesn't match</em> on both phones and repeat. A mismatch means the phones were talking to something else nearby; never confirm a code that differs.</p></div>
 <div class="card"><h3>"This envelope isn't for this phone or is damaged"</h3><p>Make sure your partner copied the whole message, from the first character to the last; some messengers trim long texts or add a preview. An envelope is addressed to one specific linked phone, so if the two of you have unlinked and linked again since it was sent, ask for a new one.</p></div>
 <div class="card"><h3>A card still says "Waiting to share"</h3><p>It has not been delivered yet. Delivery happens only during a nearby exchange or when your partner opens an envelope. Withdrawn cards update on your partner's phone the same way, at the next exchange.</p></div>
-<div class="card"><h3>"The store isn't available right now"</h3><p>Tacit needs the internet only for purchases and updates. Check the connection and that you are signed in to the App Store, then open the Plus sheet again.</p></div>
-<div class="card"><h3>I lost my phone. Is my journal recoverable?</h3><p>Your journal is only on that phone (and in your own iPhone backup, if you make one). We have no copy and cannot restore it, which is also why nobody else can read it.</p></div>
+<div class="card"><h3>"The store isn't available right now"</h3><p>Tacit needs the internet only for purchases and updates. Check the connection and that you are signed in to the App Store, then open the Plus screen again.</p></div>
+<div class="card"><h3>I lost my phone. Is my journal recoverable?</h3><p>Only if you saved an encrypted backup file (Settings → <em>Save encrypted backup</em>, see above). Otherwise your journal was only on that phone: we have no copy and cannot restore it, which is also why nobody else can read it.</p></div>
 
 <section class="contact" id="contact">
   <p>Questions, a bug, or a wish card you think is missing?</p>
