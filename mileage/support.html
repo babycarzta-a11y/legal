@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mileage Log — support (DE · NL · PL)</title>
+<style>
+:root{--paper:#f3efe6;--ink:#1c1f23;--muted:#6a6d72;--amber:#c77f00;--rule:#dad3c3;--drum:#17191c}
+@media (prefers-color-scheme:dark){:root{--paper:#111315;--ink:#ede8dd;--muted:#9a9da3;--amber:#f0a92b;--rule:#2d3136}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 -apple-system,"Helvetica Neue",Arial,sans-serif}
+header{background:var(--drum);color:#f3efe6;padding:28px 20px}
+header h1{margin:0 0 4px;font-size:1.5em}header p{margin:0;color:#b9bcc1}
+main{max-width:760px;margin:0 auto;padding:8px 20px 40px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+nav a{border:1px solid var(--rule);border-radius:999px;padding:4px 12px;color:var(--ink);text-decoration:none;font-size:.9em}
+h2{margin-top:2em;border-bottom:2px solid var(--amber);padding-bottom:4px;font-size:1.2em}
+h3{font-size:1em;margin-bottom:.2em}
+.plate{display:inline-block;font:600 .85em ui-monospace,Menlo,monospace;border:1.5px solid var(--ink);border-radius:4px;padding:0 6px 0 0;margin-right:6px;background:#fbfaf5;color:#1c1f23}
+.plate b{background:#1f4ba5;color:#fff;padding:0 4px;margin-right:6px;border-radius:2px 0 0 2px}
+small{color:var(--muted)}a{color:var(--amber)}
+</style></head><body>
+<header><h1>Mileage Log · Fahrtenbuch · Rittenregistratie · Kilometrówka</h1>
+<p>One business mileage log with a rules module per vehicle: Germany, the Netherlands, Poland.</p></header>
+<main>
+<nav><a href="#en">English</a><a href="#de">Deutsch</a><a href="#nl">Nederlands</a><a href="#pl">Polski</a><a href="privacy.html">Privacy</a></nav>
+
+<h2 id="en">English</h2>
+<h3>Which rules does the app apply?</h3>
+<p>Each vehicle carries its own country module, chosen when you add it:</p>
+<p><span class="plate"><b>D</b>DE</span> GoBD Fahrtenbuch — odometer at the start and end of every trip, destination, purpose and business partner for business trips, a change log that records every correction and deletion.<br>
+<span class="plate"><b>NL</b>NL</span> sluitende rittenregistratie — unbroken odometer chain, departure and arrival address, the 500 private kilometres per calendar year.<br>
+<span class="plate"><b>PL</b>PL</span> ewidencja przebiegu pojazdu — VAT record (with the VAT-26 deadline) or kilometrówka refund with the official per-km rates; odometer readings reconciled with the entries.</p>
+<h3>Is the app language tied to the country?</h3>
+<p>No. The interface can be German, Dutch, Polish or English (Glovebox → Language); the printed month sheet is always in the language of the vehicle's country, because that is what the tax office reads.</p>
+<h3>What is free, what is Pro?</h3>
+<p>Free for good: one vehicle, unlimited trips, every check and warning on screen. Pro (monthly or yearly subscription): the month sheet as PDF with the change log, more vehicles, suggestions from earlier trips. Restore: Glovebox → Restore purchases. Cancel: Settings → Apple ID → Subscriptions.</p>
+<h3>Where is my data?</h3>
+<p>Only on your iPhone, in one file. No account, no server, no analytics. Back it up with your normal iPhone backup.</p>
+<h3>Not tax advice</h3>
+<p>The app checks and prints what you enter. Whether a record is accepted is decided by the tax office.</p>
+
+<h2 id="de">Deutsch</h2>
+<h3>Lücken im Fahrtenbuch</h3>
+<p>Fehlende Kilometer erscheinen in der Fahrtenliste als rotes, unterbrochenes Glied mit der Zahl der Kilometer. Tippen Sie darauf: die fehlende Fahrt ist mit Anfangs- und Endstand vorbefüllt.</p>
+<h3>Korrigieren und Löschen</h3>
+<p>Jede Änderung einer gespeicherten Fahrt landet mit altem Wert, neuem Wert und Zeitpunkt im Änderungsprotokoll; eine gelöschte Fahrt steht dort mit allen Angaben, auf Wunsch mit Grund. Das Protokoll wird mit dem Monatsbogen gedruckt.</p>
+<h3>Daten aus der früheren Fahrtenbuch-Testversion</h3>
+<p>Wer eine frühere TestFlight-Version „Fahrtenbuch“ genutzt hat, findet Fahrzeuge, Fahrten und das Protokoll nach dem Update automatisch übernommen.</p>
+
+<h2 id="nl">Nederlands</h2>
+<h3>De 500 km-grens</h3>
+<p>Bovenaan staat de teller van privékilometers in het kalenderjaar, per auto. Woon-werkverkeer telt voor deze grens als zakelijk. Vanaf 400 km kleurt de balk oranje, boven 500 km rood: dan geldt de bijtelling voor het hele jaar.</p>
+<h3>Afdrukken</h3>
+<p>Het maandblad heet „Rittenregistratie“ en bevat kenteken, kilometerstanden, adressen, afwijkende route en het wijzigingslogboek.</p>
+
+<h2 id="pl">Polski</h2>
+<h3>Ewidencja dla VAT czy kilometrówka?</h3>
+<p>Wybierasz przy pojeździe. Ewidencja VAT: bez stawek i kwot, z przypomnieniem o terminie VAT-26 (7 dni od pierwszego wydatku). Kilometrówka: stawka 0,89 zł (do 900 cm³) lub 1,15 zł (powyżej), motocykl 0,69 zł, motorower 0,42 zł — według rozporządzenia z 22 grudnia 2022 r.</p>
+<h3>Stan licznika</h3>
+<p>Dodaj odczyt na koniec miesiąca. Aplikacja porównuje różnicę wskazań z sumą wpisów i pokazuje rozbieżność w kilometrach. Odczyt mniejszy niż poprzedni nie zostanie przyjęty.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:babycar.zta@gmail.com?subject=Mileage%20Log">babycar.zta@gmail.com</a> — please name the country module (DE, NL or PL) and the app version.</p>
+<p><small>Updated 7 October 2026 · <a href="privacy.html">Privacy policy</a></small></p>
+</main></body></html>
