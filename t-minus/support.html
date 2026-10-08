@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T-Minus Support — Days Until Countdown</title>
+<meta name="description" content="Help for T-Minus: Days Until Countdown — how days are counted, yearly repeats and 29 February, 09:00 reminders, Home Screen and Lock Screen widgets, backup export and import, the 10-event free tier, T-Minus Unlimited, restoring the one-time purchase, and privacy. English and Deutsch.">
+<style>
+  :root{
+    --night:#F6F7FB; --panel:#FFFFFF; --edge:#DADFEA; --text:#151A2B; --faint:#6A7187;
+    --cobalt:#2D4BC7; --cobalt-soft:#E4E9FB; --gold:#B8860B; --gold-soft:#FBF1D6; --mono-bg:#EEF1F8;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --night:#0D1120; --panel:#161C30; --edge:#2A3350; --text:#ECEFF8; --faint:#9AA3BE;
+      --cobalt:#8DA3F5; --cobalt-soft:#1C2750; --gold:#E8C35A; --gold-soft:#3A3014; --mono-bg:#1C2340; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--night);color:var(--text);font:16px/1.6 "IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--cobalt)}
+  .shell{max-width:720px;margin:0 auto;padding:0 20px 80px}
+  .top{padding:44px 0 20px;text-align:center}
+  .counter{display:inline-block;font:700 64px/1 "IBM Plex Mono","SFMono-Regular",Menlo,monospace;color:var(--cobalt);letter-spacing:-2px}
+  .counter small{display:block;font:500 13px/1.4 "IBM Plex Mono",Menlo,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:6px}
+  .top h1{font:600 30px/1.2 "Fraunces","Iowan Old Style",Georgia,serif;margin:22px 0 6px}
+  .top p{margin:0 auto;max-width:540px;color:var(--faint)}
+  .langs{display:flex;justify-content:center;gap:8px;margin:22px 0 0}
+  .langs a{padding:7px 16px;border-radius:999px;border:1px solid var(--edge);background:var(--panel);text-decoration:none;color:var(--text);font-weight:600;font-size:14px}
+  .lang{margin-top:36px;padding-top:28px;border-top:1px solid var(--edge)}
+  .lang > h2{font:600 24px/1.2 "Fraunces",Georgia,serif;margin:0 0 4px}
+  .lang > .intro{color:var(--faint);margin:0 0 20px}
+  h3{font:600 19px/1.3 "Fraunces",Georgia,serif;margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+  h3 .n{font:600 12px/1 "IBM Plex Mono",Menlo,monospace;color:var(--gold);background:var(--gold-soft);padding:5px 7px;border-radius:6px;letter-spacing:.05em}
+  .qa{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:16px 18px;margin:10px 0}
+  .qa b{display:block;margin-bottom:6px;font-size:15.5px}
+  .qa p{margin:0 0 8px;font-size:15px}
+  .qa p:last-child{margin:0}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+  @media (max-width:560px){.split{grid-template-columns:1fr}}
+  .col{border-radius:14px;padding:16px 18px;border:1px solid var(--edge);background:var(--panel)}
+  .col.free{border-color:var(--cobalt)}
+  .col.pro{border-color:var(--gold)}
+  .col h4{margin:0 0 10px;font:600 12px/1 "IBM Plex Mono",Menlo,monospace;letter-spacing:.18em;text-transform:uppercase}
+  .col.free h4{color:var(--cobalt)} .col.pro h4{color:var(--gold)}
+  .col ul{margin:0;padding-left:18px;font-size:15px}
+  .col li{margin:4px 0}
+  kbd{font:500 13px "IBM Plex Mono",Menlo,monospace;background:var(--mono-bg);border:1px solid var(--edge);border-radius:5px;padding:1px 6px}
+  .warn{background:var(--gold-soft);border-radius:12px;padding:12px 16px;margin:14px 0;font-size:15px}
+  .mail{margin-top:34px;padding:22px;border:2px solid var(--cobalt);border-radius:16px;background:var(--cobalt-soft)}
+  .mail b{display:block;font:600 18px/1.3 "Fraunces",Georgia,serif;margin-bottom:6px}
+  .mail a{font:600 17px "IBM Plex Mono",Menlo,monospace;word-break:break-all}
+  .stamp{margin-top:40px;text-align:center;font:500 12.5px/1.8 "IBM Plex Mono",Menlo,monospace;color:var(--faint);letter-spacing:.04em}
+  .stamp a{color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="top">
+  <div class="counter">T-0<small>support · hilfe</small></div>
+  <h1>T-Minus: Days Until Countdown</h1>
+  <p>Whole calendar days to or since a date you named — on your Home Screen, Lock Screen and at 09:00 in a reminder. No account, no cloud, no ads.</p>
+  <nav class="langs" aria-label="Language"><a href="#en">English</a><a href="#de">Deutsch</a></nav>
+</header>
+
+<!-- ============================ ENGLISH ============================ -->
+<section class="lang" id="en" lang="en">
+<h2>English</h2>
+<p class="intro">Answers to the questions we actually get, in the order people ask them.</p>
+
+<h3><span class="n">01</span> How days are counted</h3>
+<div class="qa"><b>Why does T-Minus say 14 days when my calendar app says "2 weeks" and a widget elsewhere says 13?</b>
+<p>T-Minus counts <em>whole calendar days</em>: the difference between today's date and the event's date, nothing to do with the time of day. An event tomorrow is always "1 day", whether it is 00:05 or 23:55 now. Each event is stored as a plain date (year-month-day), never as a timestamp, so changing time zone or crossing a daylight-saving change can never make a count come out one short or one long.</p>
+<p>The list re-computes itself at local midnight and every time you return to the app; you never need to refresh.</p></div>
+<div class="qa"><b>Yearly repeats and 29 February</b>
+<p>Switch on <kbd>Repeat every year</kbd> and the event rolls forward to its next anniversary as soon as the day has passed. For a 29 February date, in years without a 29th the anniversary falls on <strong>28 February</strong> — it never slips into March — and the reminder still fires that day.</p></div>
+<div class="qa"><b>Counting up ("days since")</b>
+<p>Turn on <kbd>Count up</kbd> for a date in the past (together 500 days, smoke-free 30 days…). Count-up events sit in their own section and sort by the longest streak. Free for every event.</p></div>
+
+<h3><span class="n">02</span> Reminders</h3>
+<div class="qa"><b>When does the reminder arrive?</b>
+<p>At <strong>09:00 local time on the day of the event</strong>, as a local notification scheduled on the phone itself — nothing is sent through a server. The notification contains only the event name you typed. The "on the day" reminder is free for every event; the extra reminders <strong>1 day</strong> and <strong>1 week</strong> before (also at 09:00) are part of Unlimited.</p></div>
+<div class="qa"><b>No reminder came.</b>
+<p>Check in this order: 1) iOS Settings → Notifications → T-Minus → Allow Notifications is on (T-Minus asks for permission only the first time you switch a reminder on, never at launch); 2) the event's reminder toggle is actually on; 3) Focus or Do Not Disturb was not silencing 09:00 that day. T-Minus re-plans every reminder at launch, at midnight and after every edit, so simply opening the app repairs a stale schedule. Reminders for repeating 29 February events are re-armed each year on purpose, because the system's own yearly repeat would only fire in leap years.</p></div>
+
+<h3><span class="n">03</span> Widgets</h3>
+<div class="qa"><b>Adding a widget</b>
+<p>Long-press the Home Screen → <kbd>+</kbd> → search "T-Minus". Lock Screen: long-press the lock screen → Customize → tap the widget area. The widget reads events from a storage area shared only between T-Minus and its widget; it recomputes days at midnight on its own and shows labels in the language you use the app in.</p>
+<p>The <strong>small</strong> Home Screen widget (your nearest event) is free. The medium and large list widgets and the Lock Screen widgets are part of Unlimited; without it they show "Unlock in T-Minus".</p></div>
+<div class="qa"><b>The widget shows "Add an event in T-Minus" although I have events.</b>
+<p>Open the app once — the widget is refreshed whenever the app saves. If it still shows nothing, remove the widget and add it again; widget caches occasionally stick after an iOS update.</p></div>
+
+<h3><span class="n">04</span> Backup, export and switching phones</h3>
+<div class="qa"><b>Export</b>
+<p><kbd>Settings → Export events</kbd> writes a small versioned JSON file that you save wherever you like: Files, iCloud Drive, Mail. That file is the only backup there is — T-Minus has no cloud sync, so keep it somewhere outside the phone if the events matter.</p></div>
+<div class="qa"><b>Import</b>
+<p><kbd>Settings → Import events</kbd> merges by event id, so importing the same file twice never creates duplicates. On the free tier only as many new events are restored as free slots remain; the app tells you how many were skipped ("not added: the free version keeps up to 10 events"). Unlock Unlimited and import again to get the rest — nothing in the file is lost.</p></div>
+<div class="qa"><b>Deleting everything</b>
+<p><kbd>Settings → Delete all data</kbd> removes every event and reminder on this device. It cannot be undone, and it does not touch your Unlimited purchase. Deleting the app has the same effect.</p></div>
+
+<h3><span class="n">05</span> Free vs T-Minus Unlimited</h3>
+<div class="split">
+  <div class="col free"><h4>Free, forever</h4><ul>
+    <li>Up to <strong>10 events</strong>, countdown or count-up</li>
+    <li>Yearly repeats, leap-day rule</li>
+    <li>09:00 reminder on the day, for every event</li>
+    <li>12 illustrated backgrounds</li>
+    <li>Small Home Screen widget</li>
+    <li>Backup export and import (within the 10)</li>
+  </ul></div>
+  <div class="col pro"><h4>Unlimited · one-time</h4><ul>
+    <li>Unlimited events</li>
+    <li>A custom colour and an emoji per event</li>
+    <li>Extra reminders 1 day and 1 week before</li>
+    <li>Medium and large widgets, Lock Screen widgets</li>
+  </ul></div>
+</div>
+<p>Unlimited is a <strong>one-time purchase</strong>: billed once by the App Store at the price shown in the app in your own currency, no subscription, no renewal, nothing to cancel. If you ever let the purchase lapse (for example a refund), custom colours, emoji and before-reminders are hidden from your events but the events themselves stay; they come back untouched when Unlimited is active again.</p>
+
+<h3><span class="n">06</span> Restore on a new iPhone</h3>
+<div class="qa"><p>Install T-Minus, open <kbd>Settings → Restore purchase</kbd>. The App Store checks whether the Apple ID on this phone bought Unlimited; if so it unlocks in a few seconds and shows "Unlimited restored". If you are told nothing was found, you are signed in with a different Apple ID than the one that purchased. "The store has not confirmed this purchase yet" after buying means the receipt is still in flight — wait a moment and tap Restore. Refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>; we cannot see or refund transactions ourselves.</p></div>
+
+<h3><span class="n">07</span> Privacy, in short</h3>
+<div class="qa"><p>Events, reminders and settings are stored locally on your phone. T-Minus has no account, no server of ours, no analytics and no advertising. Reminders are local notifications; widgets read from an app-group container that only T-Minus and its widget can open; a backup file goes only where you save it. The App Store confirms your purchase on the device. Full text: <a href="https://babycarzta-a11y.github.io/legal/t-minus/privacy.html">T-Minus privacy policy</a>.</p></div>
+
+<div class="mail"><b>Still stuck? Write to us.</b>
+<a href="mailto:babycar.zta@gmail.com?subject=T-Minus%20support">babycar.zta@gmail.com</a>
+<p style="margin:8px 0 0;font-size:14px">Tell us your iOS version and, for reminder or widget questions, the event's date and whether it repeats yearly.</p></div>
+</section>
+
+<!-- ============================ DEUTSCH ============================ -->
+<section class="lang" id="de" lang="de">
+<h2>Deutsch</h2>
+<p class="intro">T-Minus: Countdown-Tageszähler — Antworten auf die häufigsten Fragen.</p>
+
+<h3><span class="n">01</span> So werden Tage gezählt</h3>
+<div class="qa"><b>Warum zeigt T-Minus 14 Tage, obwohl ein anderes Widget 13 sagt?</b>
+<p>T-Minus zählt <em>ganze Kalendertage</em>: den Abstand zwischen dem heutigen Datum und dem Datum des Ereignisses, unabhängig von der Uhrzeit. Ein Ereignis morgen ist immer „1 Tag“, ob es jetzt 00:05 oder 23:55 Uhr ist. Jedes Ereignis wird als reines Datum gespeichert, nie als Zeitstempel. Zeitzonenwechsel und die Zeitumstellung können die Zählung deshalb nie um einen Tag verschieben. Die Liste berechnet sich um Mitternacht und bei jeder Rückkehr in die App neu.</p></div>
+<div class="qa"><b>Jährliche Wiederholung und der 29. Februar</b>
+<p>Mit <kbd>Jedes Jahr wiederholen</kbd> springt das Ereignis nach dem Tag auf den nächsten Jahrestag. Ein 29. Februar fällt in Jahren ohne 29. auf den <strong>28. Februar</strong> — nie in den März — und die Erinnerung kommt an diesem Tag.</p></div>
+<div class="qa"><b>Hochzählen („Tage seit“)</b>
+<p>Schalte <kbd>Hochzählen</kbd> für ein vergangenes Datum ein (zusammen seit 500 Tagen, rauchfrei seit 30 Tagen …). Diese Ereignisse stehen in einem eigenen Abschnitt, sortiert nach der längsten Serie. Kostenlos für jedes Ereignis.</p></div>
+
+<h3><span class="n">02</span> Erinnerungen</h3>
+<div class="qa"><b>Wann kommt die Erinnerung?</b>
+<p>Um <strong>9:00 Uhr Ortszeit am Tag des Ereignisses</strong>, als lokale Mitteilung direkt vom Gerät — ohne Server. Sie enthält nur den Namen, den du eingegeben hast. Die Erinnerung am Tag selbst ist für jedes Ereignis kostenlos; die zusätzlichen Erinnerungen <strong>1 Tag</strong> und <strong>1 Woche</strong> vorher (ebenfalls 9:00 Uhr) gehören zu Unlimited.</p></div>
+<div class="qa"><b>Es kam keine Erinnerung.</b>
+<p>Prüfe der Reihe nach: 1) iOS-Einstellungen → Mitteilungen → T-Minus → Mitteilungen erlauben (T-Minus fragt erst beim ersten Einschalten einer Erinnerung nach der Berechtigung, nie beim Start); 2) der Erinnerungsschalter des Ereignisses ist an; 3) kein Fokus / „Nicht stören“ um 9:00 Uhr. T-Minus plant alle Erinnerungen beim Start, um Mitternacht und nach jeder Änderung neu — die App einmal öffnen repariert einen veralteten Plan.</p></div>
+
+<h3><span class="n">03</span> Widgets</h3>
+<div class="qa"><b>Widget hinzufügen</b>
+<p>Home-Bildschirm lange drücken → <kbd>+</kbd> → „T-Minus“ suchen. Sperrbildschirm: lange drücken → Anpassen → Widget-Bereich tippen. Das Widget liest die Ereignisse aus einem Speicherbereich, den nur T-Minus und sein Widget öffnen können; es rechnet um Mitternacht selbst weiter und zeigt die Beschriftungen in deiner App-Sprache.</p>
+<p>Das <strong>kleine</strong> Home-Widget (nächstes Ereignis) ist kostenlos. Mittleres und großes Listen-Widget sowie die Sperrbildschirm-Widgets gehören zu Unlimited; ohne Kauf zeigen sie „In T-Minus freischalten“.</p></div>
+<div class="qa"><b>Das Widget zeigt „Ereignis in T-Minus hinzufügen“, obwohl ich Ereignisse habe.</b>
+<p>Die App einmal öffnen — das Widget wird bei jedem Speichern aktualisiert. Hilft das nicht: Widget entfernen und neu hinzufügen.</p></div>
+
+<h3><span class="n">04</span> Sicherung, Export, neues Gerät</h3>
+<div class="qa"><b>Exportieren</b>
+<p><kbd>Einstellungen → Ereignisse exportieren</kbd> erzeugt eine kleine JSON-Datei, die du selbst ablegst: Dateien, iCloud Drive, Mail. Diese Datei ist die einzige Sicherung — T-Minus hat keine Cloud-Synchronisierung.</p></div>
+<div class="qa"><b>Importieren</b>
+<p><kbd>Einstellungen → Ereignisse importieren</kbd> führt nach Ereignis-ID zusammen; dieselbe Datei zweimal zu importieren erzeugt keine Duplikate. In der kostenlosen Version werden nur so viele neue Ereignisse übernommen, wie freie Plätze übrig sind („Nicht hinzugefügt: n – gratis bis 10 Ereignisse“). Nach dem Kauf von Unlimited einfach erneut importieren — in der Datei geht nichts verloren.</p></div>
+<div class="qa"><b>Alles löschen</b>
+<p><kbd>Einstellungen → Alle Daten löschen</kbd> entfernt alle Ereignisse und Erinnerungen auf diesem Gerät, unwiderruflich. Dein Unlimited-Kauf bleibt erhalten.</p></div>
+
+<h3><span class="n">05</span> Kostenlos oder Unlimited</h3>
+<div class="split">
+  <div class="col free"><h4>Kostenlos</h4><ul>
+    <li>Bis zu <strong>10 Ereignisse</strong>, Countdown oder Hochzählen</li>
+    <li>Jährliche Wiederholung mit Schaltjahr-Regel</li>
+    <li>Erinnerung um 9:00 Uhr am Tag, für jedes Ereignis</li>
+    <li>12 illustrierte Hintergründe</li>
+    <li>Kleines Home-Widget</li>
+    <li>Export und Import (innerhalb der 10)</li>
+  </ul></div>
+  <div class="col pro"><h4>Unlimited · einmalig</h4><ul>
+    <li>Unbegrenzt viele Ereignisse</li>
+    <li>Eigene Farbe und Emoji pro Ereignis</li>
+    <li>Zusätzliche Erinnerungen 1 Tag und 1 Woche vorher</li>
+    <li>Mittleres und großes Widget, Sperrbildschirm-Widgets</li>
+  </ul></div>
+</div>
+<p>Unlimited ist ein <strong>einmaliger Kauf</strong>: einmal vom App Store zum in der App angezeigten Preis in deiner Währung abgerechnet — kein Abo, keine Verlängerung, nichts zu kündigen. Fällt der Kauf je weg (etwa nach einer Rückerstattung), werden eigene Farben, Emoji und Vorab-Erinnerungen ausgeblendet; die Ereignisse selbst bleiben und sind mit aktivem Unlimited wieder vollständig da.</p>
+
+<h3><span class="n">06</span> Auf einem neuen iPhone wiederherstellen</h3>
+<div class="qa"><p>T-Minus installieren, <kbd>Einstellungen → Käufe wiederherstellen</kbd>. Der App Store prüft, ob die auf diesem Gerät angemeldete Apple-ID Unlimited gekauft hat; dann wird in wenigen Sekunden freigeschaltet („Unlimited wiederhergestellt“). Wird nichts gefunden, bist du mit einer anderen Apple-ID angemeldet als beim Kauf. Rückerstattungen laufen ausschließlich über Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></div>
+
+<h3><span class="n">07</span> Datenschutz, kurz</h3>
+<div class="qa"><p>Ereignisse, Erinnerungen und Einstellungen liegen nur lokal auf deinem Gerät. T-Minus hat kein Konto, keinen eigenen Server, keine Analyse- und keine Werbe-SDKs. Erinnerungen sind lokale Mitteilungen; Widgets lesen aus einem Container, den nur T-Minus und sein Widget öffnen können; eine Sicherungsdatei geht nur dorthin, wo du sie speicherst. Vollständiger Text (Englisch): <a href="https://babycarzta-a11y.github.io/legal/t-minus/privacy.html">Datenschutzerklärung</a>.</p></div>
+
+<div class="mail"><b>Noch Fragen? Schreib uns.</b>
+<a href="mailto:babycar.zta@gmail.com?subject=T-Minus%20Support">babycar.zta@gmail.com</a>
+<p style="margin:8px 0 0;font-size:14px">Bitte iOS-Version nennen und bei Erinnerungs- oder Widget-Fragen das Datum des Ereignisses und ob es sich jährlich wiederholt.</p></div>
+</section>
+
+<p class="stamp">Updated 8 October 2026 · Stand: 8. Oktober 2026<br><a href="https://babycarzta-a11y.github.io/legal/t-minus/privacy.html">Privacy</a> · <a href="https://babycarzta-a11y.github.io/legal/t-minus/terms.html">Terms</a></p>
+
+</div>
+</body>
+</html>

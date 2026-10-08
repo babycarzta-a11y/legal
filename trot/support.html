@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trot Support — Dog Grooming Scheduler</title>
+<meta name="description" content="Help for Trot: Dog Grooming Scheduler — bookings and the day agenda, clients and pets, numbered invoices with tax and paid state, PDF export, the five-active-job free tier, Trot Pro, restoring and cancelling, and where your data lives.">
+<style>
+  :root{
+    --paper:#FBF8F1; --card:#FFFFFF; --rule:#E3DCCB; --ink:#1F2A24; --dim:#5F6B64;
+    --pine:#1F5F4A; --pine-soft:#DDEEE5; --clay:#B4552E; --clay-soft:#F6E3D7; --paid:#2F7D4F;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --paper:#141A17; --card:#1C2420; --rule:#2E3A34; --ink:#EEF2EE; --dim:#A3B0A8;
+      --pine:#7FCBA8; --pine-soft:#1E3A30; --clay:#E89A6F; --clay-soft:#3C271C; --paid:#7FD39F; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 Georgia,"Iowan Old Style","Times New Roman",serif}
+  a{color:var(--pine)}
+  .page{max-width:760px;margin:0 auto;padding:0 20px 72px}
+  .masthead{padding:52px 0 24px;display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:start}
+  .mark{width:72px;height:72px;border-radius:20px;background:var(--pine);color:#fff;display:flex;align-items:center;justify-content:center;font:700 34px/1 "Rockwell","Roboto Slab","Arial Black",sans-serif;letter-spacing:-1px}
+  .masthead h1{margin:0;font:700 36px/1.1 "Rockwell","Roboto Slab","Arial Black",sans-serif;letter-spacing:-.4px}
+  .masthead .sub{margin:6px 0 0;color:var(--dim);font-style:italic}
+  .masthead .lede{margin:14px 0 0;grid-column:1/-1}
+  nav.jump{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:24px 0 8px}
+  nav.jump a{display:block;padding:12px 14px;background:var(--card);border:1px solid var(--rule);border-radius:12px;text-decoration:none;color:var(--ink);font:600 14px/1.3 -apple-system,"Helvetica Neue",sans-serif}
+  nav.jump a small{display:block;color:var(--dim);font-weight:400;margin-top:2px}
+  h2{font:700 25px/1.2 "Rockwell","Roboto Slab","Arial Black",sans-serif;margin:48px 0 14px;padding-top:18px;border-top:3px double var(--rule)}
+  h3{font:700 17px/1.3 -apple-system,"Helvetica Neue",sans-serif;margin:22px 0 6px}
+  details{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:0 18px;margin:10px 0}
+  details summary{cursor:pointer;padding:14px 0;font:600 16px/1.35 -apple-system,"Helvetica Neue",sans-serif;list-style:none;display:flex;gap:10px;align-items:baseline}
+  details summary::before{content:"+";color:var(--clay);font-weight:700;width:14px;flex:none}
+  details[open] summary::before{content:"–"}
+  details p,details ul{margin:0 0 14px}
+  details ul{padding-left:20px}
+  .ledger{border-collapse:collapse;width:100%;font:15px/1.45 -apple-system,"Helvetica Neue",sans-serif;background:var(--card);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+  .ledger th,.ledger td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+  .ledger th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--pine-soft)}
+  .ledger tr:last-child td{border-bottom:0}
+  .chip{display:inline-block;padding:2px 9px;border-radius:999px;font:700 12px/1.6 -apple-system,sans-serif}
+  .chip.free{background:var(--pine-soft);color:var(--pine)}
+  .chip.pro{background:var(--clay-soft);color:var(--clay)}
+  .callout{border-left:4px solid var(--clay);background:var(--clay-soft);padding:12px 16px;border-radius:0 12px 12px 0;margin:18px 0;font-size:15.5px}
+  .howto{counter-reset:n;list-style:none;padding:0;margin:0}
+  .howto li{counter-increment:n;padding:8px 0 8px 46px;position:relative}
+  .howto li::before{content:counter(n,upper-roman);position:absolute;left:0;top:9px;font:700 13px/1 "Rockwell","Roboto Slab",serif;color:var(--clay);width:36px;text-align:right;letter-spacing:.05em}
+  .write{margin-top:48px;background:var(--pine);color:#fff;border-radius:18px;padding:26px 24px}
+  .write h2{border:0;margin:0 0 8px;padding:0;color:#fff}
+  .write a{color:#fff;font:600 20px/1.3 -apple-system,"Helvetica Neue",sans-serif;text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:4px;word-break:break-all}
+  .write p{margin:0 0 8px}
+  .colophon{margin-top:28px;font:13px/1.6 -apple-system,"Helvetica Neue",sans-serif;color:var(--dim)}
+  .colophon a{color:var(--dim)}
+  @media (max-width:520px){.masthead{grid-template-columns:56px 1fr}.mark{width:56px;height:56px;font-size:26px;border-radius:16px}.masthead h1{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="mark" aria-hidden="true">T</div>
+  <div>
+    <h1>Trot</h1>
+    <p class="sub">Dog Grooming Scheduler — support</p>
+  </div>
+  <p class="lede">Trot is a working-day book for a solo or mobile groomer: each booking is one client's dog at an address and time, and each booking carries its own numbered invoice that you settle from the van. Everything lives on your phone. Below: how the pieces fit, what is free, and how to reach a person.</p>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#bookings">Bookings &amp; agenda<small>day list, status chips, Maps</small></a>
+  <a href="#invoices">Invoices<small>numbers, tax, paid, PDF</small></a>
+  <a href="#clients">Clients &amp; pets<small>editing, snapshots, deleting</small></a>
+  <a href="#plan">Free vs Trot Pro<small>what the cap counts</small></a>
+  <a href="#billing">Restore &amp; cancel<small>subscription housekeeping</small></a>
+  <a href="#data">Your data<small>where it is, backups</small></a>
+</nav>
+
+<h2 id="bookings">Bookings and the day agenda</h2>
+<ol class="howto">
+  <li><strong>Add a client first</strong> (name, phone, address, the dog's name and breed, notes and a groom card). A booking always belongs to a client's pet, so the client card is the starting point.</li>
+  <li><strong>Create the booking</strong> from the agenda: pick client and pet, date and start time, then add the services as line items (Full groom, Nail trim, De-shed… each with an amount). The invoice total updates as you type.</li>
+  <li><strong>Work the day.</strong> The agenda shows that calendar day's bookings in time order with a status chip: <em>Upcoming</em>, <em>Unpaid</em> (the visit is past but not settled) or <em>Paid</em>.</li>
+  <li><strong>Tap "Open in Maps"</strong> on a booking to hand the address to Apple Maps or Google Maps. Trot sends a plain web link — it has no map component of its own and never asks for your location.</li>
+</ol>
+<details>
+  <summary>Why did a booking move to "Unpaid" overnight without me touching it?</summary>
+  <p>Status is derived, not stored: a booking is <em>Upcoming</em> until its calendar day has passed, then <em>Unpaid</em> until you mark it paid. Trot recomputes the agenda at local midnight and whenever you return to the app, using the local calendar day — so a booking never slips across days because of a time-zone or daylight-saving change.</p>
+</details>
+<details>
+  <summary>Can I book the same dog every six weeks automatically?</summary>
+  <p>Not in this version — there are no recurring bookings, reminders or SMS. Each visit is entered by hand. Duplicate a past booking by opening it and creating a new one for the same client and pet; the line items are a few taps.</p>
+</details>
+
+<h2 id="invoices">Invoices</h2>
+<p>Every booking is an invoice. Three rules decide what the customer sees, and they are deliberately strict so an invoice you have already handed over can never silently change.</p>
+<details open>
+  <summary>Invoice numbers: sequential, never reused</summary>
+  <p>A number is reserved the moment you save a new booking, strictly above every number ever issued on this phone. If you delete a booking, or a save fails, that number is skipped — it is not handed to the next booking. Gaps in your sequence are therefore normal and expected; they are evidence of a deletion, not a fault. Numbers start at 1 on a fresh install and cannot be edited by hand.</p>
+</details>
+<details>
+  <summary>Tax rate and currency: frozen once issued</summary>
+  <p>Your business tax rate and currency symbol are copied onto a booking at the moment it is <em>marked paid</em>, or when its PDF is <em>exported or shared</em> — whichever happens first. Changing Business details afterwards affects only invoices that are still open and unissued. Un-marking a paid invoice releases the freeze again, so if you genuinely need to correct a rate, un-pay, fix the rate, and mark paid again.</p>
+</details>
+<details>
+  <summary>How are totals rounded?</summary>
+  <p>Line amounts are stored as whole minor units (pence, cents). Tax is computed once on the subtotal in basis points and rounded half-up to a whole minor unit. There is no floating-point arithmetic anywhere in the total, so the PDF and the screen always agree to the penny.</p>
+</details>
+<details>
+  <summary>Exporting or sharing the PDF</summary>
+  <p>The PDF is built from exactly the resolved invoice you see on screen, with embedded fonts so accented names and non-Latin currency signs print correctly. <strong>Export</strong> opens the system print/save dialog and writes nothing to disk itself. <strong>Share</strong> creates a temporary copy for the share sheet (it contains the customer's details, so it is deleted the moment the share sheet closes). The file name carries only the invoice number. PDF export and share are part of Trot Pro; the invoice itself — totals, tax line, paid state — is free.</p>
+</details>
+
+<h2 id="clients">Clients and pets</h2>
+<details>
+  <summary>I corrected a client's address — why do old invoices still show the old one?</summary>
+  <p>By design. Each booking takes a snapshot of the client, pet and address when it is saved. Editing a client refreshes only that client's <em>upcoming and unpaid</em> bookings; anything already paid keeps the details the customer was invoiced under.</p>
+</details>
+<details>
+  <summary>What happens to invoices when I delete a client?</summary>
+  <p>Every past booking and its invoice stays exactly as it was, including the name and address snapshot. Only the link to the client record is dropped, so the booking no longer appears under a client card but still appears in the agenda and history.</p>
+</details>
+<details>
+  <summary>Where do grooming notes go?</summary>
+  <p>Each client card holds one dog (name and breed), free-text notes, and a <strong>groom card</strong>: blade, guard, products, coat notes, temperament and handling. The groom card is snapshotted onto every booking, so each visit keeps the recipe it was groomed with, and the next visit starts from the current card. If a client has two dogs, add a second client card for the second dog. There are no photos in this version.</p>
+</details>
+
+<h2 id="plan">What is free, what is Trot Pro</h2>
+<table class="ledger">
+  <thead><tr><th>Feature</th><th>Plan</th></tr></thead>
+  <tbody>
+    <tr><td>Clients, pets, bookings, the day agenda</td><td><span class="chip free">Free</span></td></tr>
+    <tr><td>Invoice totals, tax line, mark as paid / un-pay</td><td><span class="chip free">Free</span></td></tr>
+    <tr><td>Up to <strong>5 active bookings</strong> at once</td><td><span class="chip free">Free</span></td></tr>
+    <tr><td>Invoice history for the last <strong>30 days</strong></td><td><span class="chip free">Free</span></td></tr>
+    <tr><td>Unlimited active bookings</td><td><span class="chip pro">Trot Pro</span></td></tr>
+    <tr><td>Invoice PDF export and share</td><td><span class="chip pro">Trot Pro</span></td></tr>
+    <tr><td>Full invoice and payment history</td><td><span class="chip pro">Trot Pro</span></td></tr>
+  </tbody>
+</table>
+<div class="callout"><strong>"Active" means upcoming or unpaid.</strong> A past booking that has been marked paid no longer counts, so settling an invoice frees a slot. Only actions that would <em>add</em> an active booking are gated — editing, paying and deleting are always allowed on the free plan, even when you are at five.</div>
+<p>Trot Pro is a single <strong>annual subscription</strong>. The price is shown in the app in your own storefront's currency before you confirm; there is no monthly tier and no one-time purchase. If the paywall shows "Loading store price…" for more than a few seconds, check your connection — the app never charges a price it has not received from the App Store.</p>
+
+<h2 id="billing">Restore, cancel, refunds</h2>
+<h3>Restore on a new phone or after reinstalling</h3>
+<p>Open any Pro feature (or <strong>Settings → Trot Pro</strong>) and tap <strong>Restore purchase</strong>. Trot asks the store whether the Apple ID signed in on this device holds an active Trot Pro subscription. If it does, Pro unlocks within a few seconds; if not, you will see "No previous Trot Pro purchase found for this store account" — make sure you are signed in with the same Apple ID that bought it.</p>
+<h3>Cancel</h3>
+<p>Subscriptions are managed by Apple, not inside Trot: <strong>Settings → [your name] → Subscriptions → Trot</strong>, or <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>. Cancel at least 24 hours before the renewal date to avoid the next charge. Pro features stay on until the end of the period you already paid for; after that the app returns to the free tier and <strong>nothing is deleted</strong> — bookings over the cap and older invoices stay stored and reappear in full if you subscribe again.</p>
+<h3>Refunds</h3>
+<p>Apple handles all payments, so refunds go through <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We cannot see your transaction and cannot issue a refund ourselves.</p>
+
+<h2 id="data">Your data and privacy</h2>
+<p>Trot has no account and no server. Clients, pets, bookings, invoices and business details are stored in a local database on your phone and never sent to us — we do not run analytics or advertising SDKs. The only times anything leaves the device are the ones you trigger yourself: sharing a PDF through the share sheet, printing, or opening an address in a maps app (which receives the address text and nothing else). This matches the <a href="https://babycarzta-a11y.github.io/legal/trot/privacy.html">Trot privacy policy</a>.</p>
+<details>
+  <summary>Backups and switching phones</summary>
+  <p>There is no sync or in-app backup in this version. Your iPhone's own backup (iCloud or a computer) includes Trot's database, so restoring a phone from backup brings the ledger with it. Deleting the app deletes everything in it. If a lost phone would hurt, export PDFs of invoices you need to keep — that is the only export today.</p>
+</details>
+<details>
+  <summary>Deleting all data</summary>
+  <p>Deleting the app removes every record. There is no per-record retention: delete a client or a booking and it is gone from the device immediately (paid invoices under a deleted client survive, as described above).</p>
+</details>
+
+<section class="write">
+  <h2>Write to us</h2>
+  <p>Questions, a bug, an invoice that does not add up, a feature you miss on the road — one address, answered by the person who builds Trot.</p>
+  <p><a href="mailto:babycar.zta@gmail.com?subject=Trot%20support">babycar.zta@gmail.com</a></p>
+  <p style="font-size:14px;opacity:.85">Please include your iOS version and, for invoice questions, the invoice number — never the customer's details.</p>
+</section>
+
+<p class="colophon">Updated 8 October 2026 · <a href="https://babycarzta-a11y.github.io/legal/trot/privacy.html">Privacy policy</a> · <a href="https://babycarzta-a11y.github.io/legal/trot/terms.html">Terms</a> · Trot is not affiliated with any grooming franchise, payment processor or mapping provider.</p>
+
+</div>
+</body>
+</html>

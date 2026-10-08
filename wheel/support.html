@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wheel Support — Spin &amp; Random Picker</title>
+<meta name="description" content="Help for Wheel: Spin & Random Picker — how a fair winner is drawn, weights 1–5, pasting a list, the 12-entry free wheel, saved wheels, teams and multiple winners, remove-winner mode, history, themes, Wheel Pro as a one-time purchase, restoring it, and privacy. English and Deutsch.">
+<style>
+  :root{
+    --bg:#FFFDF7; --card:#FFFFFF; --ink:#22202A; --mute:#6E6A78; --line:#ECE6DA;
+    --w1:#F2545B; --w2:#F7B32B; --w3:#2EC4B6; --w4:#5B6CF2; --w5:#9B5DE5;
+    --accent:#5B6CF2; --accent-soft:#E8EAFD; --pop:#F2545B; --pop-soft:#FDE3E4;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#15131B; --card:#1F1C27; --ink:#F4F1F8; --mute:#A9A3B5; --line:#332E3E;
+      --w1:#FF7B80; --w2:#FFC94D; --w3:#4FE0D2; --w4:#8A97FF; --w5:#B98BF0;
+      --accent:#8A97FF; --accent-soft:#272B4D; --pop:#FF7B80; --pop-soft:#45262A; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Trebuchet MS","Nunito","Segoe UI",sans-serif}
+  a{color:var(--accent)}
+  .stripe{height:10px;background:linear-gradient(90deg,var(--w1) 0 20%,var(--w2) 20% 40%,var(--w3) 40% 60%,var(--w4) 60% 80%,var(--w5) 80% 100%)}
+  .box{max-width:700px;margin:0 auto;padding:0 20px 70px}
+  .head{padding:40px 0 10px;display:flex;gap:18px;align-items:center}
+  .wheel{flex:none;width:84px;height:84px;border-radius:50%;background:conic-gradient(var(--w1) 0 72deg,var(--w2) 72deg 144deg,var(--w3) 144deg 216deg,var(--w4) 216deg 288deg,var(--w5) 288deg 360deg);position:relative;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+  .wheel::after{content:"";position:absolute;inset:34px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 2px var(--line)}
+  .wheel::before{content:"";position:absolute;top:-8px;left:50%;margin-left:-8px;border:8px solid transparent;border-top:14px solid var(--ink);border-bottom:0}
+  .head h1{margin:0;font-size:32px;line-height:1.1;letter-spacing:-.5px}
+  .head p{margin:4px 0 0;color:var(--mute)}
+  .switch{display:flex;gap:8px;margin:20px 0 0}
+  .switch a{padding:8px 18px;border-radius:12px;background:var(--card);border:2px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700}
+  .lang{margin-top:34px;border-top:2px dashed var(--line);padding-top:26px}
+  .lang > h2{margin:0 0 20px;font-size:26px}
+  h3{font-size:20px;margin:30px 0 10px;padding-left:14px;border-left:6px solid var(--w2);line-height:1.2}
+  h3.c1{border-color:var(--w1)} h3.c3{border-color:var(--w3)} h3.c4{border-color:var(--w4)} h3.c5{border-color:var(--w5)}
+  p{margin:0 0 12px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:10px 0}
+  .q b{display:block;margin-bottom:4px}
+  .q p{margin:0 0 8px;font-size:15.5px}
+  .q p:last-child{margin:0}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:12px 0}
+  .tile{border-radius:14px;padding:12px 14px;font-size:15px;border:1px solid var(--line);background:var(--card)}
+  .tile.free{border-top:5px solid var(--w3)} .tile.pro{border-top:5px solid var(--w5)}
+  .tile b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+  .tile.free b{color:var(--w3)} .tile.pro b{color:var(--w5)}
+  .callout{background:var(--accent-soft);border-radius:14px;padding:12px 16px;margin:14px 0;font-size:15.5px}
+  .callout.hot{background:var(--pop-soft)}
+  kbd{font:600 13px "Trebuchet MS",sans-serif;background:var(--card);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px}
+  .mailbox{margin-top:36px;padding:22px;border-radius:18px;background:linear-gradient(135deg,var(--accent-soft),var(--pop-soft));text-align:center}
+  .mailbox b{display:block;font-size:19px;margin-bottom:6px}
+  .mailbox a{font-weight:800;font-size:17px;word-break:break-all}
+  .mailbox p{margin:8px 0 0;font-size:14px;color:var(--mute)}
+  .end{margin-top:34px;text-align:center;font-size:13px;color:var(--mute)}
+  .end a{color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<div class="box">
+
+<header class="head">
+  <div class="wheel" aria-hidden="true"></div>
+  <div>
+    <h1>Wheel</h1>
+    <p>Spin &amp; Random Picker · Glücksrad &amp; Zufall — support</p>
+    <nav class="switch" aria-label="Language"><a href="#en">English</a><a href="#de">Deutsch</a></nav>
+  </div>
+</header>
+
+<!-- ================================ EN ================================ -->
+<section class="lang" id="en" lang="en">
+<h2>English</h2>
+
+<h3 class="c1">Is the spin actually fair?</h3>
+<div class="q"><b>How the winner is chosen</b>
+<p>Before the wheel starts moving, Wheel draws the winner with the phone's cryptographic random generator — the same kind used for passwords, not a "pick a slice by where the animation happens to stop" trick. The animation is then aimed so that the wheel comes to rest inside exactly that wedge. The end position and the announced winner can never disagree, and no amount of flicking harder or tapping during the spin changes who was drawn.</p></div>
+<div class="q"><b>Can the odds be influenced?</b>
+<p>Only in the open, with weights. Every entry has a weight from 1 to 5: tap the <kbd>×1</kbd> badge next to an entry to cycle 1 → 2 → 3 → 5 → 1. An entry's chance is its weight divided by the total, and its wedge is drawn proportionally bigger, so everyone watching can see the odds on the wheel itself. Weights are free and are remembered by name, so editing the list never shifts them onto the wrong entry.</p></div>
+<div class="q"><b>Why does an entry appear twice on the wheel?</b>
+<p>Because it is in the list twice. Duplicates are kept on purpose — two tickets for one name is a legitimate way to double someone's chance — and count as separate entries in teams and winner draws.</p></div>
+
+<h3 class="c2">Entries, pasting and the free limit</h3>
+<div class="q"><b>Pasting a list</b>
+<p>Paste a multi-line text into the entry field and every line becomes one entry. A line with commas stays a single entry (so "Smith, Anna" is not split). Blank lines and lines made only of invisible characters are dropped; each label is cut at 200 characters without breaking an emoji.</p></div>
+<div class="q"><b>"Free wheel is full"</b>
+<p>The free plan spins up to <strong>12 entries</strong> on a wheel; Wheel Pro raises that to <strong>50</strong>. If a wheel ever has more than its limit (a long paste, or a saved wheel loaded after Pro lapsed), the extra entries are kept in the list but not painted on the wheel; the list says how many are hidden. Nothing is deleted.</p></div>
+<div class="q"><b>Remove the winner after each spin</b>
+<p>A Wheel Pro switch on the spin screen: each winner leaves the wheel so nobody is picked twice (classroom turns, raffles). <kbd>Put back</kbd> restores all removed entries at once.</p></div>
+
+<h3 class="c3">Saved wheels, teams, winners, history</h3>
+<div class="q"><b>Saved wheels (Pro)</b>
+<p>Give the current wheel a name — "Period 3", "Lunch options", "Giveaway entries" — and reload it with one tap, weights included. The free plan always has one current wheel, which is kept between launches. If Pro lapses, saved wheels stay on the phone (you can still delete them) and reload again once Pro is active.</p></div>
+<div class="q"><b>Teams &amp; winners (Pro)</b>
+<p><kbd>Make teams</kbd> splits the current list into N teams whose sizes differ by at most one. <kbd>Pick winners</kbd> draws several distinct winners at once. Both use the same cryptographic shuffle as the spin.</p></div>
+<div class="q"><b>Spin history (Pro)</b>
+<p>Every winner with the wheel's name and time, so a giveaway or a round of turns has a record. <kbd>Clear history</kbd> empties it.</p></div>
+<div class="q"><b>Ready-made wheels and themes</b>
+<p>Three presets are free: Yes or no, Numbers 1–10, What to eat. Truth or dare, Who pays, Chores, Classroom and Party games are Pro. Two wheel themes (Classic and Candy) are free; Neon, Gold, Wood and Ocean are Pro. Presets come in your app language.</p></div>
+
+<h3 class="c4">Wheel Pro — one purchase</h3>
+<div class="tiles">
+  <div class="tile free"><b>Free</b>Spinning, editing, weights 1–5, the current wheel with up to 12 entries, 3 presets, 2 themes, sound and haptics. No ads, no account.</div>
+  <div class="tile pro"><b>Wheel Pro</b>Unlimited saved wheels, up to 50 entries per wheel, remove-winner mode, teams and multiple winners, spin history, all 8 presets, all 6 themes.</div>
+</div>
+<p>Wheel Pro is a <strong>one-time purchase</strong>, billed once by the App Store at the price shown in the app in your own currency. No subscription, no renewal, nothing to cancel. Under <kbd>Settings → Delete all data</kbd> the current wheel, saved wheels and history are removed, but the purchase is kept and can always be restored.</p>
+<div class="q"><b>Restore on a new iPhone</b>
+<p><kbd>Settings → Restore purchase</kbd>. The App Store checks the Apple ID signed in on this phone; if it bought Wheel Pro, everything unlocks in a few seconds ("Wheel Pro restored"). "The store did not respond" means the request timed out — check the connection and try again; if you were charged just now, Restore is also the right button. Refunds are Apple's: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></div>
+
+<h3 class="c5">Sound, haptics, privacy</h3>
+<div class="q"><b>Turning sound off</b>
+<p>The ratchet click and the result sound are synthesized by the app (no recordings) and follow the switches in Settings; the phone's silent switch also mutes them. Haptics have their own switch.</p></div>
+<div class="q"><b>What leaves the phone?</b>
+<p>Nothing. Entries, saved wheels, weights, history and settings are stored only on your device. Wheel has no account, no server, no analytics and no advertising SDK, and never connects to the internet except for the App Store confirming your purchase. The names you type for a raffle or a class are never seen by us. Deleting the app deletes everything; your own iPhone backup may contain a copy. Full text: <a href="https://babycarzta-a11y.github.io/legal/wheel/privacy.html">privacy policy</a>.</p></div>
+<div class="callout hot">Wheel is a decision and party tool. It is not a gambling product, and nothing in it involves money, prizes or wagers; what you do with a result is yours.</div>
+
+<div class="mailbox"><b>Something spinning the wrong way?</b>
+<a href="mailto:babycar.zta@gmail.com?subject=Wheel%20support">babycar.zta@gmail.com</a>
+<p>Tell us your iOS version and, for a fairness question, the entries and weights on the wheel.</p></div>
+</section>
+
+<!-- ================================ DE ================================ -->
+<section class="lang" id="de" lang="de">
+<h2>Deutsch</h2>
+
+<h3 class="c1">Ist der Dreh wirklich fair?</h3>
+<div class="q"><b>So wird der Gewinner bestimmt</b>
+<p>Bevor sich das Rad bewegt, zieht Wheel den Gewinner mit dem kryptografischen Zufallsgenerator des Geräts — dem gleichen, der für Passwörter verwendet wird. Die Animation wird anschließend so berechnet, dass das Rad genau in diesem Feld stehen bleibt. Endposition und angesagter Gewinner können nie auseinanderfallen, und weder kräftigeres Anschnippen noch Tippen während des Drehs ändert, wer gezogen wurde.</p></div>
+<div class="q"><b>Lassen sich die Chancen beeinflussen?</b>
+<p>Nur offen, über Gewichte. Jeder Eintrag hat ein Gewicht von 1 bis 5: Tippe auf das <kbd>×1</kbd> neben dem Eintrag, um 1 → 2 → 3 → 5 → 1 durchzuschalten. Die Chance ist Gewicht geteilt durch Summe aller Gewichte, und das Feld wird entsprechend breiter gezeichnet — alle sehen die Chancen direkt auf dem Rad. Gewichte sind kostenlos und werden am Namen gemerkt, sodass Änderungen an der Liste sie nie verrutschen lassen.</p></div>
+<div class="q"><b>Warum steht ein Eintrag zweimal auf dem Rad?</b>
+<p>Weil er zweimal in der Liste steht. Duplikate bleiben absichtlich erhalten — zwei Lose für einen Namen verdoppeln die Chance — und zählen bei Teams und Gewinnern als getrennte Einträge.</p></div>
+
+<h3 class="c2">Einträge, Einfügen und das Free-Limit</h3>
+<div class="q"><b>Eine Liste einfügen</b>
+<p>Mehrzeiligen Text ins Eingabefeld einfügen — jede Zeile wird ein Eintrag. Eine Zeile mit Kommas bleibt ein Eintrag („Müller, Anna“ wird nicht geteilt). Leere Zeilen und Zeilen aus unsichtbaren Zeichen werden verworfen; jeder Eintrag wird bei 200 Zeichen abgeschnitten, ohne ein Emoji zu zerstören.</p></div>
+<div class="q"><b>„Free-Rad ist voll“</b>
+<p>Der Free-Plan dreht bis zu <strong>12 Einträge</strong> pro Rad, Wheel Pro bis zu <strong>50</strong>. Hat ein Rad mehr als erlaubt (lange Liste eingefügt oder gespeichertes Rad nach Ablauf von Pro geladen), bleiben die überzähligen Einträge in der Liste, werden aber nicht aufs Rad gemalt; die Liste zeigt, wie viele ausgeblendet sind. Nichts wird gelöscht.</p></div>
+<div class="q"><b>Gewinner nach jedem Dreh entfernen</b>
+<p>Ein Wheel-Pro-Schalter auf dem Dreh-Bildschirm: Jeder Gewinner verlässt das Rad, niemand kommt zweimal dran (Klassenzimmer, Verlosung). <kbd>Zurücklegen</kbd> holt alle entfernten Einträge auf einmal zurück.</p></div>
+
+<h3 class="c3">Gespeicherte Räder, Teams, Gewinner, Verlauf</h3>
+<div class="q"><b>Gespeicherte Räder (Pro)</b>
+<p>Dem aktuellen Rad einen Namen geben — „Klasse 7b“, „Mittagessen“, „Gewinnspiel“ — und mit einem Tipp wieder laden, inklusive Gewichte. Der Free-Plan hat immer ein aktuelles Rad, das zwischen den Starts erhalten bleibt. Läuft Pro aus, bleiben gespeicherte Räder auf dem Gerät (löschen geht weiterhin) und lassen sich mit aktivem Pro wieder laden.</p></div>
+<div class="q"><b>Teams &amp; Gewinner (Pro)</b>
+<p><kbd>Teams bilden</kbd> teilt die aktuelle Liste in N Teams, deren Größen sich um höchstens eins unterscheiden. <kbd>Gewinner ziehen</kbd> zieht mehrere verschiedene Gewinner auf einmal. Beides nutzt denselben kryptografischen Mischvorgang wie der Dreh.</p></div>
+<div class="q"><b>Dreh-Verlauf (Pro)</b>
+<p>Jeder Gewinner mit Radname und Uhrzeit — als Beleg für eine Verlosung oder eine Runde. <kbd>Verlauf löschen</kbd> leert ihn.</p></div>
+<div class="q"><b>Fertige Räder und Designs</b>
+<p>Drei Vorlagen sind kostenlos: Ja oder Nein, Zahlen 1–10, Was essen. Wahrheit oder Pflicht, Wer zahlt, Hausarbeit, Klassenzimmer und Partyspiele gehören zu Pro. Zwei Rad-Designs (Classic und Candy) sind kostenlos; Neon, Gold, Holz und Ozean sind Pro. Vorlagen erscheinen in deiner App-Sprache.</p></div>
+
+<h3 class="c4">Wheel Pro — ein einziger Kauf</h3>
+<div class="tiles">
+  <div class="tile free"><b>Kostenlos</b>Drehen, bearbeiten, Gewichte 1–5, das aktuelle Rad mit bis zu 12 Einträgen, 3 Vorlagen, 2 Designs, Ton und Haptik. Keine Werbung, kein Konto.</div>
+  <div class="tile pro"><b>Wheel Pro</b>Unbegrenzt gespeicherte Räder, bis zu 50 Einträge pro Rad, Gewinner-entfernen-Modus, Teams und mehrere Gewinner, Dreh-Verlauf, alle 8 Vorlagen, alle 6 Designs.</div>
+</div>
+<p>Wheel Pro ist ein <strong>einmaliger Kauf</strong>, einmal vom App Store zum in der App angezeigten Preis in deiner Währung abgerechnet. Kein Abo, keine Verlängerung, nichts zu kündigen. <kbd>Einstellungen → Alle Daten löschen</kbd> entfernt aktuelles Rad, gespeicherte Räder und Verlauf; der Kauf bleibt erhalten und kann jederzeit wiederhergestellt werden.</p>
+<div class="q"><b>Auf einem neuen iPhone wiederherstellen</b>
+<p><kbd>Einstellungen → Käufe wiederherstellen</kbd>. Der App Store prüft die auf diesem Gerät angemeldete Apple-ID; hat sie Wheel Pro gekauft, wird alles in wenigen Sekunden freigeschaltet („Wheel Pro wiederhergestellt“). „Der Store hat nicht geantwortet“ heißt: Zeitüberschreitung — Verbindung prüfen und erneut versuchen; wurde gerade ein Betrag abgebucht, ist Wiederherstellen ebenfalls der richtige Knopf. Rückerstattungen laufen über Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></div>
+
+<h3 class="c5">Ton, Haptik, Datenschutz</h3>
+<div class="q"><b>Ton ausschalten</b>
+<p>Ratschen-Klick und Ergebniston werden von der App selbst erzeugt (keine Aufnahmen) und folgen den Schaltern in den Einstellungen; der Stumm-Schalter des iPhones schaltet sie ebenfalls ab. Haptik hat einen eigenen Schalter.</p></div>
+<div class="q"><b>Was verlässt das Gerät?</b>
+<p>Nichts. Einträge, gespeicherte Räder, Gewichte, Verlauf und Einstellungen liegen nur auf deinem Gerät. Wheel hat kein Konto, keinen Server, keine Analyse- und keine Werbe-SDKs und verbindet sich nur zur Kaufbestätigung mit dem App Store. Die Namen, die du für eine Verlosung oder eine Klasse eingibst, sehen wir nie. Beim Löschen der App ist alles weg; dein eigenes iPhone-Backup kann eine Kopie enthalten. Vollständiger Text (Englisch): <a href="https://babycarzta-a11y.github.io/legal/wheel/privacy.html">Datenschutzerklärung</a>.</p></div>
+<div class="callout hot">Wheel ist ein Entscheidungs- und Partywerkzeug, kein Glücksspiel: Es gibt kein Geld, keine Einsätze und keine Preise in der App.</div>
+
+<div class="mailbox"><b>Dreht sich etwas falsch?</b>
+<a href="mailto:babycar.zta@gmail.com?subject=Wheel%20Support">babycar.zta@gmail.com</a>
+<p>Bitte iOS-Version nennen und bei Fairness-Fragen die Einträge und Gewichte des Rads.</p></div>
+</section>
+
+<p class="end">Updated 8 October 2026 · Stand: 8. Oktober 2026 · <a href="https://babycarzta-a11y.github.io/legal/wheel/privacy.html">Privacy</a> · <a href="https://babycarzta-a11y.github.io/legal/wheel/terms.html">Terms</a></p>
+
+</div>
+</body>
+</html>

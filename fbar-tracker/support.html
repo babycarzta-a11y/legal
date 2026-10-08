@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FBAR Tracker Support — FinCEN 114</title>
+<meta name="description" content="Help for FBAR Tracker: how the $10,000 aggregate is computed from your foreign accounts, exchange rates and the stale banner, balance history with frozen rates, the monthly reminder and the crossing alert, what the free tier includes, Premium, restore and cancel, and what leaves your phone (only a rate request).">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg2:#F3F6F9; --ink:#0B1F33; --grey:#5B6B7B; --line:#D5DEE7;
+    --navy:#153E6B; --navy-soft:#E3ECF6; --green:#1E7A4D; --green-soft:#DFF3E7; --amber:#9A6700; --amber-soft:#FFF4D6; --red:#B42318;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0E151D; --bg2:#151F2A; --ink:#E8EEF4; --grey:#9DAEBF; --line:#263443;
+      --navy:#8DB7E8; --navy-soft:#17283B; --green:#6CCB95; --green-soft:#153327; --amber:#E8B84A; --amber-soft:#3A2E10; --red:#F08A80; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--navy)}
+  .band{background:var(--navy);color:#fff}
+  .band .in{max-width:840px;margin:0 auto;padding:40px 24px 34px}
+  .band .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin:0 0 10px}
+  .band h1{margin:0 0 10px;font-size:32px;line-height:1.15;font-weight:700;letter-spacing:-.3px}
+  .band p{margin:0;max-width:600px;opacity:.92}
+  .band .line{display:inline-block;margin-top:18px;padding:6px 12px;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:13px;font-variant-numeric:tabular-nums}
+  .main{max-width:840px;margin:0 auto;padding:0 24px 72px;display:grid;grid-template-columns:200px 1fr;gap:40px}
+  @media (max-width:700px){.main{grid-template-columns:1fr;gap:0}}
+  aside{position:sticky;top:0;align-self:start;padding-top:28px}
+  aside ol{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+  aside li a{display:block;padding:6px 14px;text-decoration:none;color:var(--grey);font-size:14px;border-left:2px solid transparent;margin-left:-2px}
+  aside li a:hover{color:var(--navy);border-left-color:var(--navy)}
+  @media (max-width:700px){aside{position:static;padding-top:20px}aside ol{display:flex;flex-wrap:wrap;gap:6px;border:0}aside li a{border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin:0}}
+  article{padding-top:28px;min-width:0}
+  h2{font-size:21px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h2:first-child{margin-top:0}
+  h3{font-size:16px;margin:20px 0 6px}
+  p{margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 18px}
+  th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);font-weight:600}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .status{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap}
+  .ok{background:var(--green-soft);color:var(--green)} .part{background:var(--amber-soft);color:var(--amber)} .prem{background:var(--navy-soft);color:var(--navy)}
+  .box{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:14px 0}
+  .box.warn{border-left:4px solid var(--amber)}
+  .box.legal{border-left:4px solid var(--red);font-size:14.5px}
+  .q{font-weight:700;margin:18px 0 4px}
+  .q + p{margin-left:0}
+  ul{margin:0 0 12px;padding-left:22px}
+  li{margin:3px 0}
+  code{font:14px Menlo,Consolas,monospace;background:var(--bg2);padding:1px 5px;border-radius:4px}
+  .contact{margin-top:44px;padding:20px;border:1px solid var(--line);border-radius:8px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+  .contact .ico{width:44px;height:44px;border-radius:8px;background:var(--navy-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+  .contact a{font-weight:700;font-size:17px;word-break:break-all}
+  .contact p{margin:0;font-size:14px;color:var(--grey)}
+  .foot{margin-top:28px;font-size:13px;color:var(--grey)}
+  .foot a{color:var(--grey)}
+</style>
+</head>
+<body>
+
+<div class="band"><div class="in">
+  <p class="kicker">Support</p>
+  <h1>FBAR Tracker</h1>
+  <p>Converts the balances of your foreign accounts to US dollars at the rate in force when you enter them, sums them, and shows where the total stands against the FinCEN 114 reporting line — on your phone, with no account and no bank login.</p>
+  <span class="line">Aggregate threshold: USD 10,000.00 · fixed</span>
+</div></div>
+
+<div class="main">
+<aside><ol>
+  <li><a href="#how">How the number is made</a></li>
+  <li><a href="#rates">Exchange rates</a></li>
+  <li><a href="#history">History &amp; the chart</a></li>
+  <li><a href="#alerts">Reminder &amp; alert</a></li>
+  <li><a href="#entry">Entering balances</a></li>
+  <li><a href="#plan">Free vs Premium</a></li>
+  <li><a href="#sub">Restore &amp; cancel</a></li>
+  <li><a href="#privacy">Privacy</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ol></aside>
+
+<article>
+<h2 id="how">How the number on the Dashboard is made</h2>
+<p>Each account has a currency and a latest balance. The app multiplies every balance by that currency's rate against the US dollar, adds the results, and compares the sum with <strong>$10,000</strong>. The Dashboard shows the aggregate in USD, the percentage of the line it represents, and one of four conversion states:</p>
+<table>
+  <tr><th>State</th><th>Meaning</th></tr>
+  <tr><td><span class="status ok">Converted</span></td><td>Every account has a usable rate; the total is complete.</td></tr>
+  <tr><td><span class="status part">Partial</span></td><td>At least one account's currency has no rate right now. Those accounts are listed separately and <em>excluded</em> from the total rather than silently counted as $0 — so a "Partial" total is a floor, not the full figure.</td></tr>
+  <tr><td><span class="status part">Stale</span></td><td>The rate table is older than an hour and could not be refreshed; the total uses the last-known-good rates and a banner says so.</td></tr>
+  <tr><td><span class="status part">Unavailable</span></td><td>No rates have ever been downloaded on this phone. Connect once; balances you saved meanwhile are kept and filled in as soon as rates arrive.</td></tr>
+</table>
+<div class="box legal"><strong>What the app is not.</strong> FBAR Tracker does arithmetic on numbers you type. It does not know your filing obligations, the year's peak balance, or whether a given account must be reported; the FinCEN rule is based on the highest aggregate value at any point in the calendar year, and the app shows the aggregate <em>as of the entries you made</em>. Confirm anything that matters with a tax professional or <a href="https://www.fincen.gov">fincen.gov</a>. The app is not affiliated with FinCEN, the IRS or any bank.</div>
+
+<h2 id="rates">Exchange rates</h2>
+<p class="q">Where do rates come from, and what do you send?</p>
+<p>From a public table published by a third-party provider (ExchangeRate-API). The request asks only for the current rates against the US dollar — it carries no balances, no account names, not even which currencies you use. The table is cached for one hour; within that hour the app does not call out at all.</p>
+<p class="q">The yellow "rates may be stale" banner</p>
+<p>The last download failed (offline, provider down, or the provider's quota exhausted) and the app is using the previous table. Totals are still shown so you can keep working; tap the refresh action on the Dashboard banner when you are back online. If the banner persists for days while you are online, write to us — the provider may have changed something.</p>
+<p class="q">Can I type my own rate?</p>
+<p>No. Rates are always the provider's, captured per entry. If you need a rate from a specific source (for example the Treasury year-end rate for your actual filing), use that rate in your filing; the app's figures are for monitoring during the year.</p>
+
+<h2 id="history">Balance history and the chart</h2>
+<p class="q">Why does an old entry keep its old USD value after rates change?</p>
+<p>By design. Every saved balance stores the exchange rate and the USD value <em>at the moment you entered it</em> and is never recomputed. The History chart is therefore a record of what the aggregate <strong>was</strong> at each date, usable as evidence of when the line was crossed. Only the Dashboard uses live rates.</p>
+<p class="q">Entries saved offline</p>
+<p>They are stored immediately with the USD value left blank, and filled in the first time a rate table arrives afterwards. Saving never waits for the network.</p>
+<p class="q">I deleted an account — why is it still in the chart's past?</p>
+<p>Deleting an account removes it from the running total from the moment of deletion, but its earlier contribution stays in the chart. Otherwise deleting an account could retroactively erase a crossing that did happen. The account's entries are kept as a tombstone for that purpose only; the account no longer appears anywhere else.</p>
+
+<h2 id="alerts">The monthly reminder and the crossing alert</h2>
+<p class="q">Monthly balance reminder (free)</p>
+<p>Switch it on in Settings. A local notification asks you to log fresh balances once a month, on the same day of the month you switched it on; if that was the 31st, short months fire on their last day. It is scheduled on the phone — there is no server behind it — and re-planned every time the app starts.</p>
+<p class="q">Threshold alert (Premium)</p>
+<p>"Alert me at <em>N</em>% of $10,000" fires once when the aggregate <strong>crosses upward</strong> through your chosen percentage. It does not repeat while you stay above it and never fires on the way down; it fires again only after you have dropped below and crossed up again. The default percentage is adjustable in Settings.</p>
+<p class="q">Nothing fired</p>
+<p>Check iOS Settings → Notifications → FBAR Tracker. The app asks for permission the first time you switch either notification on; the in-app toggle shows a "notifications are off at the system level" note if iOS is blocking them. The crossing alert also needs a fresh rate table to notice a crossing — open the app occasionally so one can be fetched.</p>
+
+<h2 id="entry">Entering balances</h2>
+<ul>
+  <li><strong>Quick Update</strong> on the Dashboard opens a single numeric field aimed at one account (pre-selected if you have only one) and writes a new history entry without opening the account editor.</li>
+  <li>A <strong>comma</strong> is accepted only as a decimal separator with one or two digits after it (<code>1234,50</code>). Thousands separators are refused on purpose — <code>10,000</code> would otherwise be read as ten. Type <code>10000</code>.</li>
+  <li>Values above 10 trillion, and anything that is not a finite number, are rejected.</li>
+  <li>The currency list is built into the app (an ISO 4217 subset) and works offline; if yours is missing, tell us.</li>
+</ul>
+
+<h2 id="plan">What is free, what is Premium</h2>
+<table>
+  <tr><th>Feature</th><th>Free</th><th>Premium</th></tr>
+  <tr><td>Foreign accounts tracked together</td><td class="num">1</td><td class="num">unlimited</td></tr>
+  <tr><td>Balance history and chart</td><td class="num">last 90 days</td><td class="num">all of it</td></tr>
+  <tr><td>Aggregate vs $10,000, conversion states, stale banner</td><td>yes</td><td>yes</td></tr>
+  <tr><td>Monthly balance reminder</td><td>yes</td><td>yes</td></tr>
+  <tr><td>Quick Update, offline currency list</td><td>yes</td><td>yes</td></tr>
+  <tr><td>Threshold-crossing alert at a chosen %</td><td>—</td><td>yes</td></tr>
+</table>
+<p>Premium is an <strong>annual subscription</strong>, priced by the App Store in your storefront currency and shown in the app before you confirm; there is no monthly plan and no lifetime unlock. Entries older than 90 days are not deleted on the free tier — they are hidden from History and come back if you subscribe.</p>
+<div class="box warn">Settings still shows a "Widgets &amp; Shortcuts — coming soon" card. There is no widget in this version; it is a placeholder, not a paid feature. Use Quick Update for fast balance entry.</div>
+
+<h2 id="sub">Restore, cancel</h2>
+<h3>Restore after reinstalling or on a new iPhone</h3>
+<p>Settings → Premium → <strong>Restore purchases</strong>. The App Store checks the Apple ID on this phone for an active FBAR Tracker Premium subscription and unlocks it within a few seconds. "No previous purchase" means a different Apple ID bought it — sign in with that one and restore again.</p>
+<h3>Cancel</h3>
+<p>Through Apple, not in the app: Settings → [your name] → Subscriptions → FBAR Tracker, or <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>, at least 24 hours before the renewal date. Premium stays active until the end of the paid period; afterwards you keep the first account you created and the last 90 days of history on screen, and nothing is erased. Refund requests go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>; we never see the transaction.</p>
+
+<h2 id="privacy">Privacy, concretely</h2>
+<p>Accounts, balances, captured rates and settings live in a database on your phone. There is no user account, no server of ours, no analytics and no advertising SDK. The <em>only</em> network call the app makes is the exchange-rate request described above, which contains nothing about you beyond what any web request carries (such as your IP address). Notifications are local. Deleting the app deletes all its data; your iPhone backup may contain a copy according to your own backup settings. This matches the <a href="https://babycarzta-a11y.github.io/legal/fbar-tracker/privacy.html">FBAR Tracker privacy policy</a>.</p>
+<p>There is no export in this version. If you need figures for your preparer, write them down from the History screen.</p>
+
+<div class="contact" id="contact">
+  <div class="ico" aria-hidden="true">@</div>
+  <div>
+    <a href="mailto:babycar.zta@gmail.com?subject=FBAR%20Tracker%20support">babycar.zta@gmail.com</a>
+    <p>One person reads this. Include your iOS version and, for conversion questions, the currency involved — never balances or account numbers.</p>
+  </div>
+</div>
+
+<p class="foot">Updated 8 October 2026 · <a href="https://babycarzta-a11y.github.io/legal/fbar-tracker/privacy.html">Privacy policy</a> · <a href="https://babycarzta-a11y.github.io/legal/fbar-tracker/terms.html">Terms</a></p>
+</article>
+</div>
+
+</body>
+</html>

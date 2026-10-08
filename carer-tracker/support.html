@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carer's Allowance Tracker Support</title>
+<meta name="description" content="Help for Carer's Allowance Tracker: how SAFE, WATCH and OVER are worked out from your pay and allowed deductions, the weekly earnings limit and where it comes from, regular vs fluctuating pay, What-If, PDF export, the free tier and Premium, restore and cancel, and privacy.">
+<style>
+  :root{
+    --bg:#FBF7FA; --card:#FFFFFF; --ink:#2B1B33; --soft:#6E5F77; --line:#E6DCE6;
+    --plum:#6B2D7A; --plum-soft:#F0E4F3; --safe:#1B7F5B; --safe-soft:#DDF3EA; --watch:#A85B00; --watch-soft:#FFEFD6; --over:#B3261E; --over-soft:#FCE1DE;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#1A1420; --card:#241B2B; --ink:#F3EAF5; --soft:#B6A6BD; --line:#3A2E42;
+      --plum:#D3A6E0; --plum-soft:#3A2744; --safe:#73D3A9; --safe-soft:#173A2C; --watch:#F0B45A; --watch-soft:#3F2C12; --over:#F2918A; --over-soft:#44201E; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Avenir Next","Segoe UI",Verdana,sans-serif}
+  a{color:var(--plum)}
+  .wrap{max-width:700px;margin:0 auto;padding:0 20px 70px}
+  .hero{padding:48px 0 10px}
+  .hero .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);margin:0 0 8px}
+  .hero h1{font-size:34px;line-height:1.15;margin:0 0 12px;font-weight:800;letter-spacing:-.5px}
+  .hero p{margin:0;color:var(--soft);font-size:17px}
+  .verdicts{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+  .v{padding:8px 14px;border-radius:999px;font-weight:800;font-size:13px;letter-spacing:.08em}
+  .v.safe{background:var(--safe-soft);color:var(--safe)} .v.watch{background:var(--watch-soft);color:var(--watch)} .v.over{background:var(--over-soft);color:var(--over)}
+  .menu{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:15px}
+  @media (max-width:480px){.menu{grid-template-columns:1fr}}
+  .menu a{text-decoration:none;color:var(--ink);font-weight:600;border-bottom:2px solid var(--plum-soft)}
+  h2{font-size:23px;font-weight:800;letter-spacing:-.3px;margin:46px 0 12px}
+  h2 .pill{display:inline-block;vertical-align:middle;margin-left:10px;padding:2px 9px;border-radius:999px;background:var(--plum-soft);color:var(--plum);font-size:12px;font-weight:700;letter-spacing:.06em}
+  p{margin:0 0 12px}
+  .rule{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:12px 0}
+  .rule h3{margin:0 0 8px;font-size:17px;font-weight:800}
+  .rule ol,.rule ul{margin:0;padding-left:22px}
+  .rule li{margin:5px 0}
+  .faq{border-top:1px solid var(--line)}
+  .faq div{padding:16px 0;border-bottom:1px solid var(--line)}
+  .faq b{display:block;margin-bottom:5px;font-size:16.5px}
+  .faq p{font-size:16px;margin:0 0 6px}
+  .faq p:last-child{margin:0}
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+  @media (max-width:520px){.plans{grid-template-columns:1fr}}
+  .plan{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px 18px}
+  .plan.paid{border-color:var(--plum)}
+  .plan h3{margin:0 0 10px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
+  .plan ul{margin:0;padding-left:20px;font-size:15.5px}
+  .plan li{margin:4px 0}
+  .notice{background:var(--plum-soft);border-radius:14px;padding:14px 18px;margin:16px 0;font-size:15.5px}
+  .notice.red{background:var(--over-soft);color:var(--ink)}
+  .reach{margin-top:46px;text-align:center;padding:30px 20px;background:var(--card);border:1px solid var(--line);border-radius:20px}
+  .reach h2{margin:0 0 8px}
+  .reach a.m{display:inline-block;margin:6px 0 10px;padding:12px 22px;border-radius:999px;background:var(--plum);color:#fff;text-decoration:none;font-weight:800;word-break:break-all}
+  .reach p{font-size:14.5px;color:var(--soft);margin:0}
+  .small{margin-top:26px;font-size:13px;color:var(--soft);text-align:center}
+  .small a{color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Support</p>
+  <h1>Carer's Allowance Tracker</h1>
+  <p>Enter each payslip, see at once whether your earnings sit under the Carer's Allowance weekly limit — with the deductions the rules allow, worked out for you and kept as a record for each pay period.</p>
+  <div class="verdicts" aria-hidden="true"><span class="v safe">SAFE</span><span class="v watch">WATCH</span><span class="v over">OVER LIMIT</span></div>
+  <ul class="menu">
+    <li><a href="#verdict">How the verdict is worked out</a></li>
+    <li><a href="#limit">Where the limit comes from</a></li>
+    <li><a href="#regular">Regular vs fluctuating pay</a></li>
+    <li><a href="#history">History &amp; What-If</a></li>
+    <li><a href="#plans">Free and Premium</a></li>
+    <li><a href="#billing">Restore &amp; cancel</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#contact">Get in touch</a></li>
+  </ul>
+</header>
+
+<h2 id="verdict">How SAFE / WATCH / OVER is worked out</h2>
+<div class="rule">
+  <h3>For every pay entry the app does the same four steps</h3>
+  <ol>
+    <li><strong>Start from net pay</strong> for the period (after tax and National Insurance — what reached your bank).</li>
+    <li><strong>Take off allowed deductions.</strong> Care costs that enable you to work (paying someone other than a close relative to look after the person you care for, or your children) and pension contributions are each deducted up to a <em>cap of half</em> of the period's net pay — whichever is lower, the cap or what you entered. Work equipment or specialist clothing, travel for work and business costs are deducted in full.</li>
+    <li><strong>Convert to a weekly figure.</strong> Weekly pay counts as it is; four-weekly pay ÷ 4; monthly pay × 12 ÷ 52.</li>
+    <li><strong>Compare with the weekly earnings limit.</strong> Under 90 % of the limit = <span class="v safe" style="padding:2px 8px">SAFE</span>; between 90 % and the limit = <span class="v watch" style="padding:2px 8px">WATCH</span>; at or over = <span class="v over" style="padding:2px 8px">OVER LIMIT</span>. The app also tells you roughly how much room is left.</li>
+  </ol>
+</div>
+<div class="faq">
+  <div><b>I have two jobs — which one is tested?</b><p>Neither on its own: the limit applies to your <em>total</em> earnings. With Premium you can add more than one income source; the Dashboard adds each source's latest weekly figure together and gives the verdict on the combined amount, with a per-source breakdown underneath. On the free plan the app tracks one job, so if you have a second income the single-job verdict is not the whole picture.</p></div>
+  <div><b>Does the app know about the Carer's Allowance rate or other benefits?</b><p>It shows the weekly rate for information only. It does not calculate Universal Credit, Carer's Element, overlapping benefits or anything else, and it cannot tell you whether you are entitled to Carer's Allowance. It only tests earnings against the limit.</p></div>
+</div>
+<div class="notice red"><strong>Not a DWP tool, not advice.</strong> The app applies the published earnings rule as we understand it to figures you type. A WATCH or OVER result is a prompt to check with the Carer's Allowance Unit, Citizens Advice or a welfare rights adviser before you rely on it — and a SAFE result does not replace reporting a change of earnings to DWP. The app is not affiliated with the Department for Work and Pensions or Carers UK.</div>
+
+<h2 id="limit">Where the limit, rate and caps come from</h2>
+<p>The weekly earnings limit, the weekly allowance rate and the two deduction caps are not hard-coded. They sit in a small dated rules file: each value carries the date it took effect, the official gov.uk page it came from and the date we last checked it. The app downloads a fresh copy of that file (an 8-second timeout, then it falls back to the last copy it saved, then to the copy built into the app). The verdict never waits for the network, and a malformed or impossible download is rejected rather than used.</p>
+<div class="faq">
+  <div><b>The limit went up in April — are my old entries recalculated?</b><p>No, deliberately. Every entry stores the limit it was judged against at the time, together with the deductions applied, the weekly figure and the verdict. An uprating changes verdicts for new entries only, so your history remains an honest record of what was true in each period.</p></div>
+  <div><b>Can I see which limit an entry used?</b><p>Yes — open the entry from History; the limit in force and the breakdown are shown on the detail screen.</p></div>
+</div>
+
+<h2 id="regular">"Is your pay the same amount every payday?"</h2>
+<p>The first screen asks this because the weekly-conversion rule above is only right for <strong>regular</strong> pay. If your amount changes from payslip to payslip (variable hours, shifts, zero-hours), DWP averages earnings over a period, and this version of the app cannot do that calculation. Rather than show a SAFE that might be wrong, the app sends fluctuating-pay carers to a screen that says so. Anything you had already saved is kept. If you chose "fluctuating" by mistake, tap <em>"Actually, my pay is regular"</em> on that screen.</p>
+
+<h2 id="history">History, What-If and export</h2>
+<div class="faq">
+  <div><b>Why can't I edit an entry?</b><p>Entries are immutable once saved so the history is evidence-grade: you can delete an entry and add a corrected one, but never change what was recorded. The free plan shows your last four entries; Premium shows all of them.</p></div>
+  <div><b>What-If</b><p>From the Dashboard, try a different pay, frequency or deductions before a pay rise or a change of hours; the same engine gives the verdict instantly. On the free plan it is a scratchpad — "Preview only, not saved to your history". Premium lets you save several scenarios and compare them side by side.</p></div>
+  <div><b>PDF export (Premium)</b><p>Choose a date range and the app generates a PDF of those pay periods — entries, deductions, weekly figures, verdicts and the limit used — with the same disclaimer the app shows on screen. It goes out through the iOS print dialog or the share sheet, to Citizens Advice, an adviser or your own files; nothing is uploaded anywhere.</p></div>
+  <div><b>Payday reminder (Premium)</b><p>A local notification on your payday, following your pay frequency, nudging you to log the payslip. Dates are calculated by calendar day, so the clocks changing never moves it.</p></div>
+</div>
+
+<h2 id="plans">Free and Premium</h2>
+<div class="plans">
+  <div class="plan"><h3>Free</h3><ul>
+    <li>SAFE / WATCH / OVER check for every entry — always free</li>
+    <li>Allowed deductions and the weekly figure</li>
+    <li>One job (income source)</li>
+    <li>Your last 4 pay entries</li>
+    <li>What-If as a preview</li>
+    <li>Rules updates</li>
+  </ul></div>
+  <div class="plan paid"><h3>Premium · yearly</h3><ul>
+    <li>Full pay history</li>
+    <li>PDF export of any date range</li>
+    <li>Save and compare several What-If scenarios</li>
+    <li>More than one job, combined verdict</li>
+    <li>Payday reminder</li>
+  </ul></div>
+</div>
+<p>Premium is an annual subscription billed by Apple at the price shown in the app in your own currency; there is no monthly option. Older entries beyond the last four are never deleted on the free plan — they are kept and shown again if you subscribe.</p>
+
+<h2 id="billing">Restore and cancel</h2>
+<div class="faq">
+  <div><b>Restore on a new phone</b><p>Settings → <strong>Restore purchase</strong>. You will see "Restore requested…" and, if the Apple ID on this phone holds an active subscription, Premium unlocks within a moment. If nothing happens, check you are signed in to the App Store with the Apple ID that bought it.</p></div>
+  <div><b>Cancel</b><p>Through your Apple ID, not in the app: Settings → [your name] → Subscriptions → Carer's Allowance Tracker, or <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>, at least 24 hours before renewal. Premium lasts to the end of the period already paid; afterwards you keep the free features and all your data stays on the phone.</p></div>
+  <div><b>Refund</b><p>Apple takes the payment, so a refund is requested from Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We cannot see your transaction.</p></div>
+</div>
+
+<h2 id="privacy">Privacy</h2>
+<p>Your pay entries, deductions, income sources and settings are stored on your phone only. There is no account, no server of ours, no analytics and no advertising. Two things touch the network and neither carries anything about you: the rules file described above, downloaded from a static page we host on GitHub Pages, and the App Store checking your subscription. The payday reminder is a local notification. A PDF leaves the phone only to the destination you choose in the share sheet. Deleting the app deletes all of its data; your own iPhone backup may hold a copy. Full text: <a href="https://babycarzta-a11y.github.io/legal/carer-tracker/privacy.html">privacy policy</a>.</p>
+
+<section class="reach" id="contact">
+  <h2>Get in touch</h2>
+  <a class="m" href="mailto:babycar.zta@gmail.com?subject=Carer%27s%20Allowance%20Tracker%20support">babycar.zta@gmail.com</a>
+  <p>Say which screen you were on and your pay frequency. Please don't send payslips or National Insurance numbers — the figures from the app's breakdown are enough.</p>
+</section>
+
+<p class="small">Updated 8 October 2026 · <a href="https://babycarzta-a11y.github.io/legal/carer-tracker/privacy.html">Privacy</a> · <a href="https://babycarzta-a11y.github.io/legal/carer-tracker/terms.html">Terms</a></p>
+
+</div>
+</body>
+</html>
