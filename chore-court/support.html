@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chore Court Support — Chores &amp; Cards</title>
+<meta name="description" content="Help for Chore Court: Chores &amp; Cards — the Quest Board, card reveals and rarity odds, the binder, streaks, the parent gate, Free vs Premium (2 people / 5 chores vs 8 / 30), restoring and cancelling, and why nothing leaves the phone.">
+<style>
+  :root{
+    --bg:#F4F1FF; --panel:#FFFFFF; --line:#DAD4F2; --ink:#241E3F; --mute:#6B6487;
+    --violet:#4B3FA7; --violet-wash:#E6E2FA; --gold:#C98A12; --gold-wash:#FBF0D3;
+    --common:#5E7C8A; --rare:#2E7FB8; --epic:#8A3DB8; --legend:#C98A12;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#17142A; --panel:#211D38; --line:#352F55; --ink:#F0EDFF; --mute:#A9A3C6;
+      --violet:#AFA3FF; --violet-wash:#2A2550; --gold:#F0C04E; --gold-wash:#3C3217;
+      --common:#9FB7C2; --rare:#78B7E8; --epic:#C690EA; --legend:#F0C04E; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Avenir Next","Nunito","Segoe UI",-apple-system,"Helvetica Neue",sans-serif}
+  a{color:var(--violet)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 80px}
+  .hero{padding:56px 0 20px;text-align:center}
+  .badge{display:inline-flex;align-items:center;gap:10px;background:var(--violet);color:#fff;border-radius:999px;padding:8px 18px 8px 10px;font-weight:800;font-size:15px;letter-spacing:.02em}
+  .badge span{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#241E3F;line-height:28px;text-align:center;font-size:15px}
+  .hero h1{margin:18px 0 4px;font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.6px}
+  .hero .tag{margin:0;color:var(--mute);font-weight:600}
+  .hero .intro{margin:18px auto 0;max-width:600px;text-align:left}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px 0 10px}
+  .toc a{text-decoration:none;color:var(--violet);background:var(--violet-wash);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px}
+  h2{font-size:24px;font-weight:900;margin:52px 0 12px;letter-spacing:-.3px;display:flex;align-items:center;gap:12px}
+  h2::after{content:"";flex:1;height:2px;background:var(--line);border-radius:2px}
+  h3{font-size:17px;font-weight:800;margin:22px 0 6px}
+  p{margin:0 0 12px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0}
+  .steps{list-style:none;padding:0;margin:0;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:6px 0 6px 44px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:30px;height:30px;border-radius:10px;background:var(--gold-wash);color:var(--gold);font-weight:900;text-align:center;line-height:30px;font-size:14px}
+  details{border-bottom:1px solid var(--line);padding:4px 0}
+  details:last-of-type{border-bottom:0}
+  summary{cursor:pointer;font-weight:800;padding:10px 0;list-style:none;position:relative;padding-right:28px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"›";position:absolute;right:4px;top:8px;font-size:22px;color:var(--gold);transform:rotate(90deg);transition:transform .15s}
+  details[open] summary::after{transform:rotate(-90deg)}
+  details p,details ul{margin:0 0 12px;color:var(--ink)}
+  details ul{padding-left:20px}
+  .odds{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+  .odds div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center}
+  .odds b{display:block;font-size:22px;font-weight:900}
+  .odds small{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .odds i{display:block;font-style:normal;font-size:12px;color:var(--mute);margin-top:2px}
+  .c{color:var(--common)} .r{color:var(--rare)} .e{color:var(--epic)} .l{color:var(--legend)}
+  table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--violet-wash);color:var(--violet);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  tr:last-child td{border-bottom:0}
+  .tier{display:inline-block;border-radius:8px;padding:2px 9px;font-size:12px;font-weight:900;letter-spacing:.04em}
+  .tier.free{background:var(--violet-wash);color:var(--violet)}
+  .tier.prem{background:var(--gold-wash);color:var(--gold)}
+  .note{background:var(--gold-wash);border-radius:14px;padding:12px 16px;margin:16px 0;font-size:15px}
+  .note strong{color:var(--gold)}
+  .contact{margin-top:56px;background:var(--panel);border:2px solid var(--gold);border-radius:20px;padding:26px 24px;text-align:center}
+  .contact h2{justify-content:center;margin:0 0 8px}
+  .contact h2::after{display:none}
+  .contact a.mail{display:inline-block;margin:8px 0;font-size:20px;font-weight:800;word-break:break-all}
+  .foot{margin-top:28px;text-align:center;font-size:13px;color:var(--mute)}
+  .foot a{color:var(--mute)}
+  @media (max-width:540px){.hero h1{font-size:32px}.odds{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="badge"><span aria-hidden="true">★</span>Support</div>
+  <h1>Chore Court</h1>
+  <p class="tag">Chores &amp; Cards — help for parents</p>
+  <p class="intro">Chore Court turns a family chore list into a card game: a child picks their name on the Quest Board, taps a chore done, and a collectible card is revealed and added to their binder. The whole household shares one phone, there is no account, and the only way to earn a card is to finish a chore. This page explains the rules the app follows, what is free, and how to reach the person who makes it.</p>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <a href="#board">Quest Board</a>
+  <a href="#cards">Cards &amp; odds</a>
+  <a href="#binder">Binder</a>
+  <a href="#streaks">Streaks</a>
+  <a href="#parents">Parent area</a>
+  <a href="#premium">Free vs Premium</a>
+  <a href="#billing">Restore &amp; cancel</a>
+  <a href="#privacy">Your data</a>
+</nav>
+
+<h2 id="board">The Quest Board</h2>
+<div class="panel">
+<ol class="steps">
+  <li><strong>Pick who is playing.</strong> Each person in the household has a coloured spot at the top. Tapping it switches the board to that person's chores, streak and binder.</li>
+  <li><strong>Tap a chore when it is done.</strong> It is ticked for that person for today, and the card reveal opens straight away.</li>
+  <li><strong>Everyone sees the same list.</strong> Chores are not assigned to one child: every chore is offered to every member, every day. The ticks are per person, so two siblings can both do "Make your bed" and both get a card.</li>
+  <li><strong>At midnight the board resets.</strong> Ticks are kept per local calendar day, so a new day brings the same chores back untouched. Cards already earned stay in the binder.</li>
+</ol>
+</div>
+<details>
+  <summary>The app came with "Mia" and "Theo" and five chores I did not add</summary>
+  <p>A fresh install is seeded with two example people and five starter chores (empty the dishwasher, walk the dog, make your bed, take out recycling, tidy up toys) so there is something to tap on the first launch. Rename or remove them in the parent area; they are never re-added once you have changed anything.</p>
+</details>
+<details>
+  <summary>The board shows "All done for today"</summary>
+  <p>That person has ticked every chore on the list today. Nothing else can be earned until tomorrow — adding a chore in the parent area is the only way to offer more today.</p>
+</details>
+<details>
+  <summary>Can chores repeat on a schedule, or be assigned to one child?</summary>
+  <p>Not in this version. There is no weekly schedule, no per-child assignment, no reminders, no approval step and no photo proof. The list is the same for everyone every day; keep it short and the board stays glanceable.</p>
+</details>
+
+<h2 id="cards">Cards and the odds</h2>
+<p>Every completed chore pulls exactly one card from a set of 16. First the rarity is rolled, then one card is chosen evenly from that rarity. The odds are fixed in the app and are the same for every person, every chore and every plan:</p>
+<div class="odds">
+  <div><small class="c">Common</small><b class="c">55%</b><i>7 cards</i></div>
+  <div><small class="r">Rare</small><b class="r">28%</b><i>5 cards</i></div>
+  <div><small class="e">Epic</small><b class="e">13%</b><i>3 cards</i></div>
+  <div><small class="l">Legendary</small><b class="l">4%</b><i>1 card</i></div>
+</div>
+<details>
+  <summary>I closed the reveal before the card flipped — is the card lost?</summary>
+  <p>No. The card is written to storage in the same step that marks the chore done, before the reveal animation starts. Closing the reveal, switching apps or a crash mid-animation cannot lose it; open the binder and it is there.</p>
+</details>
+<details>
+  <summary>Why did my child get the same card again?</summary>
+  <p>Pulls are random with replacement, so duplicates are normal — the binder shows a small ×2, ×3 counter on repeated cards. With 16 cards in the set, a child who finishes a few chores a day will usually own most of the commons within a couple of weeks and still be waiting on the legendary; that is the point of the 4%.</p>
+</details>
+<details>
+  <summary>Can I buy cards, or does Premium improve the odds?</summary>
+  <p>No, on both counts. There is nothing in the app that sells cards or packs, and Premium does not change the odds, the rarities or what counts as a finished chore. The only way a card enters a binder is a tapped chore.</p>
+</details>
+<details>
+  <summary>Why did tapping a chore do nothing and give no card?</summary>
+  <p>The app refuses a pull in four cases, all deliberate: the chore is already ticked for that person today; the same tap is still being saved (a double tap); the phone's date has been set back to before the day of that person's last completion; or the chore was just removed by a parent. Set the date back to the correct day and the board works again — the earlier cards are untouched.</p>
+</details>
+
+<h2 id="binder">The binder</h2>
+<p>Each person has their own binder. Cards they own show face up with name, emoji, rarity and two stats; cards they have not pulled yet appear as locked silhouettes, with only the rarity visible so a child knows what tier is missing. The counter at the top reads <em>owned / 16</em>, and the chips filter the view by rarity.</p>
+<details>
+  <summary>Can cards be traded, spent or deleted?</summary>
+  <p>No. The binder is read-only for everyone, including parents. Cards cannot be moved between siblings, exchanged for anything or removed one by one — which keeps "that is not fair" out of your hands. A binder is deleted only when its person is removed from the household.</p>
+</details>
+
+<h2 id="streaks">Streaks</h2>
+<p>A streak counts consecutive local calendar days on which that person finished at least one chore. Doing more chores on the same day does not add to it; missing a whole day resets it to zero on the next completion.</p>
+<details>
+  <summary>The streak shows 0 today but it was 6 yesterday</summary>
+  <p>The board shows the streak as it stands <em>today</em>: if the last completion was yesterday, the number is still there and the next chore makes it 7. If the last completion was two or more days ago, it displays 0 straight away — the chain is broken even before the next tap resets it.</p>
+</details>
+<details>
+  <summary>Changing the phone's clock to keep a streak alive</summary>
+  <p>Day boundaries are computed from the local calendar date in a way that is safe across daylight-saving changes, so a streak never breaks or doubles because the clocks went forward or back. Rolling the date backwards neither extends a streak nor unlocks extra cards (see above); rolling it forwards simply skips the days in between and breaks the streak like any missed day would.</p>
+</details>
+
+<h2 id="parents">The parent area and the gate</h2>
+<p>The <strong>Parents</strong> button on the Quest Board opens a multiplication question (something like 7 × 8). Only a correct, digits-only answer opens the parent area, which holds the household roster, the chore list, Premium and the privacy and terms links. The kid-facing screens contain no text field, no store and no link that leaves the app.</p>
+<details>
+  <summary>Why do I have to answer the sum again every time?</summary>
+  <p>The parent area closes itself the moment the app goes to the background — a phone handed back to a child, a notification tapped, the home button pressed. There is no "remember me": re-answering the sum is the cost of a child never landing on the paywall or an external link by accident.</p>
+</details>
+<details>
+  <summary>Adding, renaming and removing people</summary>
+  <p>Names can be up to a few words and may contain emoji. Each person gets the next free colour. Removing a person also deletes their ticks, streak and binder on this phone — the app warns you before it does — and the last remaining person cannot be removed, because the Quest Board always needs someone to tap for.</p>
+</details>
+<details>
+  <summary>Adding and editing chores</summary>
+  <p>A chore has a name, an icon from the built-in set, a place ("Kitchen", "Outside") and an estimated number of minutes. Editing a chore keeps its history; removing one removes it from everyone's board immediately but does not take back any cards it earned.</p>
+</details>
+
+<h2 id="premium">What is free, what is Premium</h2>
+<table>
+  <thead><tr><th>Feature</th><th>Plan</th></tr></thead>
+  <tbody>
+    <tr><td>The full 16-card set, every rarity, every reveal, a binder per person</td><td><span class="tier free">Free</span></td></tr>
+    <tr><td>Streaks, the parent gate, the Quest Board</td><td><span class="tier free">Free</span></td></tr>
+    <tr><td>Up to <strong>2 people</strong> in the household</td><td><span class="tier free">Free</span></td></tr>
+    <tr><td>Up to <strong>5 chores</strong> on the Quest Board</td><td><span class="tier free">Free</span></td></tr>
+    <tr><td>Up to <strong>8 people</strong> in the household</td><td><span class="tier prem">Premium</span></td></tr>
+    <tr><td>Up to <strong>30 chores</strong> on the Quest Board</td><td><span class="tier prem">Premium</span></td></tr>
+  </tbody>
+</table>
+<div class="note"><strong>Those two limits are the whole of Premium.</strong> It adds no cards, no rarities and no better odds. The limits are enforced when you try to <em>add</em> a third person or a sixth chore — the Add button leads to the Premium sheet — and never block ticking, renaming, editing or removing.</div>
+<p>Chore Court Premium is one <strong>annual, auto-renewing subscription</strong>, bought through Apple. The price in your own currency is loaded from the App Store and shown on the sheet before you confirm; the app does not display a price it has not received, so a blank price means the store has not answered yet — wait a moment or check your connection. There is no monthly plan and no one-off purchase.</p>
+
+<h2 id="billing">Restore, cancel, refunds</h2>
+<h3>Restore on a new phone or after reinstalling</h3>
+<p>Open <strong>Parents → Premium</strong> and tap <strong>Restore purchase</strong>. The app asks the App Store whether the Apple Account signed in on this phone holds an active subscription; if it does, you see "Premium restored" within a few seconds. "No previous purchase found for this store account" means a different Apple Account bought it — sign in with that one and try again. The app also quietly re-checks with the store at every cold start, and only drops Premium after the store has twice in a row confirmed there is no subscription, so a flaky connection never locks you out.</p>
+<h3>Cancel</h3>
+<p>Subscriptions are managed by Apple, not inside the app: <strong>Settings → [your name] → Subscriptions → Chore Court</strong>, or <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>. Cancel at least 24 hours before the renewal date to avoid the next charge. Premium stays on until the end of the paid period. Afterwards nothing is deleted: people and chores above the free limits remain on the board and in their binders — you simply cannot add more until you are back under 2 and 5, or subscribe again.</p>
+<h3>Refunds</h3>
+<p>Apple takes the payment, so refunds are requested at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We cannot see your transaction and have no way to refund it ourselves.</p>
+
+<h2 id="privacy">Your data and privacy</h2>
+<p>Chore Court has no account, no sign-up and no server. The household roster, chore list, daily ticks, streaks, binders and the Premium flag are stored in one local database on this phone and are never sent to us; there are no analytics or advertising SDKs. The App Store is asked only whether the subscription is owned. The one address the app can open is this site, and only from behind the parent gate. The full wording is in the <a href="https://babycarzta-a11y.github.io/legal/chore-court/privacy.html">Chore Court privacy policy</a>.</p>
+<details>
+  <summary>Backups and moving to another phone</summary>
+  <p>There is no sync, export or in-app backup. Your iPhone's own backup (iCloud or a computer) includes the Chore Court database, so restoring a phone from backup brings every binder with it. A second phone starts from an empty household.</p>
+</details>
+<details>
+  <summary>How long is history kept?</summary>
+  <p>Daily tick records older than 60 days are pruned automatically at launch. Cards and streak values are not pruned. Deleting the app deletes everything in it; there is nothing to request from us because we hold nothing.</p>
+</details>
+<details>
+  <summary>The app opened with an empty board after a crash</summary>
+  <p>If the local database file cannot be read at launch, the app resets it to the starter roster rather than failing to open. This is rare and usually follows an interrupted update or a full disk. A device backup from before the reset is the only way to recover the binders.</p>
+</details>
+
+<section class="contact">
+  <h2>Write to us</h2>
+  <p>A bug, a card that did not land, a limit that feels wrong, a chore you wish the starter set had — one address, read by the person who builds the app.</p>
+  <a class="mail" href="mailto:babycar.zta@gmail.com?subject=Chore%20Court%20support">babycar.zta@gmail.com</a>
+  <p style="font-size:14px;color:var(--mute);margin:0">Please mention your iOS version. Do not include children's names — we do not need them.</p>
+</section>
+
+<p class="foot">Updated 8 October 2026 · <a href="https://babycarzta-a11y.github.io/legal/chore-court/privacy.html">Privacy policy</a> · <a href="https://babycarzta-a11y.github.io/legal/chore-court/terms.html">Terms</a> · Chore Court is not affiliated with any trading-card game or publisher.</p>
+
+</div>
+</body>
+</html>
