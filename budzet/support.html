@@ -74,6 +74,8 @@
 <nav class="tabs">
   <a class="on" href="#wydatki">Wydatki</a>
   <a href="#rozliczenie">Rozliczenie</a>
+  <a href="#zasady">Zasady podziału</a>
+  <a href="#konto">Wspólne konto</a>
   <a href="#pytania">Pytania</a>
   <a href="#plus">Budżet Plus</a>
   <a href="#problemy">Problemy</a>
@@ -97,6 +99,17 @@
   </table>
 </div>
 <p>Pod spodem jest wyjaśnienie w stylu „Ania pokrywa 38 % wydatków, udział wg dochodów: 42 %”. Gdy dochody są równe albo nie są podane, aplikacja dzieli po równo i mówi to wprost. Gdy nikt nikomu nic nie jest winien, zobaczysz „Rozliczone!”.</p>
+
+<h2 id="zasady">Zasady podziału wg kategorii</h2>
+<p>Nie każdy koszt dzieli się tak samo. W <em>Ustawienia → Zasady podziału</em> (albo przyciskiem pod rozliczeniem) każda z 9 kategorii dostaje swoją zasadę:</p>
+<div class="expense"><div class="ic">%</div><div><b>Wg dochodów / wg ustalonego %</b><p>Domyślna zasada gospodarstwa — np. mieszkanie i rachunki.</p></div><div class="amt">·</div></div>
+<div class="expense"><div class="ic">½</div><div><b>Po równo 50/50</b><p>Niezależnie od dochodów — np. jedzenie albo rozrywka.</p></div><div class="amt">·</div></div>
+<div class="expense"><div class="ic">1</div><div><b>Całość: Ania / Całość: Tomek</b><p>Koszt jednej osoby, nawet gdy zapłaciła druga — wtedy rozliczenie odda jej pieniądze.</p></div><div class="amt">·</div></div>
+<div class="expense"><div class="ic">–</div><div><b>Nie dzielimy (kto płacił)</b><p>Wydatki osobiste: zostają w notesie, ale nie wpływają na to, kto komu dopłaca.</p></div><div class="amt">·</div></div>
+<p>Rozliczenie pokazuje wtedy sekcję <em>Wg kategorii</em>: suma każdej kategorii, jej zasada i ile przypada na każde z was, a zdanie pod wynikiem mówi „udział wg waszych zasad”. Zasady są darmowe.</p>
+
+<h2 id="konto">Wspólne konto — plan przelewów</h2>
+<p>Zakładka <em>Przelewy</em> liczy z góry, ile każde z was przelewa co miesiąc na wspólne konto. Wpisz stałe koszty (czynsz, media, internet, przedszkole) i dla każdego wybierz: wg dochodów, po równo albo całość na jedną osobę. Aplikacja pokazuje przelew każdej osoby, jaki to procent jej dochodu, ile zostaje z pensji i — dla porównania — jaki procent dochodu zabrałby podział 50/50. Plan korzysta z dochodów podanych w <em>Trybie wspólnym</em>; bez dochodów dzieli po równo.</p>
 
 <h2 id="pytania">Pytania, które dostajemy najczęściej</h2>
 <div class="faq">
@@ -154,6 +167,10 @@
 <p><strong>Budżet we Dwoje</strong> ("Budget for Two") is a manual household expense tracker for Poland, for one person or a couple. Its one special trick: shared costs are split <em>in proportion to income</em>, not 50/50. Everything is stored on the phone; there is no account, no sync and no bank connection. The app is in Polish, English and Ukrainian (Settings → Language).</p>
 <h3>How it works</h3>
 <p>Add expenses with an amount, one of nine fixed categories, a date (today by default, never in the future), a note and, in household mode, who paid. Turn on household mode in Settings, enter both names and either both monthly incomes or a fixed percentage split. The Settlement tab then shows a sentence such as "Ania pays Tomek: 143 zł" with a table of what each person paid, their share and the difference. The free version shows the current and the previous month; older months are unlocked by Budżet Plus.</p>
+<h3>Split rules per category</h3>
+<p>Settings → Split rules (or the button under the settlement) gives each of the nine categories its own rule: by income (or your agreed %), equally 50/50, all on one person, or not shared (whoever paid keeps it). The settlement then lists every category with its rule and what falls on each person. Free.</p>
+<h3>Joint account plan</h3>
+<p>The Transfers tab lists your fixed monthly costs (rent, energy, internet, nursery) and works out each person's monthly transfer into the joint account by your rule, the share of each income it takes, what is left of each salary, and what a flat 50/50 would take instead. Free.</p>
 <h3>Budżet Plus</h3>
 <p>One non-consumable in-app purchase, product id <code>budzet_plus</code>, no subscription. It unlocks sharing the settlement through the share sheet, the app lock (4-digit PIN with optional Face ID / Touch ID; 30-second cooldown after five wrong PINs), full history beyond two months and CSV export (semicolon-separated, UTF-8 with BOM, dd.mm.yyyy dates). The price shown is the App Store's price for your country. <em>Restore purchase</em> is under Settings → Budżet Plus and on the paywall; sign in with the Apple ID that bought it. Losing Plus hides nothing and deletes nothing. Refunds are handled by Apple at reportaproblem.apple.com.</p>
 <h3>Forgotten PIN</h3>
