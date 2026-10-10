@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yulelist Support — Christmas Gift List</title>
-<meta name="description" content="Help for Yulelist: how occasions, people, budgets and gift statuses work, the year archive, backups, reminders, Yulelist Pro and restoring your purchase.">
+<meta name="description" content="Help for Yulelist: occasions, people, budgets and gift statuses, the returns desk, Even out for siblings, the year archive, backups, reminders, Yulelist Pro and restoring your purchase.">
 <style>
   :root{
     --bg:#F6F2EA; --surface:#FFFDF8; --surface2:#EFE9DD; --line:#E4DDD0;
@@ -53,9 +53,10 @@
 <header>
   <span class="tag">Support</span>
   <h1>Yulelist<br>Christmas Gift List</h1>
-  <p>Yulelist is an offline planner for the people you give to: a budget per person, gift ideas, a four-step status for every gift, a countdown with reminders, and an archive of past years. No account, no server. This page answers the questions we get most.</p>
+  <p>Yulelist is an offline planner for the people you give to: a budget per person, gift ideas, a four-step status for every gift, a countdown with reminders, a returns desk for after the holidays, an Even out check between siblings, and an archive of past years. No account, no server. This page answers the questions we get most.</p>
   <ul class="toc">
     <li><a href="#start">Getting started</a></li>
+    <li><a href="#returns">Returns &amp; Even out</a></li>
     <li><a href="#faq">Questions</a></li>
     <li><a href="#pro">Yulelist Pro</a></li>
     <li><a href="#trouble">Something wrong?</a></li>
@@ -72,19 +73,33 @@
 </ol>
 <div class="status"><span class="idea">Idea</span><i>→</i><span class="bought">Bought</span><i>→</i><span class="wrapped">Wrapped</span><i>→</i><span class="given">Given</span></div>
 
+<h2 id="returns">After the shopping: returns and Even out</h2>
+<dl class="faq">
+  <dt>What is the returns desk?</dt>
+  <dd>Every bought gift can carry a <em>Return by</em> date, a <em>Receipt or gift receipt kept</em> tick and what happens to it: <em>Keeping it</em>, <em>To return</em>, <em>Sent back</em> or <em>Refunded</em>. Set them in the gift sheet (they appear once a gift is bought) or straight from the desk. Open the desk from the <em>Returns &amp; receipts</em> card on the Plan tab or the receipt icon on the Gifts tab. Gifts are sorted by the day the shop stops taking them back, and a window closing within three days is marked in red.</dd>
+  <dt>How do returns change my budget?</dt>
+  <dd>A gift marked <em>To return</em> or <em>Sent back</em> still counts as spent, because the money has not come back yet; the Plan tab shows how much is expected back. When you mark it <em>Refunded</em>, its price leaves <em>Spent</em> and goes back into the person's budget. A gift on its way back no longer counts as a present for that person, so they show up again under "people who still need a gift", and it never appears in <em>Given before</em>.</dd>
+  <dt>Do I get reminded before a return window closes?</dt>
+  <dd>Yes, if <em>Countdown reminders</em> are on: at 10:00 three days before, one day before and on the last day, for gifts marked <em>To return</em>. Like all Yulelist reminders the text never names the gift or the person. Kept gifts with a date are listed on the desk but do not send reminders.</dd>
+  <dt>I already started next year. Can I still record a return?</dt>
+  <dd>Yes. Returns usually happen after Christmas, so the desk also shows open returns and refunds from archived seasons. Everything else about an archived season stays read-only.</dd>
+  <dt>What does Even out show?</dt>
+  <dd>People in the same group (Kids with Kids, Family with Family) side by side, with the number of presents and the money spent on each. If one child has fewer gifts, or more than 10% less money, the screen says by how much, for example "1 gift behind". Switch between <em>Bought</em> (only bought, wrapped and given gifts) and <em>With ideas</em> while you are still planning. Groups with only one person are not compared. Even out is part of the free plan.</dd>
+</dl>
+
 <h2 id="faq">Questions people ask</h2>
 <dl class="faq">
   <dt>Why does the countdown end on 24 December for me and on the 25th for a friend?</dt>
   <dd>The app follows the language of your phone, not your location. In German, Polish, Czech, Swedish, Danish, Finnish, Norwegian and Portuguese presents are traditionally opened on Christmas Eve, so the countdown targets 24 December. In other languages it targets 25 December. You can change the date of any occasion by hand in the Plan tab.</dd>
 
   <dt>What do the reminders say, and when do they arrive?</dt>
-  <dd>Turn on <em>Countdown reminders</em> in the Workshop (the last tag at the bottom of the screen). Yulelist then schedules a local notification at 10:00, 30, 14, 10, 7, 3 and 1 day before the occasion and on the day itself. The text only says how many people still need a gift or how many gifts are waiting to be wrapped. Names and gift titles are never shown on the lock screen, so nobody reads a spoiler over your shoulder. The notification permission is only requested when you switch reminders on.</dd>
+  <dd>Turn on <em>Countdown reminders</em> in the Workshop (the last tag at the bottom of the screen). Yulelist then schedules a local notification at 10:00, 30, 14, 10, 7, 3 and 1 day before the occasion and on the day itself. The text only says how many people still need a gift or how many gifts are waiting to be wrapped. Gifts marked <em>To return</em> also get a reminder 3 days and 1 day before their return window closes. Names and gift titles are never shown on the lock screen, so nobody reads a spoiler over your shoulder. The notification permission is only requested when you switch reminders on.</dd>
 
   <dt>Can I share the list with my partner?</dt>
   <dd>There is no live sync, because Yulelist has no server by design. What works: in the Workshop choose <em>Back up to a file</em>, AirDrop the file to your partner, and they choose <em>Import a backup</em>. Import merges rather than replaces: people and gifts are matched by their ids, the newer edit wins, and nothing is deleted. Do it again in the other direction whenever you want to catch up.</dd>
 
   <dt>How are budgets counted?</dt>
-  <dd>Each person can have a budget. <em>Spent</em> is the sum of gifts that are bought, wrapped or given; ideas are not counted as spent but are shown under <em>Planned in total</em>. The plan uses one currency, set from your phone's region and changeable in the Workshop. Changing the currency only relabels amounts, it does not convert them.</dd>
+  <dd>Each person can have a budget. <em>Spent</em> is the sum of gifts that are bought, wrapped or given; ideas are not counted as spent but are shown under <em>Planned in total</em>, and refunded returns are taken off again. The plan uses one currency, set from your phone's region and changeable in the Workshop. Changing the currency only relabels amounts, it does not convert them.</dd>
 
   <dt>Where is my data stored? Will I lose it on a new iPhone?</dt>
   <dd>Your plan is a single file in the app's Documents folder, which is part of your normal iPhone backup (iCloud or computer). The app writes the file atomically and keeps the previous version next to it, so an interrupted write cannot corrupt it. For a belt-and-braces copy, export a backup file to Files or iCloud Drive before switching phones. Deleting the app deletes the plan.</dd>
@@ -109,7 +124,7 @@
 <div class="two">
   <div class="card">
     <h3>Free</h3>
-    <p>One active occasion with up to 5 people, and every planning feature: budgets, statuses, the countdown, reminders, backup and import.</p>
+    <p>One active occasion with up to 5 people, and every planning feature: budgets, statuses, the countdown, reminders, the returns desk, Even out, backup and import.</p>
     <p>Nothing on the free plan is time-limited and nothing is ever taken away.</p>
   </div>
   <div class="card">
