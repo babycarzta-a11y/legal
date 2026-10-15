@@ -59,7 +59,7 @@
 <header>
   <p class="kicker">Privacy Policy</p>
   <h1>Jamaah Lock <span>·</span> privacy</h1>
-  <p class="date">Last updated: 15 October 2026</p>
+  <p class="date">Last updated: 16 October 2026</p>
   <p class="lede">Jamaah Lock is built so that nothing about you leaves your phone. This page says exactly what the app touches and what it never does.</p>
 </header>
 
@@ -71,12 +71,12 @@
 </div>
 
 <h2>What the app stores, and where</h2>
-<p>Everything you enter or create — your place, calculation settings, prayer marks, the qada list, excused days, mosque timetables, custom dhikr phrases, reminders and the apps you chose to rest — is stored on your device, in the app's own storage and in a private App Group shared only with the app's own extensions. It is not synced to any cloud by us. It is included in your own device backups under Apple's rules, as with any app.</p>
+<p>Everything you enter or create — your place, calculation settings, prayer marks, the qada list, excused days, mosque timetables, custom dhikr phrases, reminders and the apps you chose to rest — is stored on your device, in the app's own storage and in a private App Group shared only with the app's own extensions. It is not synced to any cloud by us. It is included in your own device backups under Apple's rules, as with any app. If you use the Apple Watch app, the iPhone passes it what it needs to show (such as today's prayer times) directly through Apple's WatchConnectivity; nothing goes through us.</p>
 
 <h2>Permissions, one by one</h2>
 <table>
 <tr><th>Permission</th><th>When it is asked</th><th>What it is used for</th></tr>
-<tr><td>Location (When In Use)</td><td>Only if you tap "Use my location" during setup or in Settings → Place</td><td>A single fix to find your place and calculate prayer times. The coordinates are reduced to a place and kept on the device. You can type a city instead and never grant it.</td></tr>
+<tr><td>Location (When In Use)</td><td>Only if you tap "Use my location" during setup or in Settings → Place, tap "Search near me" in Mosques nearby, or turn on the travel "far from home" check</td><td>A single fix to find your place and calculate prayer times; the coordinates are reduced to a place and kept on the device. Mosques nearby uses the position once to ask Apple Maps for mosques around you (see Network). The travel check compares the distance from home on the device. You can type a city instead and never grant it.</td></tr>
 <tr><td>Notifications</td><td>When you turn on reminders or set apps to rest</td><td>Local notifications only: prayer reminders, "Tap to pray", Jumu'ah, Al-Kahf, fasting days, "scan next month". No push service.</td></tr>
 <tr><td>Screen Time (Family Controls, individual)</td><td>Only when you choose the Gentle or Firm mode and set up resting apps</td><td>Lets iOS show a shield over the apps you picked during prayer windows. See the section below.</td></tr>
 <tr><td>Camera and Photos</td><td>Only when you scan or import a mosque timetable</td><td>Reading the printed timetable on the device. The photo is shown to you for checking and is not sent anywhere.</td></tr>
@@ -93,13 +93,15 @@
 <p>Scanning uses Apple's Vision text recognition on the device. A timetable you save stays on your phone. If you choose to share it, the app builds a QR code or a <code>.jamaah</code> file that contains only the mosque name, the city if you entered one, the month and the times — nothing about you. You decide where it goes through the share sheet; we never receive it. A timetable you receive from someone else is stored only after you check and save it.</p>
 
 <h2>Purchases</h2>
-<p>Pro is sold through Apple's App Store as a one-time purchase or a monthly subscription, with Family Sharing. Payment is handled entirely by Apple; the app never sees your payment details or your Apple Account. The app asks StoreKit on your device whether you own Pro, and keeps that yes/no answer locally so it works offline. Nothing about the purchase is sent to us.</p>
+<p>Pro is sold through Apple's App Store as a one-time purchase (Lifetime) or a yearly or monthly subscription, all with Family Sharing. Payment is handled entirely by Apple; the app never sees your payment details or your Apple Account. The app asks StoreKit on your device whether you own Pro, and keeps that yes/no answer locally so it works offline. Nothing about the purchase is sent to us.</p>
 
 <h2>Siri, Shortcuts and Focus</h2>
 <p>The "Mark prayed", "Next prayer" and "Start dhikr" shortcuts and the "Prayer" Focus filter run on your device through Apple's App Intents. What you say to Siri is handled by Apple under Apple's terms; the app receives only the resulting action.</p>
 
 <h2>Network</h2>
-<p>Jamaah Lock has no backend. It makes no network requests of its own: prayer times are calculated locally, the offline city list is bundled, fonts and licences are bundled. Network activity comes only from Apple's frameworks (StoreKit, the system speech-model download) and from actions you take yourself, such as opening a link in the browser or sharing a file.</p>
+<p>Jamaah Lock has no backend and sends nothing to us. Prayer times are calculated locally; the offline city list, the Quran text, the translations of meanings, fonts and licences are bundled in the app.</p>
+<p><b>Mosques nearby (Apple MapKit).</b> Only when you open this tool, the app asks Apple Maps through Apple's MapKit for mosques near you. What is sent is the search region (an area around your saved place, or around the position from "Search near me") and the search words (such as "mosque" in your language). It goes to Apple, not to us, and Apple handles it under its own privacy policy. The results are shown on the screen and not stored; "Open in Maps" hands the chosen place to Apple Maps.</p>
+<p>Other network activity comes only from Apple's frameworks (StoreKit, the system speech-model download) and from actions you take yourself, such as opening a link in the browser or sharing a file.</p>
 
 <h2>Data retention and deletion</h2>
 <p>Your data lives on your device for as long as you keep it. Settings → About → Delete all data removes timetables, marks, settings and the resting-app selection and stops all schedules; deleting the app does the same. The Pro entitlement belongs to your Apple Account and is restored through Apple, not through us.</p>
@@ -123,7 +125,7 @@
 <header>
   <p class="kicker">سياسة الخصوصية</p>
   <h1>Jamaah Lock <span>·</span> الخصوصية</h1>
-  <p class="date">آخر تحديث: 15 October 2026</p>
+  <p class="date">آخر تحديث: 16 أكتوبر 2026</p>
   <p class="lede">صُمم Jamaah Lock بحيث لا يغادر شيء عنك هاتفك. تبيّن هذه الصفحة بدقة ما يصل إليه التطبيق وما لا يفعله أبدًا.</p>
 </header>
 
@@ -135,12 +137,12 @@
 </div>
 
 <h2>ما يخزنه التطبيق وأين</h2>
-<p>كل ما تدخله أو تنشئه — مكانك، إعدادات الحساب، تسجيلات الصلاة، قائمة القضاء، أيام العذر، جداول المساجد، عبارات الذكر الخاصة، التذكيرات، والتطبيقات التي اخترتها لتستريح — يُخزَّن على جهازك، في مساحة التطبيق الخاصة وفي مجموعة تطبيقات خاصة لا يشاركها إلا امتدادات التطبيق نفسه. لا نزامنه مع أي سحابة. ويُشمل في نسخك الاحتياطية وفق قواعد Apple كأي تطبيق.</p>
+<p>كل ما تدخله أو تنشئه — مكانك، إعدادات الحساب، تسجيلات الصلاة، قائمة القضاء، أيام العذر، جداول المساجد، عبارات الذكر الخاصة، التذكيرات، والتطبيقات التي اخترتها لتستريح — يُخزَّن على جهازك، في مساحة التطبيق الخاصة وفي مجموعة تطبيقات خاصة لا يشاركها إلا امتدادات التطبيق نفسه. لا نزامنه مع أي سحابة. ويُشمل في نسخك الاحتياطية وفق قواعد Apple كأي تطبيق. وإن استخدمت تطبيق Apple Watch، يرسل إليه الآيفون ما يحتاجه للعرض (مثل مواقيت اليوم) مباشرةً عبر WatchConnectivity من Apple؛ ولا يمر شيء عبرنا.</p>
 
 <h2>الأذونات واحدًا واحدًا</h2>
 <table>
 <tr><th>الإذن</th><th>متى يُطلب</th><th>فيمَ يُستخدم</th></tr>
-<tr><td>الموقع (أثناء الاستخدام)</td><td>فقط إن ضغطت «استخدام موقعي» أثناء الإعداد أو في الإعدادات ← المكان</td><td>تحديد واحد لمعرفة مكانك وحساب المواقيت. تُختصر الإحداثيات إلى مكان وتُحفظ على الجهاز. يمكنك كتابة المدينة بدلًا من ذلك وعدم منحه أبدًا.</td></tr>
+<tr><td>الموقع (أثناء الاستخدام)</td><td>فقط إن ضغطت «استخدام موقعي» أثناء الإعداد أو في الإعدادات ← المكان، أو «البحث بالقرب مني» في المساجد القريبة، أو فعّلت فحص «بعيد عن المنزل» في وضع السفر</td><td>تحديد واحد لمعرفة مكانك وحساب المواقيت؛ تُختصر الإحداثيات إلى مكان وتُحفظ على الجهاز. تستخدم ميزة المساجد القريبة الموقع مرة واحدة لتسأل خرائط Apple عن المساجد من حولك (انظر الشبكة). ويقارن فحص السفر المسافة عن المنزل على الجهاز. يمكنك كتابة المدينة بدلًا من ذلك وعدم منحه أبدًا.</td></tr>
 <tr><td>الإشعارات</td><td>عند تفعيل التذكيرات أو إعداد استراحة التطبيقات</td><td>إشعارات محلية فقط: تذكيرات الصلاة، «اضغط للصلاة»، الجمعة، الكهف، أيام الصيام، «امسح الشهر التالي». لا خدمة دفع.</td></tr>
 <tr><td>مدة استخدام الجهاز (Family Controls، إذن فردي)</td><td>فقط عند اختيار الوضع اللطيف أو الحازم وإعداد التطبيقات المستريحة</td><td>يتيح لـ iOS عرض شاشة استراحة فوق التطبيقات التي اخترتها خلال فترات الصلاة. انظر القسم أدناه.</td></tr>
 <tr><td>الكاميرا والصور</td><td>فقط عند مسح جدول المسجد أو استيراده</td><td>قراءة الجدول المطبوع على الجهاز. تُعرض الصورة لك للمراجعة ولا تُرسل إلى أي مكان.</td></tr>
@@ -157,13 +159,15 @@
 <p>يستخدم المسح تقنية التعرف على النص من Apple (Vision) على الجهاز. الجدول الذي تحفظه يبقى على هاتفك. إن اخترت مشاركته، يُنشئ التطبيق رمز QR أو ملف <code>.jamaah</code> لا يحتوي إلا على اسم المسجد، والمدينة إن أدخلتها، والشهر، والمواقيت — لا شيء عنك. أنت تقرر وجهته عبر ورقة المشاركة؛ ولا نستقبله نحن أبدًا. الجدول الذي يصلك من غيرك لا يُخزَّن إلا بعد مراجعتك وحفظك له.</p>
 
 <h2>المشتريات</h2>
-<p>يُباع Pro عبر App Store من Apple كشراء لمرة واحدة أو اشتراك شهري، مع المشاركة العائلية. تتولى Apple الدفع كليًا؛ لا يرى التطبيق بيانات الدفع ولا حساب Apple الخاص بك. يسأل التطبيق StoreKit على جهازك هل تملك Pro، ويحفظ تلك الإجابة (نعم/لا) محليًا ليعمل دون اتصال. لا يُرسل إلينا شيء عن الشراء.</p>
+<p>يُباع Pro عبر App Store من Apple كشراء لمرة واحدة (مدى الحياة) أو اشتراك سنوي أو شهري، وكلها مع المشاركة العائلية. تتولى Apple الدفع كليًا؛ لا يرى التطبيق بيانات الدفع ولا حساب Apple الخاص بك. يسأل التطبيق StoreKit على جهازك هل تملك Pro، ويحفظ تلك الإجابة (نعم/لا) محليًا ليعمل دون اتصال. لا يُرسل إلينا شيء عن الشراء.</p>
 
 <h2>Siri والاختصارات والتركيز</h2>
 <p>تعمل اختصارات «سجّل الصلاة» و«الصلاة القادمة» و«ابدأ الذكر» ومرشح التركيز «الصلاة» على جهازك عبر App Intents من Apple. ما تقوله لـ Siri تعالجه Apple وفق شروطها؛ ولا يتلقى التطبيق إلا الإجراء الناتج.</p>
 
 <h2>الشبكة</h2>
-<p>ليس لـ Jamaah Lock خادم خلفي. لا يُجري أي طلبات شبكة من عنده: تُحسب المواقيت محليًا، وقائمة المدن مضمّنة دون اتصال، والخطوط والتراخيص مضمّنة. يأتي نشاط الشبكة فقط من أطر Apple (StoreKit، وتنزيل نموذج الكلام من النظام) ومن إجراءاتك أنت، كفتح رابط في المتصفح أو مشاركة ملف.</p>
+<p>ليس لـ Jamaah Lock خادم خلفي، ولا يرسل إلينا شيئًا. تُحسب المواقيت محليًا، وقائمة المدن ونص القرآن وترجمات المعاني والخطوط والتراخيص كلها مضمّنة في التطبيق.</p>
+<p><b>المساجد القريبة (MapKit من Apple).</b> فقط عند فتح هذه الأداة، يسأل التطبيقُ خرائط Apple عبر MapKit عن المساجد القريبة منك. ما يُرسل هو منطقة البحث (مساحة حول مكانك المحفوظ، أو حول الموقع من «البحث بالقرب مني») وكلمات البحث (مثل «مسجد» بلغتك). يذهب ذلك إلى Apple لا إلينا، وتعالجه Apple وفق سياسة الخصوصية الخاصة بها. تُعرض النتائج على الشاشة ولا تُحفظ؛ و«فتح في الخرائط» يسلّم المكان المختار إلى خرائط Apple.</p>
+<p>يأتي أي نشاط شبكة آخر فقط من أطر Apple (StoreKit، وتنزيل نموذج الكلام من النظام) ومن إجراءاتك أنت، كفتح رابط في المتصفح أو مشاركة ملف.</p>
 
 <h2>الاحتفاظ بالبيانات وحذفها</h2>
 <p>تبقى بياناتك على جهازك ما دمت تحتفظ بها. الإعدادات ← حول ← حذف جميع البيانات يزيل الجداول والتسجيلات والإعدادات واختيار التطبيقات المستريحة ويوقف كل الجداول الزمنية؛ وحذف التطبيق يفعل الشيء نفسه. يتبع Pro حساب Apple ويُستعاد عبر Apple لا عبرنا.</p>
