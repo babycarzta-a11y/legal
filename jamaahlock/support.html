@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jamaah Lock — Support</title>
+<meta name="description" content="Help for Jamaah Lock: prayer times, your mosque's timetable, resting apps during prayer, unlocking with dhikr, the tracker and qada list, Pro, restoring purchases.">
+<style>
+  :root{
+    --paper:#F4EFE4; --paper2:#EDE6D6; --ink:#1E1B2B; --ink2:#4A4658; --rule:#D8D1C2;
+    --clay:#B5573A; --clay-on:#FFFFFF; --lapis:#35508F; --olive:#7F8273; --moss:#5D7A55; --attention:#9A6A2B;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --paper:#15131C; --paper2:#1D1A26; --ink:#EFE9DC; --ink2:#C8C2B4; --rule:#2E2A3A;
+      --clay:#D27A5A; --clay-on:#15131C; --lapis:#8EA3DB; --olive:#9A9D90; --moss:#8FB084; --attention:#D8A860; }
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--lapis)}
+  .page{max-width:680px;margin:0 auto;padding:36px 16px 72px}
+  .lang{display:flex;gap:6px;justify-content:flex-end;margin-bottom:18px}
+  .lang button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--rule);background:var(--paper2);color:var(--ink);border-radius:8px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--clay);color:var(--clay-on);border-color:var(--clay)}
+  header{border-bottom:1px solid var(--rule);padding:0 0 22px;margin:0 0 8px}
+  .kicker{color:var(--olive);font-size:14px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 6px}
+  h1{font-size:32px;line-height:1.15;margin:0 0 10px;font-weight:600;letter-spacing:-.3px}
+  h1 span{color:var(--clay)}
+  .lede{margin:0;color:var(--ink2);font-size:17px;max-width:560px}
+  nav.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+  nav.chips a{text-decoration:none;color:var(--ink);background:var(--paper2);border:1px solid var(--rule);padding:6px 12px;border-radius:8px;font-size:14px}
+  h2{font-size:20px;margin:36px 0 12px;font-weight:600}
+  .row{border-top:1px solid var(--rule);padding:14px 0}
+  .row:last-child{border-bottom:1px solid var(--rule)}
+  .row h3{margin:0 0 4px;font-size:16.5px;font-weight:600}
+  .row p{margin:0 0 6px;color:var(--ink2)}
+  .row p:last-child{margin:0}
+  .tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:6px;margin-inline-start:6px;vertical-align:middle;background:var(--paper2);color:var(--olive);border:1px solid var(--rule)}
+  .tag.pro{color:var(--clay);border-color:var(--clay)}
+  .tag.free{color:var(--moss);border-color:var(--moss)}
+  .note{background:var(--paper2);border-inline-start:3px solid var(--clay);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;color:var(--ink2)}
+  ol.steps{margin:6px 0 0;padding-inline-start:20px;color:var(--ink2)}
+  ol.steps li{margin:4px 0}
+  .contact{margin-top:44px;padding:22px 20px;border:1px solid var(--rule);border-radius:12px;background:var(--paper2)}
+  .contact a.mail{font-size:20px;font-weight:600;color:var(--clay);text-decoration:none}
+  .contact p{margin:4px 0 0;color:var(--olive);font-size:14.5px}
+  footer{color:var(--olive);font-size:13px;margin-top:26px;border-top:1px solid var(--rule);padding-top:14px}
+  footer a{color:var(--olive)}
+  [lang="ar"]{font-family:"IBM Plex Sans Arabic","Noto Naskh Arabic","Geeza Pro",Tahoma,Arial,sans-serif}
+  html.js [data-lang]{display:none}
+  html.js[data-show="en"] [data-lang="en"], html.js[data-show="ar"] [data-lang="ar"]{display:block}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="lang" role="group" aria-label="Language">
+  <button type="button" data-set="en" aria-pressed="true">English</button>
+  <button type="button" data-set="ar" aria-pressed="false" lang="ar">العربية</button>
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<div data-lang="en" lang="en" dir="ltr">
+<header>
+  <p class="kicker">Support</p>
+  <h1>Jamaah Lock <span>·</span> help</h1>
+  <p class="lede">Prayer times from your own mosque, apps that rest during the prayer window, and an unlock that is a dhikr. Everything runs on your phone. This page answers the questions we expect.</p>
+  <nav class="chips">
+    <a href="#how">How it works</a><a href="#masjid">Your mosque</a><a href="#lock">Resting apps</a><a href="#unlock">Unlocking</a><a href="#tracker">Tracker &amp; qada</a><a href="#pro">Pro</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<h2 id="how">The four tabs</h2>
+<div class="row"><h3>Today</h3><p>The next prayer and how long until it, then today's six rows (Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha) with adhan and, when known, iqamah. Tap the circle at the end of a row to mark a prayer; tap again to clear. Lock Health sits under the rows when apps are set to rest.</p></div>
+<div class="row"><h3>Masjid</h3><p>Scan, import or type your mosque's monthly timetable, check it, and share it as a QR code.</p></div>
+<div class="row"><h3>Tracker</h3><p>A month calendar of marks, a list of prayers to make up (qada), excused days, and the Quran khatm plan.</p></div>
+<div class="row"><h3>Settings</h3><p>Mode and unlock methods per prayer, calculation method and madhab, place, resting apps, reminders, My dhikr, Siri &amp; Focus, Pro, licences, delete all data.</p></div>
+
+<h2 id="times">Prayer times</h2>
+<div class="row"><h3>Which calculation methods are available?</h3><p>Muslim World League, ISNA, Egyptian, Umm al-Qura, Karachi, Moonsighting Committee, Diyanet (Turkey), UOIF (France) and Kemenag (Indonesia), with Shafi or Hanafi Asr, high-latitude rules and a minute offset per prayer. Settings → Times &amp; calculation. The app suggests a method from your country; your mosque's own timetable always takes priority.</p></div>
+<div class="row"><h3>My times are a few minutes off the mosque's</h3><p>That is normal for calculated times. Either add an offset per prayer, or scan the mosque's timetable (below) so the app uses the printed adhan and iqamah.</p></div>
+<div class="row"><h3>Does the app need my location?</h3><p>Only once, to find your place, and only if you allow it. You can type a city instead. Your location never leaves the phone.</p></div>
+
+<h2 id="masjid">Your mosque's timetable</h2>
+<div class="row"><h3>How do I scan it?</h3>
+<ol class="steps"><li>Masjid tab → Scan. Photograph the printed monthly timetable, or choose a photo, a PDF or an image from Files.</li><li>The app reads the table on your phone and shows every cell. Doubtful values are underlined; tap one to correct it.</li><li>Save. Choose whether windows follow the iqamah (recommended) and whether to be reminded on the 25th to scan next month.</li></ol>
+<p>Saving your own scanned or typed timetable is part of Pro. Tables other people share with you are free to save.</p></div>
+<div class="row"><h3>A cell is wrong after scanning</h3><p>Tap the cell and set the right time. The verify screen also flags values that break the order of the day or drift from the day before. Nothing is saved until you confirm.</p></div>
+<div class="row"><h3>How do I share it with my mosque?</h3><p>Open the saved timetable → Share. You get a QR code (save as image or print a page for the notice board) or a <code>.jamaah</code> file for WhatsApp or AirDrop. Anyone with Jamaah Lock scans the QR with the system Camera or the in-app importer and sees the same verify screen before saving. No server is involved: the whole month lives inside the code.</p></div>
+<div class="row"><h3>The timetable ended</h3><p>Today shows "Timetable ended — using calculated times" and falls back to the calculation until you scan the next month. "Scan next month" merges into the same mosque.</p></div>
+
+<h2 id="lock">Resting apps</h2>
+<div class="row"><h3>Three modes</h3><p><strong>Reminders</strong>: notifications and the tracker only; Screen Time permission is never requested. <strong>Gentle</strong>: a shield with "Continue anyway" after a short wait (60 s by default, 30–180 s). <strong>Firm</strong>: the shield stays until you finish with one of your unlock methods; one pass per day always works. Choose per prayer in Settings → Prayers.</p></div>
+<div class="row"><h3>Which apps rest?</h3><p>The ones you pick in Apple's app picker when you set up resting apps. The app sees only an anonymous token for each, never the app's name. Keep the selection under 50 apps or categories; iOS cannot shield more.</p></div>
+<div class="row"><h3>The window and when apps return</h3><p>A window starts at the adhan or the iqamah and lasts 15–60 minutes (you set it). Apps always return at the end of the window, whether or not you did anything. The shield itself says when.</p></div>
+<div class="row"><h3>What is Lock Health?</h3><p>Three dots on Today: Screen Time permission, schedules for the next days, and the self-test. If something needs you, it says what in one line. It is never red.</p></div>
+<div class="row"><h3>Apps are still resting after the window</h3><p>Open Jamaah Lock: the self-test clears any shield that outlived its window. If it keeps happening, tell us the iOS version and the prayer; this should not occur.</p></div>
+<div class="row"><h3>I want to stop using the lock</h3><p>Settings → Resting apps → set the mode to Reminders, or remove Jamaah Lock in iOS Settings → Screen Time → Apps with Screen Time access. A change applies from the next window; the window running now finishes as planned.</p></div>
+
+<h2 id="unlock">Unlocking</h2>
+<div class="row"><h3>Methods</h3><p>Dhikr by voice (SubhanAllah ×33, Alhamdulillah ×33, Allahu Akbar ×34, counted on your phone), tasbih by tap, a wait timer, My dhikr (your own phrase and count) and "I have prayed". Pick one or more per prayer; the one you set first opens directly.</p></div>
+<div class="row"><h3>Voice counting does not hear me</h3><p>Speak the Arabic phrase clearly and close to the phone; the small dot shows the input level. On iOS 26 the first use downloads the Arabic model from Apple once (about a minute). In a noisy room, tap instead; taps and voice add up. If the microphone was denied, allow it in iOS Settings → Jamaah Lock. Nothing is recorded or sent anywhere.</p></div>
+<div class="row"><h3>Where does the shield button lead?</h3><p>Tapping it sends a notification "Tap to pray", which opens the unlock screen (iOS does not let a shield open an app directly).</p></div>
+
+<h2 id="tracker">Tracker and qada</h2>
+<div class="row"><h3>Marks</h3><p>On time, later, to make up, excused, not yet. Every change can be undone for 24 hours under "Recent changes".</p></div>
+<div class="row"><h3>Qada list</h3><p>A prayer marked "to make up" waits in the list until you tap "Made up". Unmarked prayers are added to the list only if you turn on "Add unmarked prayers to qada". There are no streaks and nothing is counted against you.</p></div>
+<div class="row"><h3>Excused days</h3><p>Tracker → Excused days: a date range and a reason (menstruation, illness, travel, other; the reason can be hidden). Those days are not counted and open qada entries inside the range are removed.</p></div>
+<div class="row"><h3>Reminders</h3><p>Optional, each on its own: Jumu'ah before the khutbah, Surah Al-Kahf on Friday, and fasting days (Monday/Thursday, the white days, Arafah, Ashura) the evening before. Settings → Reminders.</p></div>
+
+<h2 id="pro">Pro</h2>
+<div class="row"><h3>What is free <span class="tag free">free</span></h3><p>Everything to do with worship, with no ads: prayer times, all modes, all unlock methods, dhikr, the tracker and qada, reminders, Hijri date, Siri shortcuts, and receiving a shared timetable.</p></div>
+<div class="row"><h3>What Pro adds <span class="tag pro">pro</span></h3><p>Saving your own scanned or typed mosque timetable (and several mosques), and the Quran khatm reading plan. Updates will add more to Pro.</p></div>
+<div class="row"><h3>Prices and Family Sharing</h3><p>Pro is a one-time purchase, or a monthly subscription if you prefer to spread it. The price is shown in the app in your currency. Both include Family Sharing, so your family's devices get Pro too. There is no trial and no advertising.</p></div>
+<div class="row"><h3>Restore or manage</h3><p>Settings → Pro → Restore purchases, on any device signed in to the same Apple Account. Subscriptions are managed in iOS Settings → your name → Subscriptions; cancelling keeps Pro until the paid period ends.</p></div>
+<div class="row"><h3>Refunds</h3><p>Purchases are made through Apple, so refunds are requested from Apple at reportaproblem.apple.com.</p></div>
+
+<h2 id="privacy">Privacy, in short</h2>
+<div class="note">No account, no server, no analytics, no ads. Prayer times, text recognition and dhikr counting run on the phone. Screen Time selections are opaque tokens that never leave the device. See the <a href="privacy.html">Privacy Policy</a>.</div>
+<div class="row"><h3>Delete everything</h3><p>Settings → About → Delete all data removes timetables, marks and settings and stops all schedules. Deleting the app does the same. A Pro purchase belongs to your Apple Account and comes back with Restore.</p></div>
+
+<div class="contact" id="contact">
+  <a class="mail" href="mailto:jamaahlock@gmail.com">jamaahlock@gmail.com</a>
+  <p>Please include your iOS version and, for timetable questions, a photo of the timetable. We answer in English and Arabic.</p>
+</div>
+<footer><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+</div>
+
+<!-- ===================== ARABIC ===================== -->
+<div data-lang="ar" lang="ar" dir="rtl">
+<header>
+  <p class="kicker">الدعم</p>
+  <h1>Jamaah Lock <span>·</span> المساعدة</h1>
+  <p class="lede">مواقيت الصلاة من مسجدك، وتطبيقات تستريح خلال وقت الصلاة، وفتحٌ بالذكر. كل شيء يعمل على هاتفك. هذه الصفحة تجيب عن الأسئلة المتوقعة.</p>
+  <nav class="chips">
+    <a href="#ar-how">كيف يعمل</a><a href="#ar-masjid">مسجدك</a><a href="#ar-lock">التطبيقات المستريحة</a><a href="#ar-unlock">الفتح</a><a href="#ar-tracker">المتابعة والقضاء</a><a href="#ar-pro">Pro</a><a href="#ar-privacy">الخصوصية</a><a href="#ar-contact">التواصل</a>
+  </nav>
+</header>
+
+<h2 id="ar-how">الألسنة الأربعة</h2>
+<div class="row"><h3>اليوم</h3><p>الصلاة القادمة والوقت المتبقي لها، ثم صفوف اليوم الستة (الفجر، الشروق، الظهر، العصر، المغرب، العشاء) مع الأذان والإقامة إن عُرفت. اضغط الدائرة في طرف الصف لتسجيل الصلاة، واضغط مرة أخرى للإلغاء. تظهر «صحة القفل» تحت الصفوف عند تفعيل استراحة التطبيقات.</p></div>
+<div class="row"><h3>المسجد</h3><p>امسح جدول مسجدك الشهري أو استورده أو أدخله يدويًا، راجعه، وشاركه برمز QR.</p></div>
+<div class="row"><h3>المتابعة</h3><p>تقويم شهري للتسجيلات، وقائمة الصلوات التي تحتاج إلى قضاء، وأيام العذر، وخطة ختم القرآن.</p></div>
+<div class="row"><h3>الإعدادات</h3><p>الوضع وطرق الفتح لكل صلاة، طريقة الحساب والمذهب، المكان، التطبيقات المستريحة، التذكيرات، أذكاري، Siri والتركيز، Pro، التراخيص، حذف جميع البيانات.</p></div>
+
+<h2 id="ar-times">مواقيت الصلاة</h2>
+<div class="row"><h3>ما طرق الحساب المتاحة؟</h3><p>رابطة العالم الإسلامي، ISNA، الهيئة المصرية، أم القرى، كراتشي، لجنة رؤية الهلال، الديانة التركية، اتحاد المنظمات الإسلامية في فرنسا، ووزارة الشؤون الدينية الإندونيسية، مع عصر الشافعي أو الحنفي، وقواعد خطوط العرض العالية، وتعديل بالدقائق لكل صلاة. الإعدادات ← المواقيت والحساب. يقترح التطبيق طريقة بحسب بلدك، وجدول مسجدك له الأولوية دائمًا.</p></div>
+<div class="row"><h3>مواقيتي تختلف بدقائق عن المسجد</h3><p>هذا طبيعي في المواقيت المحسوبة. أضف تعديلًا لكل صلاة، أو امسح جدول المسجد (أدناه) ليستخدم التطبيق الأذان والإقامة المطبوعين.</p></div>
+<div class="row"><h3>هل يحتاج التطبيق إلى موقعي؟</h3><p>مرة واحدة فقط لتحديد مكانك، وفقط إن سمحت. يمكنك كتابة اسم المدينة بدلًا من ذلك. موقعك لا يغادر الهاتف.</p></div>
+
+<h2 id="ar-masjid">جدول مسجدك</h2>
+<div class="row"><h3>كيف أمسحه؟</h3>
+<ol class="steps"><li>لسان المسجد ← مسح. صوّر الجدول الشهري المطبوع، أو اختر صورة أو ملف PDF من الملفات.</li><li>يقرأ التطبيق الجدول على هاتفك ويعرض كل خلية. القيم المشكوك فيها مسطّرة؛ اضغط عليها لتصحيحها.</li><li>احفظ. اختر هل تتبع الفترات وقت الإقامة (موصى به) وهل تريد تذكيرًا في يوم 25 لمسح الشهر التالي.</li></ol>
+<p>حفظ جدولك الممسوح أو المُدخل يدويًا جزء من Pro. الجداول التي يشاركها معك الآخرون تُحفظ مجانًا.</p></div>
+<div class="row"><h3>خلية خاطئة بعد المسح</h3><p>اضغط الخلية واضبط الوقت الصحيح. تشير شاشة المراجعة أيضًا إلى القيم التي تخالف ترتيب اليوم أو تبتعد عن اليوم السابق. لا يُحفظ شيء قبل تأكيدك.</p></div>
+<div class="row"><h3>كيف أشاركه مع مسجدي؟</h3><p>افتح الجدول المحفوظ ← مشاركة. تحصل على رمز QR (احفظه صورة أو اطبع صفحة للوحة الإعلانات) أو ملف <code>.jamaah</code> لواتساب أو AirDrop. من لديه التطبيق يمسح الرمز بكاميرا النظام أو من داخل التطبيق ويرى شاشة المراجعة نفسها قبل الحفظ. لا يوجد خادم: الشهر كله داخل الرمز.</p></div>
+<div class="row"><h3>انتهى الجدول</h3><p>تعرض شاشة اليوم «انتهى الجدول — تُستخدم المواقيت المحسوبة» وتعود إلى الحساب حتى تمسح الشهر التالي. «مسح الشهر التالي» يُضاف إلى المسجد نفسه.</p></div>
+
+<h2 id="ar-lock">التطبيقات المستريحة</h2>
+<div class="row"><h3>ثلاثة أوضاع</h3><p><strong>تذكيرات</strong>: إشعارات ومتابعة فقط؛ لا يُطلب إذن مدة استخدام الجهاز أبدًا. <strong>لطيف</strong>: شاشة استراحة مع زر «متابعة على أي حال» بعد انتظار قصير (60 ثانية افتراضيًا، من 30 إلى 180). <strong>حازم</strong>: تبقى شاشة الاستراحة حتى تُنهي بإحدى طرق الفتح؛ ويعمل تصريح واحد في اليوم دائمًا. اختر لكل صلاة في الإعدادات ← الصلوات.</p></div>
+<div class="row"><h3>أي التطبيقات تستريح؟</h3><p>التي تختارها في منتقي التطبيقات من Apple عند إعداد الاستراحة. لا يرى التطبيق إلا رمزًا مجهولًا لكل تطبيق، لا اسمه. أبقِ الاختيار أقل من 50 تطبيقًا أو فئة؛ لا يستطيع iOS حجب أكثر من ذلك.</p></div>
+<div class="row"><h3>الفترة ومتى تعود التطبيقات</h3><p>تبدأ الفترة عند الأذان أو الإقامة وتستمر من 15 إلى 60 دقيقة (أنت تحددها). تعود التطبيقات دائمًا في نهاية الفترة، فعلت شيئًا أم لا. وشاشة الاستراحة نفسها تخبرك متى.</p></div>
+<div class="row"><h3>ما «صحة القفل»؟</h3><p>ثلاث نقاط في شاشة اليوم: إذن مدة استخدام الجهاز، والجداول للأيام القادمة، والفحص الذاتي. إن احتاج شيء إليك يقول ذلك في سطر واحد. ولا يكون أحمر أبدًا.</p></div>
+<div class="row"><h3>التطبيقات ما زالت مستريحة بعد الفترة</h3><p>افتح Jamaah Lock: يزيل الفحص الذاتي أي شاشة استراحة تجاوزت وقتها. إن تكرر ذلك فأخبرنا بإصدار iOS والصلاة؛ هذا لا ينبغي أن يحدث.</p></div>
+<div class="row"><h3>أريد إيقاف القفل</h3><p>الإعدادات ← التطبيقات المستريحة ← اجعل الوضع «تذكيرات»، أو أزل Jamaah Lock من إعدادات iOS ← مدة استخدام الجهاز ← التطبيقات التي لها صلاحية الوصول. يسري التغيير من الفترة التالية؛ والفترة الجارية تكتمل كما خُطط لها.</p></div>
+
+<h2 id="ar-unlock">الفتح</h2>
+<div class="row"><h3>الطرق</h3><p>الذكر بالصوت (سبحان الله ×33، الحمد لله ×33، الله أكبر ×34، يُعدّ على هاتفك)، والمسبحة باللمس، ومؤقت انتظار، وأذكاري (عبارتك وعددك)، و«صلّيت». اختر طريقة أو أكثر لكل صلاة؛ والأولى تُفتح مباشرة.</p></div>
+<div class="row"><h3>العدّ بالصوت لا يسمعني</h3><p>انطق العبارة بوضوح وقرب الهاتف؛ النقطة الصغيرة تُظهر مستوى الصوت. في iOS 26 يُنزَّل النموذج العربي من Apple مرة واحدة عند أول استخدام (نحو دقيقة). في مكان صاخب اعتمد اللمس؛ اللمس والصوت يُجمعان. إن رُفض الميكروفون فاسمح به في إعدادات iOS ← Jamaah Lock. لا يُسجَّل شيء ولا يُرسَل إلى أي مكان.</p></div>
+<div class="row"><h3>إلى أين يقود زر شاشة الاستراحة؟</h3><p>الضغط عليه يرسل إشعار «اضغط للصلاة» الذي يفتح شاشة الفتح (لا يسمح iOS لشاشة الاستراحة بفتح تطبيق مباشرة).</p></div>
+
+<h2 id="ar-tracker">المتابعة والقضاء</h2>
+<div class="row"><h3>التسجيلات</h3><p>في الوقت، لاحقًا، للقضاء، عذر، لم تُصلَّ بعد. يمكن التراجع عن كل تغيير خلال 24 ساعة من «التغييرات الأخيرة».</p></div>
+<div class="row"><h3>قائمة القضاء</h3><p>الصلاة المسجلة «للقضاء» تنتظر في القائمة حتى تضغط «قُضيت». الصلوات غير المسجلة لا تُضاف إلا إن فعّلت «إضافة الصلوات غير المسجلة إلى القضاء». لا سلاسل ولا شيء يُحسب ضدك.</p></div>
+<div class="row"><h3>أيام العذر</h3><p>المتابعة ← أيام العذر: مدة وسبب (حيض، مرض، سفر، آخر؛ ويمكن إخفاء السبب). لا تُحسب تلك الأيام، وتُزال سجلات القضاء المفتوحة داخل المدة.</p></div>
+<div class="row"><h3>التذكيرات</h3><p>اختيارية، كلٌّ على حدة: الجمعة قبل الخطبة، وسورة الكهف يوم الجمعة، وأيام الصيام (الاثنين والخميس، الأيام البيض، عرفة، عاشوراء) في المساء السابق. الإعدادات ← التذكيرات.</p></div>
+
+<h2 id="ar-pro">Pro</h2>
+<div class="row"><h3>ما المجاني <span class="tag free">مجاني</span></h3><p>كل ما يتعلق بالعبادة، بلا إعلانات: المواقيت، وكل الأوضاع، وكل طرق الفتح، والذكر، والمتابعة والقضاء، والتذكيرات، والتاريخ الهجري، واختصارات Siri، واستقبال جدول مشارك.</p></div>
+<div class="row"><h3>ما يضيفه Pro <span class="tag pro">pro</span></h3><p>حفظ جدول مسجدك الممسوح أو المُدخل يدويًا (وعدة مساجد)، وخطة ختم القرآن. وستضيف التحديثات المزيد إلى Pro.</p></div>
+<div class="row"><h3>الأسعار والمشاركة العائلية</h3><p>Pro شراء لمرة واحدة، أو اشتراك شهري إن فضّلت التقسيط. يظهر السعر في التطبيق بعملتك. كلاهما يشمل المشاركة العائلية، فتحصل أجهزة عائلتك على Pro أيضًا. لا فترة تجريبية ولا إعلانات.</p></div>
+<div class="row"><h3>الاستعادة أو الإدارة</h3><p>الإعدادات ← Pro ← استعادة المشتريات، على أي جهاز بحساب Apple نفسه. تُدار الاشتراكات في إعدادات iOS ← اسمك ← الاشتراكات؛ والإلغاء يُبقي Pro حتى نهاية المدة المدفوعة.</p></div>
+<div class="row"><h3>الاسترداد</h3><p>تتم المشتريات عبر Apple، فيُطلب الاسترداد من Apple عبر reportaproblem.apple.com.</p></div>
+
+<h2 id="ar-privacy">الخصوصية باختصار</h2>
+<div class="note">لا حساب، ولا خادم، ولا تحليلات، ولا إعلانات. المواقيت والتعرف على النص وعدّ الذكر تعمل على الهاتف. اختيارات مدة استخدام الجهاز رموز مبهمة لا تغادر الجهاز. انظر <a href="privacy.html">سياسة الخصوصية</a>.</div>
+<div class="row"><h3>حذف كل شيء</h3><p>الإعدادات ← حول ← حذف جميع البيانات يزيل الجداول والتسجيلات والإعدادات ويوقف كل الجداول الزمنية. حذف التطبيق يفعل الشيء نفسه. شراء Pro يتبع حساب Apple ويعود بالاستعادة.</p></div>
+
+<div class="contact" id="ar-contact">
+  <a class="mail" href="mailto:jamaahlock@gmail.com">jamaahlock@gmail.com</a>
+  <p>أرفق إصدار iOS، ولأسئلة الجداول صورة الجدول. نجيب بالعربية والإنجليزية.</p>
+</div>
+<footer><a href="privacy.html">سياسة الخصوصية</a> · <a href="terms.html">شروط الاستخدام</a></footer>
+</div>
+
+</div>
+<script>
+(function(){
+  var h=document.documentElement; h.className+=' js';
+  var want=(location.hash==='#ar'||/^ar/.test(navigator.language||''))?'ar':'en';
+  try{ want=localStorage.getItem('jl-lang')||want; }catch(e){}
+  function set(l){ h.setAttribute('data-show',l); h.lang=l; h.dir=(l==='ar')?'rtl':'ltr';
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-set')===l ? 'true':'false'); });
+    try{ localStorage.setItem('jl-lang',l); }catch(e){} }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click',function(){ set(b.getAttribute('data-set')); }); });
+  set(want);
+})();
+</script>
+</body>
+</html>
