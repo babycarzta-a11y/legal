@@ -16,11 +16,11 @@
 </head>
 <body><main>
 <h1>Sip Daily: privacy</h1>
-<p><small>Last updated: 6 October 2026 (version 1.1)</small></p>
+<p><small>Last updated: DRAFT for version 1.1 (set the date when published)</small></p>
 <div class="card"><strong>Short version:</strong> your drink log never leaves your iPhone unless you send it somewhere yourself. The developer receives nothing.</div>
 
 <h2>Your log</h2>
-<p>Drinks, amounts, times, your goal, your drink shares, saved cups, reminder settings, the body weights and fluid amounts of your sweat tests, and the voids you log on the in &amp; out chart (time, volume, urgency, leak) are stored in the app's own storage on your device. Weights and voids are never written to Apple Health or sent anywhere. There is no account, no sign-in, no server, no analytics and no advertising code in Sip Daily.</p>
+<p>Drinks, amounts, times, your goal, your drink shares, saved cups, reminder settings, the body weights and fluid amounts of your sweat tests, and the voids you log on the in &amp; out chart (time, volume, urgency, leak) are stored in the app's own storage on your device. Weights and voids are never written to Apple Health or sent anywhere. There is no account, no sign-in, no server, no analytics, no advertising and no tracking in Sip Daily. The developer receives nothing.</p>
 
 <h2>Reminders</h2>
 <p>Reminders are local notifications planned by iOS on your device. Their text never contains your amounts.</p>
@@ -29,13 +29,18 @@
 <p>To show today's amount on the Home Screen and Lock Screen, the app shares a small summary (today's counted amount, goal, unit and the widget's labels) with its own widget through an App Group container on the same device. The widget's "+" button stores the drinks you add there until the app moves them into your log.</p>
 
 <h2>Apple Health</h2>
-<p>Only if you switch it on, Sip Daily writes the counted amount of each drink to <em>Water</em> in Apple Health, and updates or removes that sample when you edit or delete the entry. Sip Daily requests write access only and never reads health data. Data in Apple Health is governed by Apple; you can revoke access in the Health app at any time. Health data is never used for advertising or shared with anyone.</p>
+<p>Only if you allow it, Sip Daily reads your <em>workouts</em> and <em>active energy</em> from Apple Health to estimate sweat loss for the sweat test, and, optionally, your <em>body mass</em> for the morning check. Each read permission is optional and can be declined; the app keeps working without it. Sip Daily also writes the counted amount of each drink to <em>Water</em> in Apple Health, and updates or removes that sample when you edit or delete the entry. What is read stays on your device and is never sent anywhere. Data in Apple Health is governed by Apple; you can change or revoke access in the Health app at any time. Health data is never used for advertising or shared with anyone.</p>
 
-<h2>Export</h2>
-<p>The CSV export and the 3-day in &amp; out chart (Sip+) create a file or image on your device and hand it to the iOS share sheet. Where it goes is your choice.</p>
+<h2>Face ID / passcode lock</h2>
+<p>If you switch on the lock, Sip Daily asks iOS to confirm it is you with Face ID, Touch ID or your device passcode. Authentication is handled entirely by iOS; the app never receives your biometric data or passcode.</p>
 
-<h2>Purchase</h2>
-<p>Sip+ is a one-time purchase handled by Apple. The app only asks the App Store on your device whether Sip+ is owned; payment details are never visible to the app or the developer.</p>
+
+
+<h2>Export and backup</h2>
+<p>The JSON, CSV and PDF exports and the in &amp; out chart create a file or image on your device and hand it to the iOS share sheet. Where it goes is your choice; the app itself sends nothing. You can restore a backup by choosing a backup file you saved earlier; it is read on your device only.</p>
+
+<h2>Purchases</h2>
+<p>Sip+ purchases and subscriptions are handled by Apple through StoreKit. The app only asks the App Store on your device whether Sip+ is active; payment details are never visible to the app or the developer.</p>
 
 <h2>Deleting your data</h2>
 <p>Delete an entry in the app, or delete the app to remove the whole log. Samples written to Apple Health stay there until you delete them in the Health app. iCloud device backups may contain app data according to your own backup settings.</p>
