@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sip Daily — help and questions</title>
-<meta name="description" content="How Sip Daily counts drinks, measures sweat rate, keeps an in &amp; out chart, plans reminders, writes to Apple Health and what Sip+ unlocks. Answers and a direct email.">
+<meta name="description" content="How Sip Daily counts drinks, measures sweat rate, keeps an in &amp; out diary, plans reminders, works with Apple Health and what Sip+ unlocks. Answers and a direct email.">
 <style>
   :root{--deep:#0b3b47;--ocean:#0e7a8c;--aqua:#4fd8e3;--foam:#eef8f9;--ink:#10262b;--muted:#5d7a7e}
   *{box-sizing:border-box}
@@ -68,8 +68,11 @@
     <p>Touch and hold the Home Screen or Lock Screen, tap <em>Edit</em> or <em>+</em>, search for Sip Daily. Home Screen: small (amount + bar) and medium (ring, amount, streak). Lock Screen: circular gauge, rectangular, and a one-line inline widget. Lock Screen widgets need iOS 16.</p></details>
   <details><summary>The widget's "+" button</summary>
     <p>On iOS 17 and later, the Home Screen widgets show a button that logs one glass of water (200 ml) without opening the app. The widget adds it right away; the entry moves into your log the next time you open Sip Daily.</p></details>
-  <details><summary>What goes to Apple Health?</summary>
-    <p>Only if you turn on <em>Settings → Write water to Health</em>. Sip Daily then writes the counted amount of each drink to <em>Water</em>. Editing or deleting an entry in Sip Daily updates or removes that same sample. Sip Daily asks for write access only and never reads your health data. You can revoke access at any time in the Health app under <em>Sharing → Apps</em>.</p></details>
+  <details><summary>What goes to Apple Health, and what does Sip read?</summary>
+    <p>Health access is optional. If you turn on <em>Settings → Write water to Health</em>, Sip Daily writes the counted amount of each drink to <em>Water</em>; editing or deleting an entry in Sip Daily updates or removes that same sample. Sip writes nothing else.</p>
+    <p>Sip reads only two things, and only when you ask: <strong>workouts</strong> (to import a session into a sweat test, or, with Sip+ and the workout toggle on, to estimate the sweat of a workout from your own test rate) and <strong>body weight</strong> (only if you choose to fill the morning check from Health). Nothing is read in the background without that choice, and nothing leaves your device. You can revoke any permission at any time in the Health app under <em>Sharing → Apps</em>.</p></details>
+  <details><summary>Why does coffee count less, and does alcohol count at all?</summary>
+    <p>Coffee, tea and energy drinks add up caffeine in mg for the day. Beer, wine and spirits are logged in units (1 unit = 10 g of alcohol) and, by default, do not count toward your goal: their share starts at 0 %. Like every other drink, you can change that share in <em>Settings → How drinks count</em>.</p></details>
 
   <h2>Sweat test</h2>
   <details><summary>How does the sweat test work?</summary>
@@ -91,14 +94,14 @@
 
   <h2>Sip+ and your data</h2>
   <table>
-    <tr><th>Free forever</th><th>Sip+ (one purchase)</th></tr>
-    <tr><td>Every drink type, editing entries, how drinks count, pace line, streaks, 7-day trend, the every-2-hours reminder, sweat tests with goal top-up, logging in &amp; out with day/night counts and NPi, widgets, Apple Health, 20 languages</td>
-        <td>Your own reminder day (first/last reminder, every 1–4 h), quiet hours, catch-up reminder, 30/90/365-day trends, weekly insights, sweat profile and session plan, 3-day in &amp; out chart (image/CSV), My cups (up to 8), two extra sizes (150 ml, 750 ml), CSV export</td></tr>
+    <tr><th>Free</th><th>Sip+ (optional)</th></tr>
+    <tr><td>Every drink type, caffeine and alcohol, water from food, logging any of the last 7 days, editing entries, how drinks count, pace line, streaks with a monthly shield, 7-day history, reminders, sweat tests with goal top-up, the in &amp; out diary with day/night counts and NPi, last night's ledger, the day card, CSV, one full PDF, widgets, Siri and Shortcuts, Apple Health, Face ID lock, JSON backup, 40+ languages</td>
+        <td>Balance (in − out − sweat) with its Live Activity and StandBy widget, workout sweat estimates, unlimited history and weekly insights, your own reminder interval with catch-up reminders, sweat profile and session plan, further PDFs, weekly shields, water colour themes, the week card, the seven-night ledger</td></tr>
   </table>
   <details><summary>Is Sip+ a subscription?</summary>
-    <p>No. It is a single in-app purchase on your App Store account; nothing renews. On a new iPhone, open <em>Settings → Sip+</em> in the app and tap <em>Restore purchase</em>.</p></details>
+    <p>Sip+ is optional. You can choose a monthly or yearly subscription, or a one-time purchase that never renews. Prices are shown in the app before you buy. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period; manage or cancel them in your App Store account settings. On a new iPhone, open <em>Settings → Sip+</em> in the app and tap <em>Restore purchases</em>.</p></details>
   <details><summary>How do I get my data out?</summary>
-    <p>With Sip+, <em>Trends → Export CSV</em> creates a file with one row per drink (date, time, drink, amount in ml, share, counted ml) and opens the iOS share sheet so you can save it to Files or send it.</p></details>
+    <p><em>Trends → Export CSV</em> creates a file with one row per drink (date, time, drink, amount in ml, share, counted ml) and opens the iOS share sheet so you can save it to Files or send it. CSV export and a JSON backup are free.</p></details>
   <details><summary>Where is my data stored?</summary>
     <p>Only on your iPhone. There is no account and no server. Deleting the app deletes the log. See the <a href="privacy.html">privacy policy</a>.</p></details>
 
