@@ -59,7 +59,7 @@
 <header>
   <p class="kicker">Privacy Policy</p>
   <h1>Jamaah Lock <span>·</span> privacy</h1>
-  <p class="date">Last updated: 16 October 2026</p>
+  <p class="date">Last updated: 24 November 2026</p>
   <p class="lede">Jamaah Lock is built so that nothing about you leaves your phone. This page says exactly what the app touches and what it never does.</p>
 </header>
 
@@ -81,6 +81,7 @@
 <tr><td>Screen Time (Family Controls, individual)</td><td>Only when you choose the Gentle or Firm mode and set up resting apps</td><td>Lets iOS show a shield over the apps you picked during prayer windows. See the section below.</td></tr>
 <tr><td>Camera and Photos</td><td>Only when you scan or import a mosque timetable</td><td>Reading the printed timetable on the device. The photo is shown to you for checking and is not sent anywhere.</td></tr>
 <tr><td>Microphone and Speech Recognition</td><td>Only when you tap "Start listening" on the voice dhikr method</td><td>Counting the dhikr you recite. Recognition runs on the device; no audio is recorded, stored or uploaded.</td></tr>
+<tr><td>Alarms (AlarmKit, iOS 26 and later)</td><td>Only when you turn on the Fajr wake-up alarm</td><td>Lets the Fajr and prayer alarms ring as a system alarm, even in silent mode. Alarms are scheduled on the device; no data leaves the device.</td></tr>
 </table>
 
 <h2>Screen Time data never leaves the device</h2>
@@ -88,6 +89,9 @@
 
 <h2>Voice dhikr</h2>
 <p>Dhikr counting uses Apple's on-device speech recognition (the SpeechAnalyzer dictation model on iOS 26, or on-device SFSpeechRecognizer on iOS 18). On iOS 26 the Arabic language model is downloaded once from Apple by the system; that download is Apple's and is covered by Apple's privacy policy. The app keeps only the running count. There is no audio file, no transcript history and no upload. If you decline the microphone, counting by tap works the same way.</p>
+
+<h2>Alarms</h2>
+<p>On iOS 26 and later the Fajr wake-up and prayer alarms use Apple's AlarmKit, so they ring like a system alarm. The app asks for the Alarms permission only when you turn the Fajr alarm on. Alarm times are calculated and scheduled on the device; no alarm data leaves the device and nothing is sent to us. If you decline, or on iOS 18 to 25, the app uses local notifications instead. You can withdraw the permission at any time in iOS Settings.</p>
 
 <h2>Mosque timetables and QR sharing</h2>
 <p>Scanning uses Apple's Vision text recognition on the device. A timetable you save stays on your phone. If you choose to share it, the app builds a QR code or a <code>.jamaah</code> file that contains only the mosque name, the city if you entered one, the month and the times — nothing about you. You decide where it goes through the share sheet; we never receive it. A timetable you receive from someone else is stored only after you check and save it.</p>
@@ -125,7 +129,7 @@
 <header>
   <p class="kicker">سياسة الخصوصية</p>
   <h1>Jamaah Lock <span>·</span> الخصوصية</h1>
-  <p class="date">آخر تحديث: 16 أكتوبر 2026</p>
+  <p class="date">آخر تحديث: 24 نوفمبر 2026</p>
   <p class="lede">صُمم Jamaah Lock بحيث لا يغادر شيء عنك هاتفك. تبيّن هذه الصفحة بدقة ما يصل إليه التطبيق وما لا يفعله أبدًا.</p>
 </header>
 
@@ -147,6 +151,7 @@
 <tr><td>مدة استخدام الجهاز (Family Controls، إذن فردي)</td><td>فقط عند اختيار الوضع اللطيف أو الحازم وإعداد التطبيقات المستريحة</td><td>يتيح لـ iOS عرض شاشة استراحة فوق التطبيقات التي اخترتها خلال فترات الصلاة. انظر القسم أدناه.</td></tr>
 <tr><td>الكاميرا والصور</td><td>فقط عند مسح جدول المسجد أو استيراده</td><td>قراءة الجدول المطبوع على الجهاز. تُعرض الصورة لك للمراجعة ولا تُرسل إلى أي مكان.</td></tr>
 <tr><td>الميكروفون والتعرف على الكلام</td><td>فقط عند الضغط على «ابدأ الاستماع» في طريقة الذكر بالصوت</td><td>عدّ الذكر الذي تنطقه. يعمل التعرف على الجهاز؛ لا يُسجَّل صوت ولا يُحفظ ولا يُرفع.</td></tr>
+<tr><td>المنبّهات (AlarmKit، iOS 26 وما بعده)</td><td>فقط عند تفعيل منبّه الاستيقاظ للفجر</td><td>يتيح أن يرنّ منبّه الفجر والصلاة كمنبّه نظام حتى في الوضع الصامت. تُجدول المنبّهات على الجهاز؛ لا تغادر أي بيانات الجهاز.</td></tr>
 </table>
 
 <h2>بيانات مدة استخدام الجهاز لا تغادر الجهاز</h2>
@@ -154,6 +159,9 @@
 
 <h2>الذكر بالصوت</h2>
 <p>يستخدم عدّ الذكر التعرف على الكلام من Apple على الجهاز (نموذج الإملاء SpeechAnalyzer في iOS 26، أو SFSpeechRecognizer على الجهاز في iOS 18). في iOS 26 يُنزِّل النظام نموذج اللغة العربية من Apple مرة واحدة؛ هذا التنزيل من Apple وتحكمه سياسة خصوصية Apple. لا يحتفظ التطبيق إلا بالعدد الجاري. لا ملف صوتي، ولا سجل نصوص، ولا رفع. إن رفضت الميكروفون فالعدّ باللمس يعمل بالطريقة نفسها.</p>
+
+<h2>المنبّهات</h2>
+<p>على iOS 26 وما بعده يستخدم منبّه الاستيقاظ للفجر ومنبّهات الصلاة إطار AlarmKit من Apple، فترنّ كمنبّه النظام. لا يطلب التطبيق إذن المنبّهات إلا عند تفعيل منبّه الفجر. تُحسب أوقات المنبّهات وتُجدول على الجهاز؛ لا تغادر أي بيانات منبّه الجهاز ولا يُرسل إلينا شيء. إن رفضت، أو على iOS من 18 إلى 25، يستخدم التطبيق الإشعارات المحلية بدلًا من ذلك. يمكنك سحب الإذن في أي وقت من إعدادات iOS.</p>
 
 <h2>جداول المساجد ومشاركة QR</h2>
 <p>يستخدم المسح تقنية التعرف على النص من Apple (Vision) على الجهاز. الجدول الذي تحفظه يبقى على هاتفك. إن اخترت مشاركته، يُنشئ التطبيق رمز QR أو ملف <code>.jamaah</code> لا يحتوي إلا على اسم المسجد، والمدينة إن أدخلتها، والشهر، والمواقيت — لا شيء عنك. أنت تقرر وجهته عبر ورقة المشاركة؛ ولا نستقبله نحن أبدًا. الجدول الذي يصلك من غيرك لا يُخزَّن إلا بعد مراجعتك وحفظك له.</p>
